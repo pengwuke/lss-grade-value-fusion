@@ -35,4 +35,4 @@ or new patient validation. R7's earlier exact-output comparisons describe R7.
 Full historical training is outside this release. Author code contributions are MIT-licensed; trained models are handled separately.
 
 
-Public v1.0.1 scope: no weights or patient data are included. Model examples require a separately obtained matching authorised model package. Historical validation references describe earlier preparation, not new release-time execution.
+Public v1.1.1 scope: no weights or patient data are included. Model examples require a separately obtained matching authorised model package. Historical validation references describe earlier preparation, not new release-time execution.

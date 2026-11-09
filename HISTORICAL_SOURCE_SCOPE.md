@@ -1,6 +1,6 @@
 # Included historical training and analysis source snapshot
 
-Code v1.1.0 adds all 46 retained historical source files under historical_sources/, preserving their original names/hierarchy: 42 Python files and four archived Python-text producers. Original internal R16 source hashes and public-snapshot hashes are both listed in SOURCE_LICENSE_ATTRIBUTION.json/CSV. The older historical_source_inventory.json and historical_source_manifest.json remain unchanged metadata for raw R16, not hashes of the sanitised public files.
+Code v1.1.1 retains the v1.1.0 addition of all 46 retained historical source files under historical_sources/, preserving their original names/hierarchy: 42 Python files and four archived Python-text producers. Original internal R16 source hashes and public-snapshot hashes are both listed in SOURCE_LICENSE_ATTRIBUTION.json/CSV. The older historical_source_inventory.json and historical_source_manifest.json remain unchanged metadata for raw R16, not hashes of the sanitised public files.
 
 Twenty-one public copies match their originals byte-for-byte; twenty-five have explicit placeholder paths and, for three source auditors, the external split-input gate documented below. The raw R16 sources are unchanged. This closes the inspectable training-source gap; it does not claim full historical training portability, a locked historical environment or a rerun. See HISTORICAL_TRAINING_SOURCES.md, PUBLIC_SOURCE_DIFF.patch and TRAINING_REPRODUCTION_SCOPE.md.
 

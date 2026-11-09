@@ -1,4 +1,4 @@
-# Code v1.1.0 reproduction scope
+# Code v1.1.1 reproduction scope
 
 This release supplies the unchanged portable inference/statistics interfaces and all 46 inspectable historical training/analysis sources. The added snapshot includes the grade-value auxiliary module/objectives, alpha-search and training controllers, DeiT training, matched auxiliary controls, reference reconstructions, selection and evaluation lineage. SOURCE_LICENSE_ATTRIBUTION.json/CSV binds every public file to its raw R16 source SHA and applicable attribution.
 

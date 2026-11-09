@@ -29,4 +29,4 @@ The fixes do not change image conversion, model tensors, fusion, frozen kernels,
 contrast plans or the manuscript's numerical results.
 
 
-Public v1.0.1 scope: no weights or patient data are included. Model examples require a separately obtained matching authorised model package. Historical validation references describe earlier preparation, not new release-time execution.
+Public v1.1.1 scope: no weights or patient data are included. Model examples require a separately obtained matching authorised model package. Historical validation references describe earlier preparation, not new release-time execution.

@@ -1,6 +1,6 @@
 # Historical training and analysis source snapshot for manuscript B15
 
-Source component of prepared public code v1.1.0. This snapshot supplies all 46 retained historical sources (42 .py and four .py.txt), including the grade-value auxiliary head/objectives, alpha search/training controllers, DeiT training, matched controls, reconstruction references and fusion/evaluation lineage. It complements the separate portable code release; it does not replace that runtime or claim full training portability.
+Source component of code v1.1.1, unchanged from public v1.1.0. This snapshot supplies all 46 retained historical sources (42 .py and four .py.txt), including the grade-value auxiliary head/objectives, alpha search/training controllers, DeiT training, matched controls, reconstruction references and fusion/evaluation lineage. It complements the separate portable code release; it does not replace that runtime or claim full training portability.
 
 Author contributions are MIT, with explicit unchanged upstream notices in THIRD_PARTY_NOTICES.md and per-file SOURCE_LICENSE_ATTRIBUTION.json/CSV. Original source SHA values bind the full unmodified internal R16 files; public SHA values bind this sanitised snapshot. PUBLIC_SOURCE_DIFF.patch lists the limited modifications while masking the omitted original private roots and split IDs. The exact full diff stays in a private server audit directory and is not part of this public review payload.
 

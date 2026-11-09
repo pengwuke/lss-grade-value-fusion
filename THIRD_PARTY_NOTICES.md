@@ -21,7 +21,7 @@ Official sources (checked 2026-11-09):
 
 Dataset v4: https://data.mendeley.com/datasets/rgb77xm3jf/4, DOI 10.17632/rgb77xm3jf.4. Its licence field states CC BY 4.0; the description also says scientific purpose (noncommercial), both still present on 2026-11-09. No MRI/ROI image or real patient-level table is redistributed. No unrestricted commercial model permission is inferred. This factual difference is not presented as a categorical prohibition on sharing noncommercial research models. Trained models require a separate distribution and author-contribution grant; a code MIT choice does not settle third-party data rights.
 
-Code v1.1.0 includes all 46 sanitised historical sources with per-file provenance/licence mapping and source/public SHA pairs. Original internal R16 remains preserved.
+Code v1.1.1 includes all 46 sanitised historical sources with per-file provenance/licence mapping and source/public SHA pairs. Original internal R16 remains preserved.
 
 
 Historical-source details and the ORNet method/source distinction:
