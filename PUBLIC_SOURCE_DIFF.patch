@@ -1,0 +1,505 @@
+--- original/historical_sources/fixed_fusion/01_remote_fixed_deit_fusion.py
++++ public/historical_sources/fixed_fusion/01_remote_fixed_deit_fusion.py
+@@ -18,7 +18,7 @@
+ os.environ.setdefault('OMP_NUM_THREADS','1')
+ import numpy as np
+ HERE=Path(__file__).resolve().parent
+-RUN_PARENT=Path('<ORIGINAL_PRIVATE_ROOT>/server_runs')
++RUN_PARENT=Path('/PATH/TO/RESEARCH_WORKSPACE/server_runs')
+ PREFIX='paper2_w25_a4_r2_fixed_deit_fusion_20261025_'
+ MANIFEST='10_FUSION_SOURCE_SHA256.json'
+ DESIGN='03_FUSION_DESIGN.json'
+@@ -530,7 +530,7 @@
+     validate_sources();run=run_for_design(sha(HERE/DESIGN));require_run(run)
+     if a.mode=='worker':return worker(run,a.manifest_sha)
+     need(a.out is not None and a.bundle is not None,'CLIENT_OUTPUT_ARGUMENTS')
+-    for p in (a.out,a.bundle):need(re.fullmatch(r'<ORIGINAL_PRIVATE_ROOT>/lss_w25a4r2_[A-Za-z0-9]{8}',str(p.parent)) is not None,'CLIENT_OUTPUT_PATH_INVALID')
++    for p in (a.out,a.bundle):need(re.fullmatch(r'/PATH/TO/TEMP/lss_w25a4r2_[A-Za-z0-9]{8}',str(p.parent)) is not None,'CLIENT_OUTPUT_PATH_INVALID')
+     s=evaluate_once(run,a.manifest_sha) if a.mode=='evaluate' else status_snapshot(run,a.manifest_sha)
+     dump(a.out,s)
+     if s.get('safe_result_available'):shutil.copyfile(run/'02_FIXED_FUSION_SAFE_RESULT.zip',a.bundle)
+--- original/historical_sources/fixed_fusion/05_P5R2_IDENTITY_PARENT.py
++++ public/historical_sources/fixed_fusion/05_P5R2_IDENTITY_PARENT.py
+@@ -19,12 +19,33 @@
+ from collections import Counter
+ 
+ SCHEMA='LSS_PAPER2_W24P5_R2_R11_SPLIT_GRADE_CROSSWALK_V1'
+-ROOT=pathlib.Path('<ORIGINAL_PRIVATE_ROOT>')
+-SCRIPT_ROOT=pathlib.Path('<ORIGINAL_PRIVATE_ROOT>/experiments/baseline_v1/scripts')
++ROOT=pathlib.Path('/PATH/TO/RESEARCH_WORKSPACE')
++SCRIPT_ROOT=pathlib.Path('/PATH/TO/PROJECT/experiments/baseline_v1/scripts')
+ 
+ # Exactly 94 *published dataset-internal* IDs, transcribed from the authors'
+ # public data/splits.csv test rows, NOT user-derived IDs or medical identifiers.
+-PUBLIC_TEST_IDS="""<OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID>""".split()
++# Public snapshot: exact original split must be supplied separately; no IDs bundled.
++def _load_public_test_ids_from_source_csv():
++    split_path = os.environ.get('PAPER2_SOURCE_SPLITS_CSV')
++    if not split_path:
++        raise SystemExit('PUBLIC_SNAPSHOT_REQUIRES_PAPER2_SOURCE_SPLITS_CSV: supply the original published data/splits.csv; no substitute split is generated')
++    split_bytes = pathlib.Path(split_path).expanduser().read_bytes()
++    # Exact official source CSV bytes measured 2026-11-09; not a retroactive historical freeze.
++    if hashlib.sha256(split_bytes).hexdigest() != '1dab827011428f783b51624a32c52ca063e67a608375bfe41ee52cb6e0f5380f':
++        raise SystemExit('PUBLIC_SOURCE_SPLIT_CSV_DIFFERS_FROM_OFFICIAL_SNAPSHOT_20261109')
++    with io.StringIO(split_bytes.decode('utf-8-sig'), newline='') as handle:
++        reader = csv.DictReader(handle)
++        if reader.fieldnames != ['patient', 'split']:
++            raise SystemExit('PUBLIC_SOURCE_SPLIT_COLUMNS_MUST_BE_patient_split')
++        test_ids = [row['patient'].strip() for row in reader if row['split'] == 'test']
++    if len(test_ids) != 94 or len(set(test_ids)) != 94 or not all(re.fullmatch(r'\d{4}', value) for value in test_ids):
++        raise SystemExit('PUBLIC_SOURCE_SPLIT_TEST_IDS_INVALID_OR_COUNT_NOT_94')
++    canonical = '\n'.join(sorted(test_ids)).encode('utf-8')
++    if hashlib.sha256(canonical).hexdigest() != '9d2cc0d11364f06c8c1f777cc1f37b77a6cef28a64a8134dae453d8fd5034f45':
++        raise SystemExit('PUBLIC_SOURCE_SPLIT_TEST_ID_SET_DIFFERS_FROM_FROZEN_ORIGINAL')
++    return set(test_ids)
++
++PUBLIC_TEST_IDS = _load_public_test_ids_from_source_csv()
+ EXPECTED_PUBLIC_TEST_COUNT=94
+ if len(PUBLIC_TEST_IDS)!=94 or len(set(PUBLIC_TEST_IDS))!=94:
+     raise SystemExit('PUBLIC_TEST_ID_TRANSCRIPTION_COUNT_GATE_FAILED')
+@@ -360,7 +381,7 @@
+ def main():
+  ap=argparse.ArgumentParser();ap.add_argument('--output',required=True);args=ap.parse_args()
+  out=pathlib.Path(args.output)
+- if not re.fullmatch(r'<ORIGINAL_PRIVATE_ROOT>/lss_w24p5r2_[0-9a-f]{10}/r11_preflight_evidence\.zip',str(out)):
++ if not re.fullmatch(r'/PATH/TO/TEMP/lss_w24p5r2_[0-9a-f]{10}/r11_preflight_evidence\.zip',str(out)):
+   raise SystemExit('NO_WRITES_OUTSIDE_TMP_STAGE')
+  out.parent.mkdir(parents=True,exist_ok=True)
+  status={k:fail_or_pass_asset(k,*v) for k,v in ASSETS.items()}
+--- original/historical_sources/grade_alpha_search/common_step04a.py
++++ public/historical_sources/grade_alpha_search/common_step04a.py
+@@ -26,16 +26,16 @@
+     cohen_kappa_score, mean_absolute_error
+ )
+ 
+-ROOT = Path("<ORIGINAL_PRIVATE_ROOT>")
++ROOT = Path("/PATH/TO/RESEARCH_WORKSPACE")
+ PKG = ROOT / "server_packages/secondgen_step04a_firstgenbest_iq8_nohe_g1_20260821"
+ SCI = ROOT / "server_runs/secondgen_step04a_firstgenbest_coralmsaux_fixeddeit_iq8_nohe_g1_20260821"
+ CTRL = ROOT / "server_runs/secondgen_step04a_firstgenbest_control_20260821"
+ 
+-SOURCE54 = Path("<ORIGINAL_PRIVATE_ROOT>/experiments/baseline_v1/scripts/54_train_coral_risk_protocol_v3_full468_oof.py")
++SOURCE54 = Path("/PATH/TO/PROJECT/experiments/baseline_v1/scripts/54_train_coral_risk_protocol_v3_full468_oof.py")
+ SHA54 = "b8e5360657fa467e74db846c4d03e7f5f80901aa2108e66587b04a58e89cb259"
+-SOURCE52 = Path("<ORIGINAL_PRIVATE_ROOT>/experiments/baseline_v1/scripts/52_train_official_deit_protocol_v3_full468_oof.py")
++SOURCE52 = Path("/PATH/TO/PROJECT/experiments/baseline_v1/scripts/52_train_official_deit_protocol_v3_full468_oof.py")
+ SHA52 = "dc8c0b4b1aafe640d7ce764c3efff984e5154430621c946ea7025c0b4d3887ae"
+-SOURCE393 = Path("<ORIGINAL_PRIVATE_ROOT>/experiments/baseline_v1/scripts/393_train_step14u25d_convnext_ce_differential_lr.py")
++SOURCE393 = Path("/PATH/TO/PROJECT/experiments/baseline_v1/scripts/393_train_step14u25d_convnext_ce_differential_lr.py")
+ SHA393 = "5eef55010d4c019d26601a270a78be5e51b264bb396ba3a8b70871b7f4dfae04"
+ FORMAL_WRAPPER = ROOT / "server_runs/step04a_protocol_matched80_20_authoritative_source_preflight_20260813/current_unified_wrappers/step02b_train_convnext_corn_unified5fold.py"
+ SHA_WRAPPER = "5ecf4154e8dccffcb6ab9a9ee0798a7ebdc7cbf17099fd47c03f9b14ce9a7ee4"
+--- original/historical_sources/historical_fusion/01_expand_fusion_weight_inner_grid.py
++++ public/historical_sources/historical_fusion/01_expand_fusion_weight_inner_grid.py
+@@ -7,7 +7,7 @@
+ import pandas as pd
+ from sklearn.metrics import accuracy_score, balanced_accuracy_score, f1_score, cohen_kappa_score
+ 
+-ROOT=Path("<ORIGINAL_PRIVATE_ROOT>")
++ROOT=Path("/PATH/TO/RESEARCH_WORKSPACE")
+ PARENT_RUN=ROOT/"server_runs/paper2_p10_c3_r6_r4_r2_crossplatform_deit_load_fusion_weight_search_20261005"
+ PARENT=PARENT_RUN/"P10_C3_R6_R4_R2_DUAL_INNERVAL_FUSION_WEIGHT_SEARCH_RESULT.zip"
+ OUT=ROOT/"server_runs/paper2_p10_c3_r6_r5_fusion_weight_boundary_expansion_20261005"
+--- original/historical_sources/historical_fusion/01_materialize_dual_innerval_and_search_fusion_weight_R2.py
++++ public/historical_sources/historical_fusion/01_materialize_dual_innerval_and_search_fusion_weight_R2.py
+@@ -10,11 +10,11 @@
+ from torch.utils.data import DataLoader
+ from sklearn.metrics import accuracy_score, balanced_accuracy_score, f1_score, cohen_kappa_score
+ 
+-ROOT=Path("<ORIGINAL_PRIVATE_ROOT>")
++ROOT=Path("/PATH/TO/RESEARCH_WORKSPACE")
+ R5ZIP=ROOT/"server_runs/paper2_p10_c3_r5_selected_alpha_outer_eval_20261005/P10_C3_R5_SELECTED_ALPHA_OUTER_EVAL_RESULT.zip"
+ R4ZIP=ROOT/"server_runs/paper2_p10_c3_r4_innerval_alpha_search_20261005/P10_C3_R4_INNERVAL_ALPHA_SEARCH_RESULT.zip"
+ FIXED=ROOT/"server_packages/step06a2_fix2_explicit_locked_deit_20260814/Original_DeiT_native_loss_fixed_inner_OOF.csv"
+-SOURCE52=Path("<ORIGINAL_PRIVATE_ROOT>/experiments/baseline_v1/scripts/52_train_official_deit_protocol_v3_full468_oof.py")
++SOURCE52=Path("/PATH/TO/PROJECT/experiments/baseline_v1/scripts/52_train_official_deit_protocol_v3_full468_oof.py")
+ 
+ R5RUN=ROOT/"server_runs/paper2_p10_c3_r5_selected_alpha_outer_eval_20261005"
+ R4RUN=ROOT/"server_runs/paper2_p10_c3_r4_innerval_alpha_search_20261005"
+--- original/historical_sources/historical_fusion/01_selected_weight_outer_oof_eval.py
++++ public/historical_sources/historical_fusion/01_selected_weight_outer_oof_eval.py
+@@ -6,7 +6,7 @@
+ import pandas as pd
+ from sklearn.metrics import accuracy_score, balanced_accuracy_score, f1_score, cohen_kappa_score
+ 
+-ROOT=Path("<ORIGINAL_PRIVATE_ROOT>")
++ROOT=Path("/PATH/TO/RESEARCH_WORKSPACE")
+ R6R5=ROOT/"server_runs/paper2_p10_c3_r6_r5_fusion_weight_boundary_expansion_20261005/P10_C3_R6_R5_FUSION_WEIGHT_BOUNDARY_EXPANSION_RESULT.zip"
+ R5=ROOT/"server_runs/paper2_p10_c3_r5_selected_alpha_outer_eval_20261005/P10_C3_R5_SELECTED_ALPHA_OUTER_EVAL_RESULT.zip"
+ R5RUN=ROOT/"server_runs/paper2_p10_c3_r5_selected_alpha_outer_eval_20261005"
+--- original/historical_sources/matched_aux/11_remote_matched_aux_formal5.py
++++ public/historical_sources/matched_aux/11_remote_matched_aux_formal5.py
+@@ -14,7 +14,7 @@
+ os.environ.setdefault('CUBLAS_WORKSPACE_CONFIG', ':4096:8')
+ os.environ.setdefault('MPLBACKEND', 'Agg')
+ HERE = Path(__file__).resolve().parent
+-RUN_PARENT = Path('<ORIGINAL_PRIVATE_ROOT>/server_runs')
++RUN_PARENT = Path('/PATH/TO/RESEARCH_WORKSPACE/server_runs')
+ PREFIX = 'paper2_w25_a2_matched_aux_formal5_20261022_'
+ ARM_NAMES = ('A0_NATURAL', 'A1_SCALED', 'A2_BINARY_P', 'A3_GRADE_FIXED')
+ STAGE = 'PREPARING'
+@@ -406,7 +406,7 @@
+     if a.mode=='worker':return worker(run,a.manifest_sha)
+     need(a.out is not None and a.bundle is not None,'CLIENT_OUTPUT_ARGUMENTS_REQUIRED')
+     for p in (a.out,a.bundle):
+-        need(re.fullmatch(r'<ORIGINAL_PRIVATE_ROOT>/lss_w25a2_[A-Za-z0-9]{8}',str(p.parent)) is not None,'CLIENT_OUTPUT_NOT_OWN_TEMP_STAGE')
++        need(re.fullmatch(r'/PATH/TO/TEMP/lss_w25a2_[A-Za-z0-9]{8}',str(p.parent)) is not None,'CLIENT_OUTPUT_NOT_OWN_TEMP_STAGE')
+     s=start_job(run,a.manifest_sha) if a.mode=='start' else status_snapshot(run,a.manifest_sha)
+     dump(a.out,s)
+     if s.get('safe_result_available'):
+--- original/historical_sources/matched_aux/common_step04a.py
++++ public/historical_sources/matched_aux/common_step04a.py
+@@ -26,16 +26,16 @@
+     cohen_kappa_score, mean_absolute_error
+ )
+ 
+-ROOT = Path("<ORIGINAL_PRIVATE_ROOT>")
++ROOT = Path("/PATH/TO/RESEARCH_WORKSPACE")
+ PKG = ROOT / "server_packages/secondgen_step04a_firstgenbest_iq8_nohe_g1_20260821"
+ SCI = ROOT / "server_runs/secondgen_step04a_firstgenbest_coralmsaux_fixeddeit_iq8_nohe_g1_20260821"
+ CTRL = ROOT / "server_runs/secondgen_step04a_firstgenbest_control_20260821"
+ 
+-SOURCE54 = Path("<ORIGINAL_PRIVATE_ROOT>/experiments/baseline_v1/scripts/54_train_coral_risk_protocol_v3_full468_oof.py")
++SOURCE54 = Path("/PATH/TO/PROJECT/experiments/baseline_v1/scripts/54_train_coral_risk_protocol_v3_full468_oof.py")
+ SHA54 = "b8e5360657fa467e74db846c4d03e7f5f80901aa2108e66587b04a58e89cb259"
+-SOURCE52 = Path("<ORIGINAL_PRIVATE_ROOT>/experiments/baseline_v1/scripts/52_train_official_deit_protocol_v3_full468_oof.py")
++SOURCE52 = Path("/PATH/TO/PROJECT/experiments/baseline_v1/scripts/52_train_official_deit_protocol_v3_full468_oof.py")
+ SHA52 = "dc8c0b4b1aafe640d7ce764c3efff984e5154430621c946ea7025c0b4d3887ae"
+-SOURCE393 = Path("<ORIGINAL_PRIVATE_ROOT>/experiments/baseline_v1/scripts/393_train_step14u25d_convnext_ce_differential_lr.py")
++SOURCE393 = Path("/PATH/TO/PROJECT/experiments/baseline_v1/scripts/393_train_step14u25d_convnext_ce_differential_lr.py")
+ SHA393 = "5eef55010d4c019d26601a270a78be5e51b264bb396ba3a8b70871b7f4dfae04"
+ FORMAL_WRAPPER = ROOT / "server_runs/step04a_protocol_matched80_20_authoritative_source_preflight_20260813/current_unified_wrappers/step02b_train_convnext_corn_unified5fold.py"
+ SHA_WRAPPER = "5ecf4154e8dccffcb6ab9a9ee0798a7ebdc7cbf17099fd47c03f9b14ce9a7ee4"
+--- original/historical_sources/matched_outer_evaluation/01_remote_evaluate_frozen_aux.py
++++ public/historical_sources/matched_outer_evaluation/01_remote_evaluate_frozen_aux.py
+@@ -14,7 +14,7 @@
+ os.environ.setdefault('CUBLAS_WORKSPACE_CONFIG', ':4096:8')
+ os.environ.setdefault('MPLBACKEND','Agg')
+ HERE=Path(__file__).resolve().parent
+-RUN_PARENT=Path('<ORIGINAL_PRIVATE_ROOT>/server_runs')
++RUN_PARENT=Path('/PATH/TO/RESEARCH_WORKSPACE/server_runs')
+ PREFIX='paper2_w25_a3_frozen_outer_eval_20261023_'
+ MANIFEST='10_EVAL_SOURCE_SHA256.json'
+ DESIGN='03_EVALUATION_DESIGN.json'
+@@ -417,7 +417,7 @@
+     validate_sources();run=run_for_design(sha(HERE/DESIGN));require_run(run)
+     if a.mode=='worker':return worker(run,a.manifest_sha)
+     need(a.out is not None and a.bundle is not None,'CLIENT_OUTPUT_ARGUMENTS')
+-    for p in (a.out,a.bundle):need(re.fullmatch(r'<ORIGINAL_PRIVATE_ROOT>/lss_w25a3_[A-Za-z0-9]{8}',str(p.parent)) is not None,'CLIENT_OUTPUT_PATH_INVALID')
++    for p in (a.out,a.bundle):need(re.fullmatch(r'/PATH/TO/TEMP/lss_w25a3_[A-Za-z0-9]{8}',str(p.parent)) is not None,'CLIENT_OUTPUT_PATH_INVALID')
+     s=evaluate_once(run,a.manifest_sha) if a.mode=='evaluate' else status_snapshot(run,a.manifest_sha)
+     dump(a.out,s)
+     if s.get('safe_result_available'):shutil.copyfile(run/'02_EVAL_SAFE_RESULT.zip',a.bundle)
+--- original/historical_sources/p4c_reference/01_server_p4_1c_formal_train.py
++++ public/historical_sources/p4c_reference/01_server_p4_1c_formal_train.py
+@@ -69,8 +69,8 @@
+ SEED = 1337
+ 
+ RAW_ROOT = Path("/data/LSS/raw/LSS_MRI_AISSLab_Dataset_V0.1")
+-MANIFEST = Path("<ORIGINAL_PRIVATE_ROOT>/server_runs/step02a0_fix1_resolve_roi_paths_20260813/unified_5fold_manifest_server_resolved.csv")
+-PYTHON_EXPECTED = "<ORIGINAL_PRIVATE_ROOT>/miniforge3/envs/lss-foraminal-v2/bin/python"
++MANIFEST = Path("/PATH/TO/RESEARCH_WORKSPACE/server_runs/step02a0_fix1_resolve_roi_paths_20260813/unified_5fold_manifest_server_resolved.csv")
++PYTHON_EXPECTED = "/PATH/TO/AUTHOR_HOME/miniforge3/envs/lss-foraminal-v2/bin/python"
+ 
+ RECIPE = dict(
+     backbone="resnet18", img_size=224,
+--- original/historical_sources/selected_fusion/01_remote_validation_selected_fusion.py
++++ public/historical_sources/selected_fusion/01_remote_validation_selected_fusion.py
+@@ -9,7 +9,7 @@
+ sys.dont_write_bytecode=True
+ os.environ.setdefault('OPENBLAS_NUM_THREADS','1');os.environ.setdefault('OMP_NUM_THREADS','1')
+ HERE=Path(__file__).resolve().parent
+-RUN_PARENT=Path('<ORIGINAL_PRIVATE_ROOT>/server_runs')
++RUN_PARENT=Path('/PATH/TO/RESEARCH_WORKSPACE/server_runs')
+ PREFIX='paper2_w25_a6_matched_val_selection_20261026_'
+ MANIFEST='10_SELECTION_SOURCE_SHA256.json';DESIGN='03_SELECTION_DESIGN.json'
+ COMPLETE='PASS_MATCHED_VALIDATION_SELECTION_AND_PAIRED_ANALYSIS'
+--- original/historical_sources/selected_fusion/05_P5R2_IDENTITY_PARENT.py
++++ public/historical_sources/selected_fusion/05_P5R2_IDENTITY_PARENT.py
+@@ -19,12 +19,33 @@
+ from collections import Counter
+ 
+ SCHEMA='LSS_PAPER2_W24P5_R2_R11_SPLIT_GRADE_CROSSWALK_V1'
+-ROOT=pathlib.Path('<ORIGINAL_PRIVATE_ROOT>')
+-SCRIPT_ROOT=pathlib.Path('<ORIGINAL_PRIVATE_ROOT>/experiments/baseline_v1/scripts')
++ROOT=pathlib.Path('/PATH/TO/RESEARCH_WORKSPACE')
++SCRIPT_ROOT=pathlib.Path('/PATH/TO/PROJECT/experiments/baseline_v1/scripts')
+ 
+ # Exactly 94 *published dataset-internal* IDs, transcribed from the authors'
+ # public data/splits.csv test rows, NOT user-derived IDs or medical identifiers.
+-PUBLIC_TEST_IDS="""<OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID>""".split()
++# Public snapshot: exact original split must be supplied separately; no IDs bundled.
++def _load_public_test_ids_from_source_csv():
++    split_path = os.environ.get('PAPER2_SOURCE_SPLITS_CSV')
++    if not split_path:
++        raise SystemExit('PUBLIC_SNAPSHOT_REQUIRES_PAPER2_SOURCE_SPLITS_CSV: supply the original published data/splits.csv; no substitute split is generated')
++    split_bytes = pathlib.Path(split_path).expanduser().read_bytes()
++    # Exact official source CSV bytes measured 2026-11-09; not a retroactive historical freeze.
++    if hashlib.sha256(split_bytes).hexdigest() != '1dab827011428f783b51624a32c52ca063e67a608375bfe41ee52cb6e0f5380f':
++        raise SystemExit('PUBLIC_SOURCE_SPLIT_CSV_DIFFERS_FROM_OFFICIAL_SNAPSHOT_20261109')
++    with io.StringIO(split_bytes.decode('utf-8-sig'), newline='') as handle:
++        reader = csv.DictReader(handle)
++        if reader.fieldnames != ['patient', 'split']:
++            raise SystemExit('PUBLIC_SOURCE_SPLIT_COLUMNS_MUST_BE_patient_split')
++        test_ids = [row['patient'].strip() for row in reader if row['split'] == 'test']
++    if len(test_ids) != 94 or len(set(test_ids)) != 94 or not all(re.fullmatch(r'\d{4}', value) for value in test_ids):
++        raise SystemExit('PUBLIC_SOURCE_SPLIT_TEST_IDS_INVALID_OR_COUNT_NOT_94')
++    canonical = '\n'.join(sorted(test_ids)).encode('utf-8')
++    if hashlib.sha256(canonical).hexdigest() != '9d2cc0d11364f06c8c1f777cc1f37b77a6cef28a64a8134dae453d8fd5034f45':
++        raise SystemExit('PUBLIC_SOURCE_SPLIT_TEST_ID_SET_DIFFERS_FROM_FROZEN_ORIGINAL')
++    return set(test_ids)
++
++PUBLIC_TEST_IDS = _load_public_test_ids_from_source_csv()
+ EXPECTED_PUBLIC_TEST_COUNT=94
+ if len(PUBLIC_TEST_IDS)!=94 or len(set(PUBLIC_TEST_IDS))!=94:
+     raise SystemExit('PUBLIC_TEST_ID_TRANSCRIPTION_COUNT_GATE_FAILED')
+@@ -360,7 +381,7 @@
+ def main():
+  ap=argparse.ArgumentParser();ap.add_argument('--output',required=True);args=ap.parse_args()
+  out=pathlib.Path(args.output)
+- if not re.fullmatch(r'<ORIGINAL_PRIVATE_ROOT>/lss_w24p5r2_[0-9a-f]{10}/r11_preflight_evidence\.zip',str(out)):
++ if not re.fullmatch(r'/PATH/TO/TEMP/lss_w24p5r2_[0-9a-f]{10}/r11_preflight_evidence\.zip',str(out)):
+   raise SystemExit('NO_WRITES_OUTSIDE_TMP_STAGE')
+  out.parent.mkdir(parents=True,exist_ok=True)
+  status={k:fail_or_pass_asset(k,*v) for k,v in ASSETS.items()}
+--- original/historical_sources/selected_fusion/20_A4_FIXED_FUSION_PARENT.py
++++ public/historical_sources/selected_fusion/20_A4_FIXED_FUSION_PARENT.py
+@@ -18,7 +18,7 @@
+ os.environ.setdefault('OMP_NUM_THREADS','1')
+ import numpy as np
+ HERE=Path(__file__).resolve().parent
+-RUN_PARENT=Path('<ORIGINAL_PRIVATE_ROOT>/server_runs')
++RUN_PARENT=Path('/PATH/TO/RESEARCH_WORKSPACE/server_runs')
+ PREFIX='paper2_w25_a4_r2_fixed_deit_fusion_20261025_'
+ MANIFEST='10_FUSION_SOURCE_SHA256.json'
+ DESIGN='03_FUSION_DESIGN.json'
+@@ -530,7 +530,7 @@
+     validate_sources();run=run_for_design(sha(HERE/DESIGN));require_run(run)
+     if a.mode=='worker':return worker(run,a.manifest_sha)
+     need(a.out is not None and a.bundle is not None,'CLIENT_OUTPUT_ARGUMENTS')
+-    for p in (a.out,a.bundle):need(re.fullmatch(r'<ORIGINAL_PRIVATE_ROOT>/lss_w25a4r2_[A-Za-z0-9]{8}',str(p.parent)) is not None,'CLIENT_OUTPUT_PATH_INVALID')
++    for p in (a.out,a.bundle):need(re.fullmatch(r'/PATH/TO/TEMP/lss_w25a4r2_[A-Za-z0-9]{8}',str(p.parent)) is not None,'CLIENT_OUTPUT_PATH_INVALID')
+     s=evaluate_once(run,a.manifest_sha) if a.mode=='evaluate' else status_snapshot(run,a.manifest_sha)
+     dump(a.out,s)
+     if s.get('safe_result_available'):shutil.copyfile(run/'02_FIXED_FUSION_SAFE_RESULT.zip',a.bundle)
+--- original/historical_sources/selected_fusion/21_A5_FORMAT_AUDIT_PARENT.py
++++ public/historical_sources/selected_fusion/21_A5_FORMAT_AUDIT_PARENT.py
+@@ -260,7 +260,7 @@
+                 kk=safe_key(k)
+                 if kk=='<redacted-key>':continue
+                 if isinstance(v,str) and re.fullmatch('[a-fA-F0-9]{64}',v):link[kk]=v.lower()
+-                elif isinstance(v,str) and v.startswith('<ORIGINAL_PRIVATE_ROOT>/') and Path(v).suffix.lower() in ('.py','.json','.csv','.pt','.pth','.zip') and not re.search(r'patient[_-]?\d|case[_-]?\d|/\d{3,}/',v,re.I):link[kk]=v
++                elif isinstance(v,str) and v.startswith('/PATH/TO/RESEARCH_WORKSPACE/') and Path(v).suffix.lower() in ('.py','.json','.csv','.pt','.pth','.zip') and not re.search(r'patient[_-]?\d|case[_-]?\d|/\d{3,}/',v,re.I):link[kk]=v
+                 elif k in ('outer_fold','fixed_validation_fold','selected_inner_validation_fold','best_epoch','checkpoint_epoch') and isinstance(v,int) and 0<=v<=10000:link[kk]=v
+             if len(link)>=2 and any(isinstance(v,str) and re.fullmatch('[a-f0-9]{64}',v) for v in link.values()):links.append(link)
+             for k,v in x.items():
+@@ -274,7 +274,7 @@
+                 if isinstance(v,dict):visit(v,key,depth+1)
+         elif isinstance(x,str):
+             if re.fullmatch('[a-fA-F0-9]{64}',x):hashes.add(x.lower())
+-            elif x.startswith('<ORIGINAL_PRIVATE_ROOT>/') and Path(x).suffix.lower() in ('.py','.json','.csv','.pt','.pth','.zip'):
++            elif x.startswith('/PATH/TO/RESEARCH_WORKSPACE/') and Path(x).suffix.lower() in ('.py','.json','.csv','.pt','.pth','.zip'):
+                 if not re.search(r'patient[_-]?\d|case[_-]?\d|/\d{3,}/',x,re.I):paths.add(x)
+     visit(obj)
+     return {'top_level_keys':[safe_key(k) for k in list(obj)[:80]] if isinstance(obj,dict) else ['<list>' if isinstance(obj,list) else '<scalar>'],
+@@ -289,7 +289,7 @@
+     out['parse_status']='AST_ONLY_NOT_EXECUTED'
+     out['functions']=[n.name for n in tree.body if isinstance(n,(ast.FunctionDef,ast.AsyncFunctionDef))]
+     # A small non-row metadata extraction: path literals and declared identifiers.
+-    out['artifact_path_literals']=sorted({n.value for n in ast.walk(tree) if isinstance(n,ast.Constant) and isinstance(n.value,str) and n.value.startswith('<ORIGINAL_PRIVATE_ROOT>/') and len(n.value)<350 and not re.search(r'patient[_-]?\d|case[_-]?\d',n.value,re.I)})[:80]
++    out['artifact_path_literals']=sorted({n.value for n in ast.walk(tree) if isinstance(n,ast.Constant) and isinstance(n.value,str) and n.value.startswith('/PATH/TO/RESEARCH_WORKSPACE/') and len(n.value)<350 and not re.search(r'patient[_-]?\d|case[_-]?\d',n.value,re.I)})[:80]
+     if roles and not re.search(r'(?i)(?:password|private[_-]?key|api[_-]?key)\s*=\s*[\'\"][^\'\"]+[\'\"]',text):
+         name='sources/verified_'+h+'.py.txt';SOURCE_EXPORTS[name]=raw;out['exact_source_export_member']=name
+     return out
+@@ -466,7 +466,7 @@
+     ap=argparse.ArgumentParser();ap.add_argument('--mode',choices=['audit'],required=True)
+     ap.add_argument('--manifest-sha',required=True);ap.add_argument('--out',type=Path,required=True);ap.add_argument('--bundle',type=Path,required=True)
+     args=ap.parse_args()
+-    for p in (args.out,args.bundle):need(p.parent==HERE and re.fullmatch(r'<ORIGINAL_PRIVATE_ROOT>/lss_w25a5r2_[A-Za-z0-9]{8}',str(HERE)) is not None,'OUTPUT_NOT_OWN_TEMP')
++    for p in (args.out,args.bundle):need(p.parent==HERE and re.fullmatch(r'/PATH/TO/TEMP/lss_w25a5r2_[A-Za-z0-9]{8}',str(HERE)) is not None,'OUTPUT_NOT_OWN_TEMP')
+     gate(HERE/'10_DIAGNOSTIC_SOURCE_SHA256.json',args.manifest_sha,'A5_SOURCE_MANIFEST');m=read(HERE/'10_DIAGNOSTIC_SOURCE_SHA256.json')
+     need(m['schema']=='W25_A5_SOURCE_MANIFEST_V1','A5_SOURCE_SCHEMA')
+     for n,h in m['files'].items():need(Path(n).name==n,'SOURCE_NAME_UNSAFE');gate(HERE/n,h,'A5_SOURCE')
+--- original/historical_sources/selected_fusion/22_LEGACY_DUAL_PRODUCER.py.txt
++++ public/historical_sources/selected_fusion/22_LEGACY_DUAL_PRODUCER.py.txt
+@@ -10,11 +10,11 @@
+ from torch.utils.data import DataLoader
+ from sklearn.metrics import accuracy_score, balanced_accuracy_score, f1_score, cohen_kappa_score
+ 
+-ROOT=Path("<ORIGINAL_PRIVATE_ROOT>")
++ROOT=Path("/PATH/TO/RESEARCH_WORKSPACE")
+ R5ZIP=ROOT/"server_runs/paper2_p10_c3_r5_selected_alpha_outer_eval_20261005/P10_C3_R5_SELECTED_ALPHA_OUTER_EVAL_RESULT.zip"
+ R4ZIP=ROOT/"server_runs/paper2_p10_c3_r4_innerval_alpha_search_20261005/P10_C3_R4_INNERVAL_ALPHA_SEARCH_RESULT.zip"
+ FIXED=ROOT/"server_packages/step06a2_fix2_explicit_locked_deit_20260814/Original_DeiT_native_loss_fixed_inner_OOF.csv"
+-SOURCE52=Path("<ORIGINAL_PRIVATE_ROOT>/experiments/baseline_v1/scripts/52_train_official_deit_protocol_v3_full468_oof.py")
++SOURCE52=Path("/PATH/TO/PROJECT/experiments/baseline_v1/scripts/52_train_official_deit_protocol_v3_full468_oof.py")
+ 
+ R5RUN=ROOT/"server_runs/paper2_p10_c3_r5_selected_alpha_outer_eval_20261005"
+ R4RUN=ROOT/"server_runs/paper2_p10_c3_r4_innerval_alpha_search_20261005"
+--- original/historical_sources/selected_fusion/23_LEGACY_SELECTOR.py.txt
++++ public/historical_sources/selected_fusion/23_LEGACY_SELECTOR.py.txt
+@@ -7,7 +7,7 @@
+ import pandas as pd
+ from sklearn.metrics import accuracy_score, balanced_accuracy_score, f1_score, cohen_kappa_score
+ 
+-ROOT=Path("<ORIGINAL_PRIVATE_ROOT>")
++ROOT=Path("/PATH/TO/RESEARCH_WORKSPACE")
+ PARENT_RUN=ROOT/"server_runs/paper2_p10_c3_r6_r4_r2_crossplatform_deit_load_fusion_weight_search_20261005"
+ PARENT=PARENT_RUN/"P10_C3_R6_R4_R2_DUAL_INNERVAL_FUSION_WEIGHT_SEARCH_RESULT.zip"
+ OUT=ROOT/"server_runs/paper2_p10_c3_r6_r5_fusion_weight_boundary_expansion_20261005"
+--- original/historical_sources/selected_fusion/24_P4C_PRODUCER.py.txt
++++ public/historical_sources/selected_fusion/24_P4C_PRODUCER.py.txt
+@@ -69,8 +69,8 @@
+ SEED = 1337
+ 
+ RAW_ROOT = Path("/data/LSS/raw/LSS_MRI_AISSLab_Dataset_V0.1")
+-MANIFEST = Path("<ORIGINAL_PRIVATE_ROOT>/server_runs/step02a0_fix1_resolve_roi_paths_20260813/unified_5fold_manifest_server_resolved.csv")
+-PYTHON_EXPECTED = "<ORIGINAL_PRIVATE_ROOT>/miniforge3/envs/lss-foraminal-v2/bin/python"
++MANIFEST = Path("/PATH/TO/RESEARCH_WORKSPACE/server_runs/step02a0_fix1_resolve_roi_paths_20260813/unified_5fold_manifest_server_resolved.csv")
++PYTHON_EXPECTED = "/PATH/TO/AUTHOR_HOME/miniforge3/envs/lss-foraminal-v2/bin/python"
+ 
+ RECIPE = dict(
+     backbone="resnet18", img_size=224,
+--- original/historical_sources/selected_fusion/26_selected_fusion_analysis.py
++++ public/historical_sources/selected_fusion/26_selected_fusion_analysis.py
+@@ -40,7 +40,7 @@
+ def verify_deit_checkpoint_manifest(sd,review,ids,parent,summary):
+     mat=[x for x in review['historical_dual_metadata'] if 'deit_checkpoint_sha256' in x]
+     need(len(mat)==5,'DUAL_MATERIALIZED_CHECKPOINT_COUNT')
+-    root=Path('<ORIGINAL_PRIVATE_ROOT>')
++    root=Path('/PATH/TO/RESEARCH_WORKSPACE')
+     lock=root/'server_packages/step06a7_fix5_fix2_exact_sha_final_lock_20260815'
+     rb=root/'server_runs/paper2_source_g1_corrected_fixed_inner_formal_p3_l4_20260917'
+     r09=root/'server_runs/paper2_p10_c3_r5_selected_alpha_outer_eval_20261005/final_oof/coral_msaux'
+--- original/historical_sources/source94/COMMON_04A.py
++++ public/historical_sources/source94/COMMON_04A.py
+@@ -26,16 +26,16 @@
+     cohen_kappa_score, mean_absolute_error
+ )
+ 
+-ROOT = Path("<ORIGINAL_PRIVATE_ROOT>")
++ROOT = Path("/PATH/TO/RESEARCH_WORKSPACE")
+ PKG = ROOT / "server_packages/secondgen_step04a_firstgenbest_iq8_nohe_g1_20260821"
+ SCI = ROOT / "server_runs/secondgen_step04a_firstgenbest_coralmsaux_fixeddeit_iq8_nohe_g1_20260821"
+ CTRL = ROOT / "server_runs/secondgen_step04a_firstgenbest_control_20260821"
+ 
+-SOURCE54 = Path("<ORIGINAL_PRIVATE_ROOT>/experiments/baseline_v1/scripts/54_train_coral_risk_protocol_v3_full468_oof.py")
++SOURCE54 = Path("/PATH/TO/PROJECT/experiments/baseline_v1/scripts/54_train_coral_risk_protocol_v3_full468_oof.py")
+ SHA54 = "b8e5360657fa467e74db846c4d03e7f5f80901aa2108e66587b04a58e89cb259"
+-SOURCE52 = Path("<ORIGINAL_PRIVATE_ROOT>/experiments/baseline_v1/scripts/52_train_official_deit_protocol_v3_full468_oof.py")
++SOURCE52 = Path("/PATH/TO/PROJECT/experiments/baseline_v1/scripts/52_train_official_deit_protocol_v3_full468_oof.py")
+ SHA52 = "dc8c0b4b1aafe640d7ce764c3efff984e5154430621c946ea7025c0b4d3887ae"
+-SOURCE393 = Path("<ORIGINAL_PRIVATE_ROOT>/experiments/baseline_v1/scripts/393_train_step14u25d_convnext_ce_differential_lr.py")
++SOURCE393 = Path("/PATH/TO/PROJECT/experiments/baseline_v1/scripts/393_train_step14u25d_convnext_ce_differential_lr.py")
+ SHA393 = "5eef55010d4c019d26601a270a78be5e51b264bb396ba3a8b70871b7f4dfae04"
+ FORMAL_WRAPPER = ROOT / "server_runs/step04a_protocol_matched80_20_authoritative_source_preflight_20260813/current_unified_wrappers/step02b_train_convnext_corn_unified5fold.py"
+ SHA_WRAPPER = "5ecf4154e8dccffcb6ab9a9ee0798a7ebdc7cbf17099fd47c03f9b14ce9a7ee4"
+--- original/historical_sources/source94/PARENT_P5R2_SPLIT_AUDITOR.py
++++ public/historical_sources/source94/PARENT_P5R2_SPLIT_AUDITOR.py
+@@ -19,12 +19,33 @@
+ from collections import Counter
+ 
+ SCHEMA='LSS_PAPER2_W24P5_R2_R11_SPLIT_GRADE_CROSSWALK_V1'
+-ROOT=pathlib.Path('<ORIGINAL_PRIVATE_ROOT>')
+-SCRIPT_ROOT=pathlib.Path('<ORIGINAL_PRIVATE_ROOT>/experiments/baseline_v1/scripts')
++ROOT=pathlib.Path('/PATH/TO/RESEARCH_WORKSPACE')
++SCRIPT_ROOT=pathlib.Path('/PATH/TO/PROJECT/experiments/baseline_v1/scripts')
+ 
+ # Exactly 94 *published dataset-internal* IDs, transcribed from the authors'
+ # public data/splits.csv test rows, NOT user-derived IDs or medical identifiers.
+-PUBLIC_TEST_IDS="""<OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID> <OMITTED_SPLIT_ID>""".split()
++# Public snapshot: exact original split must be supplied separately; no IDs bundled.
++def _load_public_test_ids_from_source_csv():
++    split_path = os.environ.get('PAPER2_SOURCE_SPLITS_CSV')
++    if not split_path:
++        raise SystemExit('PUBLIC_SNAPSHOT_REQUIRES_PAPER2_SOURCE_SPLITS_CSV: supply the original published data/splits.csv; no substitute split is generated')
++    split_bytes = pathlib.Path(split_path).expanduser().read_bytes()
++    # Exact official source CSV bytes measured 2026-11-09; not a retroactive historical freeze.
++    if hashlib.sha256(split_bytes).hexdigest() != '1dab827011428f783b51624a32c52ca063e67a608375bfe41ee52cb6e0f5380f':
++        raise SystemExit('PUBLIC_SOURCE_SPLIT_CSV_DIFFERS_FROM_OFFICIAL_SNAPSHOT_20261109')
++    with io.StringIO(split_bytes.decode('utf-8-sig'), newline='') as handle:
++        reader = csv.DictReader(handle)
++        if reader.fieldnames != ['patient', 'split']:
++            raise SystemExit('PUBLIC_SOURCE_SPLIT_COLUMNS_MUST_BE_patient_split')
++        test_ids = [row['patient'].strip() for row in reader if row['split'] == 'test']
++    if len(test_ids) != 94 or len(set(test_ids)) != 94 or not all(re.fullmatch(r'\d{4}', value) for value in test_ids):
++        raise SystemExit('PUBLIC_SOURCE_SPLIT_TEST_IDS_INVALID_OR_COUNT_NOT_94')
++    canonical = '\n'.join(sorted(test_ids)).encode('utf-8')
++    if hashlib.sha256(canonical).hexdigest() != '9d2cc0d11364f06c8c1f777cc1f37b77a6cef28a64a8134dae453d8fd5034f45':
++        raise SystemExit('PUBLIC_SOURCE_SPLIT_TEST_ID_SET_DIFFERS_FROM_FROZEN_ORIGINAL')
++    return set(test_ids)
++
++PUBLIC_TEST_IDS = _load_public_test_ids_from_source_csv()
+ EXPECTED_PUBLIC_TEST_COUNT=94
+ if len(PUBLIC_TEST_IDS)!=94 or len(set(PUBLIC_TEST_IDS))!=94:
+     raise SystemExit('PUBLIC_TEST_ID_TRANSCRIPTION_COUNT_GATE_FAILED')
+@@ -360,7 +381,7 @@
+ def main():
+  ap=argparse.ArgumentParser();ap.add_argument('--output',required=True);args=ap.parse_args()
+  out=pathlib.Path(args.output)
+- if not re.fullmatch(r'<ORIGINAL_PRIVATE_ROOT>/lss_w24p5r2_[0-9a-f]{10}/r11_preflight_evidence\.zip',str(out)):
++ if not re.fullmatch(r'/PATH/TO/TEMP/lss_w24p5r2_[0-9a-f]{10}/r11_preflight_evidence\.zip',str(out)):
+   raise SystemExit('NO_WRITES_OUTSIDE_TMP_STAGE')
+  out.parent.mkdir(parents=True,exist_ok=True)
+  status={k:fail_or_pass_asset(k,*v) for k,v in ASSETS.items()}
+--- original/historical_sources/source94/PHADKE_SR1_AGGREGATOR.py
++++ public/historical_sources/source94/PHADKE_SR1_AGGREGATOR.py
+@@ -37,8 +37,8 @@
+ EXPECTED_P4C_SHA="4089ed9d6e446abd76b16433f54a41a38c263a612bacefdee250d8f61e21804f"
+ EXPECTED_REPO_SHA="f2bc251fffaf90460703df1338b5d811957b493f73c2e1c222f948fd11496bf4"
+ REPO_COMMIT="df2b3020fe2ecb36203b09812803acfb847ba6d5"
+-P4C_RUN=Path("<ORIGINAL_PRIVATE_ROOT>/server_runs/paper2_p4_1c_source_reconstructed_resnet18_corn_formal_20260918")
+-PY_EXPECTED="<ORIGINAL_PRIVATE_ROOT>/miniforge3/envs/lss-foraminal-v2/bin/python"
++P4C_RUN=Path("/PATH/TO/RESEARCH_WORKSPACE/server_runs/paper2_p4_1c_source_reconstructed_resnet18_corn_formal_20260918")
++PY_EXPECTED="/PATH/TO/AUTHOR_HOME/miniforge3/envs/lss-foraminal-v2/bin/python"
+ 
+ PUBLISHED=dict(
+     paper="Phadke et al., Journal of Imaging 2026",
+--- original/historical_sources/source94/PHADKE_SR1_TRAINER.py
++++ public/historical_sources/source94/PHADKE_SR1_TRAINER.py
+@@ -37,8 +37,8 @@
+ EXPECTED_P4C_SHA="4089ed9d6e446abd76b16433f54a41a38c263a612bacefdee250d8f61e21804f"
+ EXPECTED_REPO_SHA="f2bc251fffaf90460703df1338b5d811957b493f73c2e1c222f948fd11496bf4"
+ REPO_COMMIT="df2b3020fe2ecb36203b09812803acfb847ba6d5"
+-P4C_RUN=Path("<ORIGINAL_PRIVATE_ROOT>/server_runs/paper2_p4_1c_source_reconstructed_resnet18_corn_formal_20260918")
+-PY_EXPECTED="<ORIGINAL_PRIVATE_ROOT>/miniforge3/envs/lss-foraminal-v2/bin/python"
++P4C_RUN=Path("/PATH/TO/RESEARCH_WORKSPACE/server_runs/paper2_p4_1c_source_reconstructed_resnet18_corn_formal_20260918")
++PY_EXPECTED="/PATH/TO/AUTHOR_HOME/miniforge3/envs/lss-foraminal-v2/bin/python"
+ 
+ PUBLISHED=dict(
+     paper="Phadke et al., Journal of Imaging 2026",
+--- original/historical_sources/source94_entry/01_prepare_devonly.py
++++ public/historical_sources/source94_entry/01_prepare_devonly.py
+@@ -21,7 +21,7 @@
+ from collections import Counter
+ 
+ HERE = Path(__file__).resolve().parent
+-ROOT = Path('<ORIGINAL_PRIVATE_ROOT>')
++ROOT = Path('/PATH/TO/RESEARCH_WORKSPACE')
+ P4C = ROOT/'server_runs/paper2_p4_1c_source_reconstructed_resnet18_corn_formal_20260918/PAPER2_P4_1C_SOURCE_RECONSTRUCTED_RESNET18_CORN_FORMAL_RESULT.zip'
+ SR1 = ROOT/'server_runs/paper2_p4_1_sr1_source_protocol_reconstruction_20260919/PAPER2_P4_1_SR1_SOURCE_PROTOCOL_RECONSTRUCTION_RESULT.zip'
+ R2 = ROOT/'server_runs/secondgen_step01f_r2_patient_split_403link_20260820/01_FROZEN_SOURCE_MANIFEST_WITH_PATIENT_SPLIT.csv'
+--- original/historical_sources/source94_entry/02_train_devonly.py
++++ public/historical_sources/source94_entry/02_train_devonly.py
+@@ -447,7 +447,7 @@
+  pa.add_argument('--mode',choices=['check','train'],default='check')
+  args=pa.parse_args()
+  run=Path(args.run_dir).resolve()
+- req(str(run).startswith('<ORIGINAL_PRIVATE_ROOT>/server_runs/paper2_w24p9p1_sr1_roles_devonly_20261012_'),'RUN_DIR_NOT_ALLOWED')
++ req(str(run).startswith('/PATH/TO/RESEARCH_WORKSPACE/server_runs/paper2_w24p9p1_sr1_roles_devonly_20261012_'),'RUN_DIR_NOT_ALLOWED')
+  mods=get_modules()
+  if args.mode=='check':freeze_preflight(run,mods,probe_pretrain=True)
+  else:
+--- original/historical_sources/sr1_reference/01_server_p4_1_sr1_source_protocol_reconstruction.py
++++ public/historical_sources/sr1_reference/01_server_p4_1_sr1_source_protocol_reconstruction.py
+@@ -37,8 +37,8 @@
+ EXPECTED_P4C_SHA="4089ed9d6e446abd76b16433f54a41a38c263a612bacefdee250d8f61e21804f"
+ EXPECTED_REPO_SHA="f2bc251fffaf90460703df1338b5d811957b493f73c2e1c222f948fd11496bf4"
+ REPO_COMMIT="df2b3020fe2ecb36203b09812803acfb847ba6d5"
+-P4C_RUN=Path("<ORIGINAL_PRIVATE_ROOT>/server_runs/paper2_p4_1c_source_reconstructed_resnet18_corn_formal_20260918")
+-PY_EXPECTED="<ORIGINAL_PRIVATE_ROOT>/miniforge3/envs/lss-foraminal-v2/bin/python"
++P4C_RUN=Path("/PATH/TO/RESEARCH_WORKSPACE/server_runs/paper2_p4_1c_source_reconstructed_resnet18_corn_formal_20260918")
++PY_EXPECTED="/PATH/TO/AUTHOR_HOME/miniforge3/envs/lss-foraminal-v2/bin/python"
+ 
+ PUBLISHED=dict(
+     paper="Phadke et al., Journal of Imaging 2026",

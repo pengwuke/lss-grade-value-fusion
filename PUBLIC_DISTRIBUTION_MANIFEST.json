@@ -1,25 +1,31 @@
 {
-  "release": "code_v1.0.1",
+  "release": "code_v1.1.0",
   "manuscript": "B15",
-  "status": "PUBLIC_CODE_DISTRIBUTION",
+  "status": "PUBLIC_CODE_DISTRIBUTION_PREPARED",
+  "public_repository": "https://github.com/pengwuke/lss-grade-value-fusion",
   "author_code_license": "MIT",
-  "parent_candidate": "R16_B15",
-  "parent_code_tree_sha256": "a8ffad7fe31dccd16afb11d565076280ca0e51a2651fee8583d87d98b40d7ab2",
-  "scope": "Portable runtime + five frozen-input statistics modes + aggregate evidence + synthetic examples/tests + provenance metadata",
+  "parent_public_release": "v1.0.1",
+  "parent_public_commit": "7dcb02165a332ddf6831b285598cd3000bbb8f6c",
+  "parent_public_asset_sha256": "d7aa5a10c903962a6858df50777bbb724f16901ebb340f80a5a4fd40bfbce1c6",
+  "scope": "Unchanged portable runtime/statistics plus all 46 sanitised historical training/analysis sources and per-file provenance/licence map",
   "models_bundled": false,
   "raw_or_patient_level_data_bundled": false,
-  "historical_source_controllers_bundled": false,
-  "historical_source_count_metadata_only": 46,
-  "functional_python_files_byte_identical_to_R16": 32,
-  "historical_validation_records_not_new_tests": true,
+  "historical_source_controllers_bundled": true,
+  "historical_source_files": 46,
+  "portable_python_files_preserved": 32,
+  "historical_source_files_statically_parsed": 46,
+  "historical_sources_executed": false,
+  "full_historical_training_portability_claimed": false,
+  "source_csv_sha256_measured_20261109": "1dab827011428f783b51624a32c52ca063e67a608375bfe41ee52cb6e0f5380f",
+  "new_training_inference_statistics": false,
   "files_excluding_this_manifest_and_SHA256SUMS": {
     "ARCHIVE_INTEGRITY.md": {
-      "bytes": 1216,
-      "sha256": "1bca3bc14c1e473ba53e33c3226ac69f0262f65b844210fb629a2d113664361e"
+      "bytes": 1508,
+      "sha256": "2628b845d6d6f55f09be0d86133ff62c15b521ad9ad5304a52a69a10e8db4927"
     },
     "CODE_MODEL_COMPATIBILITY.json": {
-      "bytes": 7922,
-      "sha256": "d7f457e4716527571c26af9132f77ab44a2cd9672bdf138d7d926b9610a8d640"
+      "bytes": 21810,
+      "sha256": "76ef925b628923f5b51b5ba370511ed87aaae845c8ea5700aa0c44ce1022276d"
     },
     "COMMON5_FUSION_PRECISION.md": {
       "bytes": 2467,
@@ -30,8 +36,12 @@
       "sha256": "edc625fc8be69859d38ea0ae71a7822007cca0c4553439017b1148fc6b2a0bfe"
     },
     "HISTORICAL_SOURCE_SCOPE.md": {
-      "bytes": 1159,
-      "sha256": "d86fe7ff093fda68549fc3af403b1c185264673807e585862fea152e19aa9048"
+      "bytes": 2355,
+      "sha256": "9c4a6fd50c680e7c3b80ae82f0e95568650d77d82493068e1d3f065411ee3585"
+    },
+    "HISTORICAL_TRAINING_SOURCES.md": {
+      "bytes": 3350,
+      "sha256": "841fc655d2c40e1f7d4e9572ad3e0519cb4b001a8005d76b243a3b6cf2106b33"
     },
     "LICENSE": {
       "bytes": 1066,
@@ -41,21 +51,33 @@
       "bytes": 2287,
       "sha256": "0cb1a24f4338c1bc9c06d5ddb6f052407c93538ee512e05178e5d026a6269d3b"
     },
+    "PUBLIC_SOURCE_DIFF.patch": {
+      "bytes": 40216,
+      "sha256": "0d2ca59f6ab1f931f4aad0726f1dce3b1dedec63657f7c62b00a8055381b9cc8"
+    },
     "README.md": {
-      "bytes": 7514,
-      "sha256": "aa0cfb1e9bb27f862ae9bb0c28ed75b78d4bc31ce698a37ee1536a9a37d5033b"
+      "bytes": 7723,
+      "sha256": "e9e7fac34e3d550e7c53c2520d1cb726577c1d01c5e57f5510d12d39d085d51f"
+    },
+    "SOURCE_LICENSE_ATTRIBUTION.csv": {
+      "bytes": 22672,
+      "sha256": "7020aa8bd69948c62ec02ec44824c214aa77055d809867fdda019c4e06c913bf"
+    },
+    "SOURCE_LICENSE_ATTRIBUTION.json": {
+      "bytes": 71247,
+      "sha256": "35c5db86e0c5df9f77fd67b625978cd3e36380545ce29f1599b7859aa37eed7d"
     },
     "TASK_BASELINE_EVIDENCE.md": {
       "bytes": 3264,
       "sha256": "dd2d35070bdcc1ee2be2d20989fddde07cc736f843898d89923335f9c7b72312"
     },
     "THIRD_PARTY_NOTICES.md": {
-      "bytes": 3671,
-      "sha256": "64b777d01a1b615be4c9cc9fd28b463166e766d9ae01626ddbc154f0d5aa4b72"
+      "bytes": 6292,
+      "sha256": "1d113be7ad9a0794ad8616ef89e6793a050a11a2916bedb60b1ff3c36307cc4e"
     },
     "TRAINING_REPRODUCTION_SCOPE.md": {
-      "bytes": 1660,
-      "sha256": "d16b59be21800c6a515723ec744dfef3712954ff97b9850313fb36b56f780210"
+      "bytes": 1974,
+      "sha256": "2610192d761298c26fca0a9163c9ee1c8db81aae61282acf12404e750ceb9c7b"
     },
     "cnn_source_provenance.json": {
       "bytes": 390,
@@ -128,6 +150,190 @@
     "historical_source_manifest.json": {
       "bytes": 9085,
       "sha256": "679612c6d7f8684f646972a8a8dfcd87b1d98ac3e1fccfbcc916695b266a5c1a"
+    },
+    "historical_sources/deit_training/52_train_official_deit_protocol_v3_full468_oof.py": {
+      "bytes": 17836,
+      "sha256": "dc8c0b4b1aafe640d7ce764c3efff984e5154430621c946ea7025c0b4d3887ae"
+    },
+    "historical_sources/fixed_fusion/01_remote_fixed_deit_fusion.py": {
+      "bytes": 36151,
+      "sha256": "67a39c171c780124647977aa7e6d08ec5a7fe3cbc7147bae15803553984310e5"
+    },
+    "historical_sources/fixed_fusion/02_fixed_fusion_metrics.py": {
+      "bytes": 4478,
+      "sha256": "31ecd0bf8255de1c18d0ed01e41a2132212708bc6c1f338634b1c5a85148b654"
+    },
+    "historical_sources/fixed_fusion/04_A3_PATIENT_METRICS.py": {
+      "bytes": 6599,
+      "sha256": "bb0ce9cc7d4590edf29e0076ce96a4eac77e2349f10ddf40c29e2c56b356d4f9"
+    },
+    "historical_sources/fixed_fusion/05_P5R2_IDENTITY_PARENT.py": {
+      "bytes": 23355,
+      "sha256": "b1c07023c989c7d5bbb81cdfa049175f1ebc8850d4533fd4389e93e3ea4bb4e7"
+    },
+    "historical_sources/fixed_fusion/16_d1_probability_compatibility.py": {
+      "bytes": 10175,
+      "sha256": "a93b73eabea3279faaf0a646fbef86069bde927e4b2e8c4f9eb46387942e7c8c"
+    },
+    "historical_sources/grade_alpha_search/03_train_coral_progression_aux_INNER_SEARCH.py": {
+      "bytes": 7885,
+      "sha256": "b09e3a7ddfa5278a6357b75ed7cc5b617926ecfbbb4fd91cc6d4e33be9e800c3"
+    },
+    "historical_sources/grade_alpha_search/03_train_coral_progression_aux_fold.py": {
+      "bytes": 7809,
+      "sha256": "2529afd31e91dcc7327381de640651605c25a2eafc79cc846cd5dc6763f2c3bf"
+    },
+    "historical_sources/grade_alpha_search/common_step04a.py": {
+      "bytes": 19599,
+      "sha256": "e63a3f776baa19ad451514455e14f5ed946b951bf7328993a15195547f039650"
+    },
+    "historical_sources/grade_alpha_search/ornet_progression_aux.py": {
+      "bytes": 4994,
+      "sha256": "f0f7aa3fdfdf00fa1b6ced5eb8d00bec478399212fdcaff7a81252e82c3283ca"
+    },
+    "historical_sources/historical_fusion/01_expand_fusion_weight_inner_grid.py": {
+      "bytes": 9045,
+      "sha256": "fcfda4781096306831d166650764d3f2848ee47b36a58dd8bc8f11860bcf7237"
+    },
+    "historical_sources/historical_fusion/01_materialize_dual_innerval_and_search_fusion_weight_R2.py": {
+      "bytes": 16737,
+      "sha256": "c946fa9616190bab2924777f04cc3aaee03397c95390abb2cc44abbb7cb2d5c7"
+    },
+    "historical_sources/historical_fusion/01_selected_weight_outer_oof_eval.py": {
+      "bytes": 17233,
+      "sha256": "2fad0c727a4e26bbd0d7d081d044bc2a6e7db45b510830b26451b6530c4e8a7a"
+    },
+    "historical_sources/matched_aux/11_remote_matched_aux_formal5.py": {
+      "bytes": 28365,
+      "sha256": "ec0d5fcaa142c229282744d1413236fa4b0e5aba41d98d841d8535f5c9610a26"
+    },
+    "historical_sources/matched_aux/common_step04a.py": {
+      "bytes": 19599,
+      "sha256": "e63a3f776baa19ad451514455e14f5ed946b951bf7328993a15195547f039650"
+    },
+    "historical_sources/matched_aux/matched_aux_objectives.py": {
+      "bytes": 1804,
+      "sha256": "6726ca5f8ab3854a1d3aec85ead40ab1040f2c5729236f6035b9d2ce3ab2a60f"
+    },
+    "historical_sources/matched_aux/ornet_progression_aux.py": {
+      "bytes": 4994,
+      "sha256": "f0f7aa3fdfdf00fa1b6ced5eb8d00bec478399212fdcaff7a81252e82c3283ca"
+    },
+    "historical_sources/matched_aux/parent_r09_trainer.py.txt": {
+      "bytes": 7809,
+      "sha256": "2529afd31e91dcc7327381de640651605c25a2eafc79cc846cd5dc6763f2c3bf"
+    },
+    "historical_sources/matched_aux/source54.py": {
+      "bytes": 40063,
+      "sha256": "b8e5360657fa467e74db846c4d03e7f5f80901aa2108e66587b04a58e89cb259"
+    },
+    "historical_sources/matched_outer_evaluation/01_remote_evaluate_frozen_aux.py": {
+      "bytes": 28347,
+      "sha256": "8fe54e4524a92c0b6168ba51c8e7895d5133feb15b50d9dc581cb90537c06cfd"
+    },
+    "historical_sources/matched_outer_evaluation/02_patient_paired_metrics.py": {
+      "bytes": 6599,
+      "sha256": "bb0ce9cc7d4590edf29e0076ce96a4eac77e2349f10ddf40c29e2c56b356d4f9"
+    },
+    "historical_sources/p4c_reference/01_server_p4_1c_formal_train.py": {
+      "bytes": 33371,
+      "sha256": "d6ff830bd0f025372be8bff1f6651e55ffae52f096427b938398dad432022d13"
+    },
+    "historical_sources/selected_fusion/01_remote_validation_selected_fusion.py": {
+      "bytes": 10126,
+      "sha256": "248ef04e0db19afa7579dc634dd4440eb3f7eb7d24311d092b4b689b4c0e9a2d"
+    },
+    "historical_sources/selected_fusion/02_fixed_fusion_metrics.py": {
+      "bytes": 4478,
+      "sha256": "31ecd0bf8255de1c18d0ed01e41a2132212708bc6c1f338634b1c5a85148b654"
+    },
+    "historical_sources/selected_fusion/04_A3_PATIENT_METRICS.py": {
+      "bytes": 6599,
+      "sha256": "bb0ce9cc7d4590edf29e0076ce96a4eac77e2349f10ddf40c29e2c56b356d4f9"
+    },
+    "historical_sources/selected_fusion/05_P5R2_IDENTITY_PARENT.py": {
+      "bytes": 23355,
+      "sha256": "b1c07023c989c7d5bbb81cdfa049175f1ebc8850d4533fd4389e93e3ea4bb4e7"
+    },
+    "historical_sources/selected_fusion/16_d1_probability_compatibility.py": {
+      "bytes": 10175,
+      "sha256": "a93b73eabea3279faaf0a646fbef86069bde927e4b2e8c4f9eb46387942e7c8c"
+    },
+    "historical_sources/selected_fusion/17_exact_validation_formats.py": {
+      "bytes": 24434,
+      "sha256": "c1e7e6400608128e95483170b9b67b86c7efbc0c2f9b562bc0b21fccbc0ef027"
+    },
+    "historical_sources/selected_fusion/20_A4_FIXED_FUSION_PARENT.py": {
+      "bytes": 36151,
+      "sha256": "67a39c171c780124647977aa7e6d08ec5a7fe3cbc7147bae15803553984310e5"
+    },
+    "historical_sources/selected_fusion/21_A5_FORMAT_AUDIT_PARENT.py": {
+      "bytes": 34152,
+      "sha256": "a64dc821bda38ebdc67d51c906c16a7bb58cca3ac2237127865675bcde8e88b5"
+    },
+    "historical_sources/selected_fusion/22_LEGACY_DUAL_PRODUCER.py.txt": {
+      "bytes": 16737,
+      "sha256": "c946fa9616190bab2924777f04cc3aaee03397c95390abb2cc44abbb7cb2d5c7"
+    },
+    "historical_sources/selected_fusion/23_LEGACY_SELECTOR.py.txt": {
+      "bytes": 9045,
+      "sha256": "fcfda4781096306831d166650764d3f2848ee47b36a58dd8bc8f11860bcf7237"
+    },
+    "historical_sources/selected_fusion/24_P4C_PRODUCER.py.txt": {
+      "bytes": 33371,
+      "sha256": "d6ff830bd0f025372be8bff1f6651e55ffae52f096427b938398dad432022d13"
+    },
+    "historical_sources/selected_fusion/25_matched_inner_selection.py": {
+      "bytes": 4454,
+      "sha256": "db066ead69f1229d6c01e3003e3ddf251e9b0807abe1ecfd9eccdc976263361a"
+    },
+    "historical_sources/selected_fusion/26_selected_fusion_analysis.py": {
+      "bytes": 16948,
+      "sha256": "ed67efbe95ca870defdeef4bc124f88c4c1dfe0c27b589a475402d23ef227a93"
+    },
+    "historical_sources/source94/COMMON_04A.py": {
+      "bytes": 19599,
+      "sha256": "e63a3f776baa19ad451514455e14f5ed946b951bf7328993a15195547f039650"
+    },
+    "historical_sources/source94/DEIT_CORE_52.py": {
+      "bytes": 17836,
+      "sha256": "dc8c0b4b1aafe640d7ce764c3efff984e5154430621c946ea7025c0b4d3887ae"
+    },
+    "historical_sources/source94/ORNET_ALPHA0125.py": {
+      "bytes": 4994,
+      "sha256": "f0f7aa3fdfdf00fa1b6ced5eb8d00bec478399212fdcaff7a81252e82c3283ca"
+    },
+    "historical_sources/source94/PARENT_P5R2_SPLIT_AUDITOR.py": {
+      "bytes": 23355,
+      "sha256": "b1c07023c989c7d5bbb81cdfa049175f1ebc8850d4533fd4389e93e3ea4bb4e7"
+    },
+    "historical_sources/source94/PHADKE_SR1_AGGREGATOR.py": {
+      "bytes": 28079,
+      "sha256": "7124341ea03c3a0597db64ae0d1a853ba13346e83e6d21dfbe67b71f7e6640ad"
+    },
+    "historical_sources/source94/PHADKE_SR1_TRAINER.py": {
+      "bytes": 27879,
+      "sha256": "9cc0be8286b61cefaeaac7a17faaa70d63d1182874764963e5c983bf8e987cdd"
+    },
+    "historical_sources/source94/R09_CORE_54.py": {
+      "bytes": 40063,
+      "sha256": "b8e5360657fa467e74db846c4d03e7f5f80901aa2108e66587b04a58e89cb259"
+    },
+    "historical_sources/source94/R09_TRAINER.py": {
+      "bytes": 7809,
+      "sha256": "2529afd31e91dcc7327381de640651605c25a2eafc79cc846cd5dc6763f2c3bf"
+    },
+    "historical_sources/source94_entry/01_prepare_devonly.py": {
+      "bytes": 11380,
+      "sha256": "71e074cb3ad3ba21c8207b9fba3f012dd4d03d3a5de54757268cba7c5dcae615"
+    },
+    "historical_sources/source94_entry/02_train_devonly.py": {
+      "bytes": 24197,
+      "sha256": "2a252053d3b768d04ca8091e2de00ad4e56deb7a0914ab7c0b7f58a107984db1"
+    },
+    "historical_sources/sr1_reference/01_server_p4_1_sr1_source_protocol_reconstruction.py": {
+      "bytes": 27879,
+      "sha256": "9cc0be8286b61cefaeaac7a17faaa70d63d1182874764963e5c983bf8e987cdd"
     },
     "historical_validation/R10_VERIFICATION_STATUS.json": {
       "bytes": 1081,
@@ -214,8 +420,8 @@
       "sha256": "1d5726116f34e9cd5d15dda97f53ee9f0409d51d4927d895140127aa609626a9"
     },
     "matched_statistics/README.md": {
-      "bytes": 10415,
-      "sha256": "b3325d6e3aafbdd0bd35cf7cdd30290da280db239ae887d218b95930ec6be79d"
+      "bytes": 10575,
+      "sha256": "ccaf5c5b9cd65e920dc88899ab2b42dfde10757dc2571ec0db54d0ce3b75956d"
     },
     "matched_statistics/STATISTICS_VERIFICATION.json": {
       "bytes": 909,
@@ -394,12 +600,9 @@
       "sha256": "6502f676851cfe25f8af75531dfb32375b7325b73c37e7b43741fa422893e71d"
     }
   },
-  "manifest_self_exclusion": "This manifest and SHA256SUMS omitted from payload map to avoid self-reference; SHA256SUMS covers this manifest",
+  "manifest_self_exclusion": "Public manifest and SHA256SUMS omitted from payload map; SHA256SUMS covers manifest and excludes itself",
   "credential_pattern_hits": 0,
-  "patient_roi_table_hits": 0,
-  "code_public_release": true,
-  "public_repository": "https://github.com/pengwuke/lss-grade-value-fusion",
-  "distribution_patch": "Documentation-only v1.0.1; runtime/statistics package versions remain 1.0.0; no new runtime tests or scientific computation.",
-  "baseline_public_release": "v1.0.0",
-  "baseline_public_asset_sha256": "44b1bbb10011c1737ef927b8803c4cb29136ed63409294e0c67117e41e9d5425"
+  "private_ip_hits": 0,
+  "remaining_embedded_id_lists": 0,
+  "actual_remote_publication_evidence": "External publication receipt"
 }

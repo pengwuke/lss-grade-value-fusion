@@ -21,4 +21,19 @@ Official sources (checked 2026-11-09):
 
 Dataset v4: https://data.mendeley.com/datasets/rgb77xm3jf/4, DOI 10.17632/rgb77xm3jf.4. Its licence field states CC BY 4.0; the description also says scientific purpose (noncommercial), both still present on 2026-11-09. No MRI/ROI image or real patient-level table is redistributed. No unrestricted commercial model permission is inferred. This factual difference is not presented as a categorical prohibition on sharing noncommercial research models. Trained models require a separate distribution and author-contribution grant; a code MIT choice does not settle third-party data rights.
 
-The public code release excludes the 46 legacy historical_sources files pending a more detailed file/source map. Their metadata is preserved. This is a temporary scope decision, not an identified prohibition in the permissive upstream licences. Original internal R16 is preserved.
+Code v1.1.0 includes all 46 sanitised historical sources with per-file provenance/licence mapping and source/public SHA pairs. Original internal R16 remains preserved.
+
+
+Historical-source details and the ORNet method/source distinction:
+
+# Historical-source attribution and licence boundaries
+
+Copyright (c) 2026 Wuke Peng for original author contributions and modifications, under LICENSE (MIT). Third-party rights and notices remain unchanged; this is not a grant of upstream model/data rights. The file map identifies author controllers, method implementations and compatible reconstructed/reference portions. No licence was inferred merely from public repository visibility.
+
+CORAL/CORN reference: Sebastian Raschka 2020-2022, MIT, https://github.com/Raschka-research-group/coral-pytorch/blob/main/LICENSE.txt . Phadke image-reference reconstruction: Rohan A. Phadke 2026, MIT, https://github.com/rohanpa27/LSS_foraminal_stenosis_imaging/blob/main/LICENSE . timm: Apache-2.0, https://github.com/huggingface/pytorch-image-models/blob/main/LICENSE . torchvision: BSD-3-Clause, https://github.com/pytorch/vision/blob/main/LICENSE . Full existing snapshots are retained; all four matched their official raw text on 2026-11-09. Frameworks and pretrained files are not bundled.
+
+ORNet method reference: Wenqiang Tang, Zhouwang Yang and Yanzhi Song, Disease-grading networks with ordinal regularization for medical imaging, Neurocomputing 545 (2023) 126245, official https://github.com/ahtwq/ORNet . Checked 2026-11-09: the repository page/raw LICENSE probes did not disclose an express licence. No upstream ORNet file is distributed here. The three author auxiliary files are distinct CORAL-specific functions/classes; direct source inspection against upstream network/singleNet.py ORNet1 and utils.py FusionLoss found shared scalar-head/loss mechanisms and standard Torch calls, but did not identify copied nontrivial implementation. The author wrappers add CORAL probability construction, shape/frozen-alpha gates, different data interfaces and tuple results. This assessment does not turn the upstream repository into MIT. The upstream repo's source would require its own permission if copied in a future release.
+
+The original 94 source split IDs are publicly provided by Phadke data/splits.csv, but omitted here to respect this distribution's no-ID/table scope. The three auditors now require the original user-supplied source CSV and verify the exact original test-ID-set hash; the original protocol is not silently changed.
+
+MRI source: Mendeley Data DOI 10.17632/rgb77xm3jf.4, https://data.mendeley.com/datasets/rgb77xm3jf/4 . Current licence field CC BY 4.0 and scientific-purpose/noncommercial wording are both disclosed in the main release. No dataset, trained weights, private metadata or patient table is bundled in this source snapshot. Author code MIT does not license absent data/models.

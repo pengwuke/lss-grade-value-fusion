@@ -165,4 +165,4 @@ resampling were rerun in R16.
 
 ## Public distribution scope
 
-This package is part of the scoped code v1.0.1 release derived from internal R16. Frozen source kernels/plans and all functional Python bytes are unchanged. Historical validation keeps its original round and scope; it is not a new validation of this distribution. Original study rows, patient/ROI probabilities and full historical training controllers are not bundled. See ../PUBLIC_DISTRIBUTION_MANIFEST.json and ../HISTORICAL_SOURCE_SCOPE.md.
+This package is part of the code v1.1.0 release derived from internal R16. Frozen source kernels/plans and all functional Python bytes are unchanged. Historical validation keeps its original round and scope; it is not a new validation of this distribution. Original study rows and patient/ROI probabilities are not bundled. The independently installable statistics package does not include training controllers inside its own wheel; the top-level release now provides the historical source snapshot under ../historical_sources/. See ../PUBLIC_DISTRIBUTION_MANIFEST.json and ../HISTORICAL_SOURCE_SCOPE.md.

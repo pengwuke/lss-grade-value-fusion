@@ -4,15 +4,15 @@ Research code for **Four-grade lumbar foraminal stenosis classification on routi
 
 Author: Wuke Peng. ORCID: 0009-0003-5791-3783.
 
-## Code distribution v1.0.1: documentation-only patch
+## Code distribution v1.1.0: historical training-source snapshot
 
-Public code repository: https://github.com/pengwuke/lss-grade-value-fusion. The initial code release v1.0.0 remains unchanged. This v1.0.1 distribution corrects publication-state metadata and historical-status wording only; all 32 Python files, frozen kernels/plans/fusion settings, both pyproject.toml package versions (1.0.0), and licence texts remain byte-identical to v1.0.0. No new training, inference, statistics or software tests were run for this documentation patch.
+Public repository: https://github.com/pengwuke/lss-grade-value-fusion. This prepared v1.1.0 extension starts from exact public v1.0.1 (commit 7dcb02165a332ddf6831b285598cd3000bbb8f6c). It adds all 46 inspectable historical training/analysis sources, per-file original/public hashes and licence attribution, explicit path/split-input sanitation diffs and scope notes. The 32 portable Python files, package metadata, frozen kernels/plans and fusion bytes remain unchanged. Versioned v1.0.0/v1.0.1 and raw R16 are preserved.
 
-This distribution contains a portable inference architecture/input/fusion interface, five explicit frozen-prediction statistical modes, a descriptive branch-error helper, artificial-input examples/tests, aggregate evidence, and source/validation metadata. It is a scoped derivative of internal R16, not the complete internal code/model archive. See PUBLIC_DISTRIBUTION_MANIFEST.json for exact membership.
+The release contains portable inference architecture/input/fusion interfaces, five frozen-input statistics modes, synthetic examples/tests, aggregate evidence and the added training-source snapshot. See HISTORICAL_SOURCE_SCOPE.md, SOURCE_LICENSE_ATTRIBUTION.json/CSV and PUBLIC_SOURCE_DIFF.patch. This provides inspectable training-method source; it is not a claim of full historical retraining, complete portability or a locked historical environment. No legacy controller was executed or imported to prepare it.
 
-No model weights, MRI/DICOM/ROI images, real patient/ROI predictions, probabilities, fold tables, original pretrained files, or manuscript/reviewer files are distributed here. Model licensing and public distribution are handled separately; the trained model package is not publicly released with this code version. The inference programs require a matching authorised model package. The 46 historical training/analysis controllers are not bundled; their inventory metadata is retained and labelled in HISTORICAL_SOURCE_SCOPE.md. This temporary scope choice is not a claim that their upstream licences prohibit sharing.
+No model weights, MRI/DICOM/ROI images, real patient/ROI predictions or probabilities, split/fold rows, original pretrained files, manuscript/reviewer files or credentials are bundled. The three historical auditors that embedded public test IDs now require the exact user-supplied original source CSV with strict source/hash gates and fail clearly if absent. Model distribution is handled separately. The unchanged runtime needs a matching authorised model package.
 
-The author's original code contributions are MIT-licensed. Upstream portions retain their own terms and attribution; see THIRD_PARTY_NOTICES.md and third_party_licenses/. The code licence does not grant rights to training data, third-party pretrained weights, or trained model files that are absent from this distribution.
+The author's original code contributions are MIT-licensed. Adapted/reference portions retain their own terms; see THIRD_PARTY_NOTICES.md and full texts in third_party_licenses/. The ORNet method is cited for the author's distinct CORAL-specific implementation; the upstream repository is not assigned MIT or copied into this distribution. Author code MIT does not license absent datasets/pretrained/model files. Current remote version identity and anonymous access checks are recorded in external publication receipts.
 
 ## Installation
 
@@ -63,7 +63,7 @@ The task is grading expert-selected ROIs. Aggregate gains do not establish indep
 
 historical_validation/ retains immutable earlier preparation records. R4 checked a fresh isolated same-host Linux CPU installation, 50 strict role loads and artificial forward interfaces; it was not a new machine or a clinical evaluation. R5 retained model strict-load evidence. R7 records path and artificial-CLI checks. R9 records 30 runtime tests, 70 frozen-rule cases and ten artificial-image CLI cases. R12 records the added robustness interface and statistics checks. See historical_validation/README.md for scope.
 
-This v1.0.1 packaging step checks membership, hashes, source preservation and distribution scope only. It performs no new training, model inference, statistics, bootstrap, selection or clinical validation. Historical records retain original IDs, dates and scope, including their then-unpublished status. Their old pending flags are not the current code-licence status. Historical source paths/digests in those records are provenance references and need not be bundled public paths.
+This v1.1.0 packaging step checks membership, hashes, source preservation and distribution scope only. It performs no new training, model inference, statistics, bootstrap, selection or clinical validation. Historical records retain original IDs, dates and scope, including their then-unpublished status. Their old pending flags are not the current code-licence status. Historical source paths/digests in those records are provenance references and need not be bundled public paths.
 
 ## Integrity
 
