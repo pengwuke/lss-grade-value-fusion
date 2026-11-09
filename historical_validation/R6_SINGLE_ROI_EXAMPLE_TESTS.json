@@ -1,0 +1,76 @@
+{
+  "status": "PASS_SYNTHETIC_ONLY",
+  "successful_cli_cases": 10,
+  "model_role_files_used": 10,
+  "scope": "common5_core selected CORAL/DeiT pair; folds 0..4 and R10/R11",
+  "test_inputs": "Two explicitly artificial 8-bit grayscale PNG arrays, not MRI",
+  "probabilities_and_argmax_equal_to_direct_API": true,
+  "threads_for_comparison": 1,
+  "image_or_patient_identity_automatically_verified": false,
+  "patient_data_used": false,
+  "new_training": false,
+  "new_weight_selection": false,
+  "paper_performance_recomputed": false,
+  "cases": [
+    {
+      "fold": 0,
+      "strategy": "R10",
+      "matches_direct_R5_API": true,
+      "single_roi_only": true
+    },
+    {
+      "fold": 0,
+      "strategy": "R11",
+      "matches_direct_R5_API": true,
+      "single_roi_only": true
+    },
+    {
+      "fold": 1,
+      "strategy": "R10",
+      "matches_direct_R5_API": true,
+      "single_roi_only": true
+    },
+    {
+      "fold": 1,
+      "strategy": "R11",
+      "matches_direct_R5_API": true,
+      "single_roi_only": true
+    },
+    {
+      "fold": 2,
+      "strategy": "R10",
+      "matches_direct_R5_API": true,
+      "single_roi_only": true
+    },
+    {
+      "fold": 2,
+      "strategy": "R11",
+      "matches_direct_R5_API": true,
+      "single_roi_only": true
+    },
+    {
+      "fold": 3,
+      "strategy": "R10",
+      "matches_direct_R5_API": true,
+      "single_roi_only": true
+    },
+    {
+      "fold": 3,
+      "strategy": "R11",
+      "matches_direct_R5_API": true,
+      "single_roi_only": true
+    },
+    {
+      "fold": 4,
+      "strategy": "R10",
+      "matches_direct_R5_API": true,
+      "single_roi_only": true
+    },
+    {
+      "fold": 4,
+      "strategy": "R11",
+      "matches_direct_R5_API": true,
+      "single_roi_only": true
+    }
+  ]
+}

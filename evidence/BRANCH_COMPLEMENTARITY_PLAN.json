@@ -1,0 +1,29 @@
+{
+  "analysis_id": "B13_DESCRIPTIVE_BRANCH_COMPLEMENTARITY_20261109",
+  "scope": "Post-hoc descriptive re-analysis of existing frozen outer-fold class predictions, fixed before inspecting joint error counts. Existing aggregate performance and prior confidence intervals are already known.",
+  "source_report_sha256": "7cba82a5e7dfb59826d992f89941c58d6148f2a9fdd44c745c529ab6672b8170",
+  "source_csv_sha256": "4fdcf97f968d3fbe16271fea7c12efe85e279f340956bb97196aefb02d51a08d",
+  "source_freeze_sha256": "b0fde1d438c29cc6021e16776e7f4180ffaff84ec352e0be55bf7c6deaf84b7c",
+  "pairs": [
+    ["R09_SELECTED_ALPHA", "ORIGINAL_DEIT", "R09_SELECTED_ALPHA_VSEL"],
+    ["A0_NATURAL", "ORIGINAL_DEIT", "A0_NATURAL_VSEL"]
+  ],
+  "required_roi_count": 2978,
+  "required_patient_count": 468,
+  "required_outer_folds": [0, 1, 2, 3, 4],
+  "truth_counts": [2009, 507, 254, 208],
+  "outputs": [
+    "Joint correctness 2x2 counts and fused correct counts in each cell",
+    "For each branch: wrong-to-correct repairs, correct-to-wrong losses, net accuracy count and absolute-grade-error change",
+    "Same descriptive counts by truth grade and outer fold",
+    "All six pooled performance metrics and confusion matrices; source report parity"
+  ],
+  "interpretation": "Different branch errors and actual fusion repairs are descriptive evidence consistent with complementary predictions. They do not prove a positive interaction, unique auxiliary-loss contribution, causation, external generalization or clinical utility. Compare the natural-CORAL pair too. Do not infer interaction from separate significance decisions or add historical component gains.",
+  "new_bootstrap": false,
+  "new_hypothesis_test": false,
+  "new_model_inference": false,
+  "new_training": false,
+  "new_selection": false,
+  "export_patient_rows_or_identifiers": false,
+  "public_release": false
+}

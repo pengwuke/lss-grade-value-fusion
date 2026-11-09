@@ -1,0 +1,28 @@
+{
+  "scope": "Frozen A3/A4 kernels copied byte-for-byte; no patient data",
+  "source_relative_paths": {
+    "kernels/04_A3_PATIENT_METRICS.py": "matched_outer_evaluation/02_patient_paired_metrics.py",
+    "kernels/fusion.py": "fixed_fusion/02_fixed_fusion_metrics.py"
+  },
+  "installed_file_sha256": {
+    "kernels/04_A3_PATIENT_METRICS.py": "bb0ce9cc7d4590edf29e0076ce96a4eac77e2349f10ddf40c29e2c56b356d4f9",
+    "kernels/fusion.py": "31ecd0bf8255de1c18d0ed01e41a2132212708bc6c1f338634b1c5a85148b654",
+    "plans.json": "312cac9657aca1b353ad206dfd4b8c0354b5a9f42933461709d0ff816a009493",
+    "robustness.py": "3140f00853d3099868482affcc659f2ac1d08ebd40d7bd4fb5eb2e59809e4ba7"
+  },
+  "parent_plans_sha256": "1d1e206d282cbf683ad1fa6f01a3eed6ef86654c0512ec7dd307ec448d49119b",
+  "R11_extension": {
+    "new_plan": "r11_natural",
+    "legacy_plans_semantic_sha256": "f9ef98d40c4f48f542b2ef3cd155718078d54029efd6164098e3e1ce6c515022",
+    "legacy_plans_semantics_unchanged": true,
+    "metric_and_bootstrap_kernel_bytes_unchanged": true,
+    "post_hoc_frozen_prediction_analysis": true
+  },
+  "parent_B11_plans_sha256": "1b13252645b7ea3191ff1bf805c2d7457e3474e83c0992d99221f5b36572f66a",
+  "R12_extension": {
+    "prior_four_plan_definitions_semantic_sha256": "ab3ed83a2fd08a65e10ac42a3881035752e7cd1e9f941f2136175b58276067c7",
+    "metric_and_original_bootstrap_kernels_unchanged": true,
+    "new_module": "robustness.py",
+    "ten_outcome_posthoc_family": true
+  }
+}

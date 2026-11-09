@@ -1,0 +1,17 @@
+{
+  "status": "PASS_WITH_RECORDED_LIMITS",
+  "fresh_isolated_cpu_model_dependency_install": true,
+  "fresh_machine_test": false,
+  "runtime_unit_tests": 9,
+  "statistics_unit_tests": 7,
+  "strict_model_load_pass": 50,
+  "synthetic_forward_pass": 50,
+  "valid_artificial_cases_byte_equal_R3": 88,
+  "weights_changed": false,
+  "weights_reselected": false,
+  "historical_source_files_unchanged": 46,
+  "full_historical_pipeline_ported": false,
+  "new_patient_inference": false,
+  "new_patient_bootstrap": false,
+  "public_release": false
+}

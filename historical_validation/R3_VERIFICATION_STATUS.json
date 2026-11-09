@@ -1,0 +1,14 @@
+{
+  "status": "PASS_WITH_RECORDED_LIMITS",
+  "inference_validation_origin": "R2; verified unchanged bytes in R3",
+  "model_roles_sha256_unchanged": 50,
+  "historical_sources_unchanged": 46,
+  "inference_runtime_programs_unchanged": 9,
+  "statistics_kernel_byte_identity": true,
+  "server_synthetic_statistics_tests_passed": 7,
+  "fresh_statistics_installation": true,
+  "fresh_model_dependency_installation": false,
+  "full_historical_pipeline_ported": false,
+  "new_patient_analysis": false,
+  "public_release": false
+}

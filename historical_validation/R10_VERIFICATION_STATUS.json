@@ -1,0 +1,29 @@
+{
+  "status": "PASS_B10_CLAIM_DOCUMENTATION_AND_ARTIFACT_BINDING",
+  "review_date": "2026-11-08",
+  "scientific_manuscript": "B10",
+  "parent_candidate": "R9",
+  "focus": [
+    "task_value",
+    "baseline_rationale",
+    "performance_evidence"
+  ],
+  "all_runtime_programs_unchanged": true,
+  "all_statistics_programs_unchanged": true,
+  "all_example_programs_unchanged": true,
+  "historical_sources_unchanged": 46,
+  "model_weights_changed": false,
+  "fusion_config_changed": false,
+  "direct_full_R11_vs_natural_selected_interval": "NOT_COMPUTED_AND_DISCLOSED",
+  "paper_tables_or_results_changed": false,
+  "software_verification_origin": "R9 30 runtime tests, 70 frozen numeric-rule cases, 10 artificial CLI cases; R7 10 statistics tests",
+  "strict_load_validation_origin": "R5 50 roles",
+  "full_branch_forward_validation_origin": "R4 50 roles",
+  "new_model_execution": false,
+  "new_patient_inference": false,
+  "new_patient_bootstrap": false,
+  "new_training": false,
+  "new_weight_selection": false,
+  "full_historical_pipeline_ported": false,
+  "public_release": false
+}

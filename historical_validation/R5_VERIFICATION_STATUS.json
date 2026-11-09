@@ -1,0 +1,16 @@
+{
+  "status": "PASS_WITH_RECORDED_LIMITS",
+  "runtime_regression_tests": 17,
+  "R5_strict_model_load_pass": 50,
+  "manifest_and_fusion_fingerprints_checked": true,
+  "weights_changed": false,
+  "fusion_config_changed": false,
+  "model_dependency_installation_origin": "R4 fresh same-host Linux CPU environment; R5 wheel in separate target",
+  "synthetic_forward_origin": "R4 50 roles, math and tensors unchanged",
+  "statistics_tests_origin": "R4 seven tests, statistical code unchanged",
+  "scientific_manuscript": "B9",
+  "visual_revision": "FIG1_PALETTE_R2",
+  "public_release": false,
+  "new_patient_inference": false,
+  "new_patient_bootstrap": false
+}

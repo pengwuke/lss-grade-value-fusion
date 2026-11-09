@@ -1,0 +1,174 @@
+{
+  "schema": "paper2-release-prep-r1",
+  "status": "UNPUBLISHED_CANDIDATE",
+  "labels": [
+    "normal",
+    "mild",
+    "moderate",
+    "severe"
+  ],
+  "common5": {
+    "outer_to_validation": [
+      1,
+      2,
+      3,
+      4,
+      0
+    ],
+    "selected_alpha": [
+      0.1,
+      0.125,
+      0.125,
+      0.1,
+      0.125
+    ],
+    "R10_coral_weights": [
+      0.4,
+      0.4,
+      0.4,
+      0.4,
+      0.4
+    ],
+    "R11_coral_weights": [
+      0.7,
+      0.6,
+      0.6,
+      0.9,
+      0.9
+    ],
+    "deit_weight": "1 minus coral weight",
+    "R11_is_probability_fusion_not_a_separate_checkpoint": true
+  },
+  "source94": {
+    "development_patients": 374,
+    "test_patients": 94,
+    "selected_alpha": [
+      0.15,
+      0.1,
+      0.125,
+      0.1,
+      0.15
+    ],
+    "coral_weights": [
+      1.0,
+      0.9,
+      0.7,
+      0.9,
+      0.9
+    ],
+    "inference": "Fuse per fold, average five probability vectors, then argmax. SR1 separately averages five image-branch probability vectors then argmax."
+  },
+  "matched_common5": {
+    "fixed_image_weight": 0.4,
+    "selected_image_weights": {
+      "A0_NATURAL": [
+        0.8,
+        0.5,
+        0.6,
+        0.7,
+        0.5
+      ],
+      "A1_SCALED": [
+        0.6,
+        0.5,
+        0.6,
+        0.7,
+        0.8
+      ],
+      "A2_BINARY_P": [
+        0.5,
+        0.6,
+        0.6,
+        0.8,
+        0.7
+      ],
+      "A3_GRADE_FIXED": [
+        0.6,
+        0.6,
+        0.6,
+        0.7,
+        0.9
+      ],
+      "PHADKE_P4C": [
+        0.4,
+        0.4,
+        0.9,
+        0.4,
+        0.5
+      ],
+      "R09_SELECTED_ALPHA": [
+        0.7,
+        0.6,
+        0.6,
+        0.9,
+        0.9
+      ]
+    },
+    "selection_source_sha256": "b0fde1d438c29cc6021e16776e7f4180ffaff84ec352e0be55bf7c6deaf84b7c",
+    "weights_reselected_in_packaging": false,
+    "arm_to_model": {
+      "A0_NATURAL": [
+        "common5_matched_aux",
+        "A0_NATURAL"
+      ],
+      "A1_SCALED": [
+        "common5_matched_aux",
+        "A1_SCALED"
+      ],
+      "A2_BINARY_P": [
+        "common5_matched_aux",
+        "A2_BINARY_P"
+      ],
+      "A3_GRADE_FIXED": [
+        "common5_matched_aux",
+        "A3_GRADE_FIXED"
+      ],
+      "PHADKE_P4C": [
+        "common5_reference",
+        "p4c_resnet18_corn_ema"
+      ],
+      "R09_SELECTED_ALPHA": [
+        "common5_core",
+        "grade_value_coral_selected"
+      ]
+    }
+  },
+  "input_contracts": {
+    "cnn": {
+      "representation": "DICOM-derived tight IQ8",
+      "histogram_equalization": false,
+      "geometry": "G1",
+      "shape": [
+        1,
+        64,
+        64
+      ],
+      "mean": 0.5,
+      "std": 0.5
+    },
+    "deit": {
+      "representation": "historical PNG ROI grayscale",
+      "histogram_equalization": true,
+      "shape": [
+        3,
+        224,
+        224
+      ],
+      "mean": 0.5,
+      "std": 0.5
+    },
+    "reference": {
+      "representation": "source PNG, bounding-box margin 40% each side",
+      "resize": "PIL bilinear direct 224x224",
+      "shape": [
+        1,
+        224,
+        224
+      ],
+      "mean": 0.449,
+      "std": 0.226,
+      "score_floor": 1e-06,
+      "row_renormalization": false
+    }
+  }
+}

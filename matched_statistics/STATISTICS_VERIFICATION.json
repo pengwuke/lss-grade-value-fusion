@@ -1,0 +1,34 @@
+{
+  "status": "PASS_SYNTHETIC_ONLY",
+  "tests_passed": 7,
+  "fresh_statistics_dependency_install": true,
+  "isolated_mode": true,
+  "separate_working_directory": true,
+  "installed_wheel_not_source_import": true,
+  "cli": {
+    "single": {
+      "metric_intervals": 24,
+      "replicates": 37,
+      "cohort": "ARTIFICIAL_ONLY",
+      "strict_json": true
+    },
+    "fixed": {
+      "metric_intervals": 90,
+      "replicates": 37,
+      "cohort": "ARTIFICIAL_ONLY",
+      "strict_json": true
+    },
+    "selected": {
+      "metric_intervals": 72,
+      "replicates": 37,
+      "cohort": "ARTIFICIAL_ONLY",
+      "strict_json": true
+    }
+  },
+  "frozen_kernel_copy": "BYTE_IDENTICAL_A3_A4",
+  "patient_data_read": false,
+  "real_patient_bootstrap": false,
+  "full_model_dependency_install_tested": false,
+  "historical_full_pipeline_ported": false,
+  "public_release": false
+}

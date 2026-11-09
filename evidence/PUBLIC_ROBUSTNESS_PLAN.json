@@ -1,0 +1,78 @@
+{
+  "date": "2026-11-09",
+  "timing": "Post-hoc robustness plan fixed before calculating new sensitivity results; B11 points and six unadjusted 20k intervals are already known; not prospective preregistration",
+  "purpose": "Assess multiplicity, grade-specific uncertainty and dependence on patient/fold composition without searching for a favorable result",
+  "systems": [
+    "R09_SELECTED_ALPHA_VSEL",
+    "A0_NATURAL_VSEL"
+  ],
+  "contrast": "full R11 minus natural CORAL with the same DeiT and selected fusion",
+  "cohort": {
+    "patients": 468,
+    "rois": 2978,
+    "outer_folds": 5
+  },
+  "family": {
+    "size": 10,
+    "outcomes": [
+      "accuracy",
+      "balanced_accuracy",
+      "macro_f1",
+      "weighted_f1",
+      "qwk",
+      "mae",
+      "recall_grade0",
+      "recall_grade1",
+      "recall_grade2",
+      "recall_grade3"
+    ],
+    "family_alpha": 0.05,
+    "bonferroni_individual_confidence": 0.995,
+    "percentile_bounds": [
+      0.25,
+      99.75
+    ],
+    "scope": "This ten-outcome sensitivity family only; does not adjust all earlier 192 paper intervals or undo post-hoc development"
+  },
+  "bootstrap": {
+    "iterations": 100000,
+    "seed": 42,
+    "chunk": 32,
+    "unit": "patient retaining every ROI and duplicate patient multiplicities",
+    "paired": true,
+    "report": [
+      "unadjusted 95% percentile",
+      "Bonferroni-type 99.5% marginal percentile intervals"
+    ],
+    "reason_for_budget": "Tail resolution of multiplicity sensitivity, not additional independent observations",
+    "undefined": "count explicitly; no zero replacement"
+  },
+  "required_checks": [
+    "same SHA-anchored A6 predictions and selection freeze as B11",
+    "exact pooled and original fold-point reproduction",
+    "first 20000 core-metric bootstrap intervals reproduce B11 without replacing them",
+    "independent sklearn/raw-grade checks on the first eight actual patient resamples",
+    "weighted pooled metrics checked against sklearn sample_weight"
+  ],
+  "influence_checks": [
+    "all 468 leave-one-patient-out pooled six-metric differences; aggregate min/max and maximum point change only, no patient identifiers",
+    "all five leave-one-original-outer-fold-out pooled differences, descriptive only",
+    "six pooled metrics with each patient contributing total weight one, descriptive alternate estimand only"
+  ],
+  "interpretation": [
+    "Frozen-prediction internal retrospective sensitivity, not a new validation cohort",
+    "No retraining for deletion checks; not leave-one-out cross-validation",
+    "Equal-patient weighting is not the mean of individual patient kappas",
+    "Bootstrap intervals and Bonferroni-type coverage remain approximate",
+    "Report all ten outcomes and all five folds regardless of direction",
+    "Do not select models, weights, thresholds or outcomes using sensitivity results"
+  ],
+  "no_actions": [
+    "new model inference",
+    "training",
+    "alpha/weight search",
+    "replacing B11 intervals",
+    "external-validation claim",
+    "public release or submission"
+  ]
+}

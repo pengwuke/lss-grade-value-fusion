@@ -1,0 +1,22 @@
+{
+  "status": "PASS_B15_PUBLISHED_REFERENCE_FIRST_PRESENTATION_R16_DOCUMENT_BINDING",
+  "scientific_manuscript": "B15",
+  "parent": "R15/B14",
+  "scientific_text_changed": true,
+  "primary_evidence": "published-method same-protocol reconstruction and matched internal controls",
+  "unpublished_early_system_comparison": "supplementary historical context only; S2.1/S2.13",
+  "shared_assets_disclosed": true,
+  "all_existing_numerical_results_retained": true,
+  "new_training": false,
+  "new_model_inference": false,
+  "new_selection": false,
+  "new_statistical_inference": false,
+  "new_patient_bootstrap": false,
+  "programs_unchanged": true,
+  "historical_sources_unchanged": 46,
+  "model_weights_changed": false,
+  "fusion_config_changed": false,
+  "date": "2026-11-09",
+  "public_release": false,
+  "retained_verification": "R15/B14 reporting and archive records; B13 branch errors; B12 statistics; historical runtime/model checks, none rerun as performance tests"
+}

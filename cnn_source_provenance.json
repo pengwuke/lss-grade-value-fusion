@@ -1,0 +1,12 @@
+{
+  "file": "54_train_coral_risk_protocol_v3_full468_oof.py",
+  "source_sha256": "b8e5360657fa467e74db846c4d03e7f5f80901aa2108e66587b04a58e89cb259",
+  "extracted_unchanged_nodes": [
+    "CustomCNNEncoder",
+    "inverse_softplus",
+    "RankConsistentCoralHead",
+    "RiskAwareOrdinalCNN",
+    "cumulative_and_class_probabilities"
+  ],
+  "no_historical_top_level_execution": true
+}

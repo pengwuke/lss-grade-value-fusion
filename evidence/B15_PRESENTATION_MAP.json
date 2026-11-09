@@ -1,0 +1,24 @@
+{
+  "manuscript": "B15",
+  "materials": "R16",
+  "parent_scientific": "B14",
+  "parent_materials": "R15",
+  "primary_external_method_comparison": "R11 vs published Phadke image method reconstruction, same DeiT, each selected fusion",
+  "primary_strong_internal_reference": "natural CORAL same input and same DeiT/selected fusion",
+  "unpublished_early_system_role": "supplementary historical comparison only; S2.1 and S2.13",
+  "shared_assets_disclosed": [
+    "468 patients and 2978 ROIs",
+    "patient splits",
+    "some frozen DeiT assets",
+    "four representative ROIs"
+  ],
+  "new_training": false,
+  "new_model_inference": false,
+  "new_selection": false,
+  "new_statistics": false,
+  "all_estimates_and_intervals_retained": true,
+  "natural_reference_limitations_retained": true,
+  "full_vs_natural_qwk_mae_superiority_established": false,
+  "historical_B14_reporting_audit_sha256": "26a46ca0e40054b8d71c3baeddff59ad2fc010f5abd070c927e866a7e7b230e7",
+  "frozen_comparison_evidence_map_sha256": "a032822b0858b537e39487d286db9cdd576fb50ca54758c2cbfceab62dfe66da"
+}

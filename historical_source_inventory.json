@@ -1,0 +1,369 @@
+{
+  "scope": "Static source audit, not an execution or training-portability test",
+  "historical_files": 46,
+  "python_files": 42,
+  "archived_python_text_files": 4,
+  "python_files_with_explicit_absolute_path_literals": 22,
+  "files": [
+    {
+      "file": "deit_training/52_train_official_deit_protocol_v3_full468_oof.py",
+      "bytes": 17836,
+      "sha256": "dc8c0b4b1aafe640d7ce764c3efff984e5154430621c946ea7025c0b4d3887ae",
+      "has_main": true,
+      "has_argparse": true,
+      "absolute_path_literal_count": 0
+    },
+    {
+      "file": "fixed_fusion/01_remote_fixed_deit_fusion.py",
+      "bytes": 36136,
+      "sha256": "b6eb5d7e4d017333bc7825b75439242f71ac3382892c2271fd03821fafaab678",
+      "has_main": true,
+      "has_argparse": true,
+      "absolute_path_literal_count": 2
+    },
+    {
+      "file": "fixed_fusion/02_fixed_fusion_metrics.py",
+      "bytes": 4478,
+      "sha256": "31ecd0bf8255de1c18d0ed01e41a2132212708bc6c1f338634b1c5a85148b654",
+      "has_main": false,
+      "has_argparse": false,
+      "absolute_path_literal_count": 0
+    },
+    {
+      "file": "fixed_fusion/04_A3_PATIENT_METRICS.py",
+      "bytes": 6599,
+      "sha256": "bb0ce9cc7d4590edf29e0076ce96a4eac77e2349f10ddf40c29e2c56b356d4f9",
+      "has_main": false,
+      "has_argparse": false,
+      "absolute_path_literal_count": 0
+    },
+    {
+      "file": "fixed_fusion/05_P5R2_IDENTITY_PARENT.py",
+      "bytes": 22224,
+      "sha256": "a3a6d4b638f3b992b469c8fdf28fb4ccf02e6d068ffc63a8e5088adbdf054631",
+      "has_main": true,
+      "has_argparse": true,
+      "absolute_path_literal_count": 3
+    },
+    {
+      "file": "fixed_fusion/16_d1_probability_compatibility.py",
+      "bytes": 10175,
+      "sha256": "a93b73eabea3279faaf0a646fbef86069bde927e4b2e8c4f9eb46387942e7c8c",
+      "has_main": false,
+      "has_argparse": false,
+      "absolute_path_literal_count": 0
+    },
+    {
+      "file": "grade_alpha_search/03_train_coral_progression_aux_INNER_SEARCH.py",
+      "bytes": 7885,
+      "sha256": "b09e3a7ddfa5278a6357b75ed7cc5b617926ecfbbb4fd91cc6d4e33be9e800c3",
+      "has_main": true,
+      "has_argparse": true,
+      "absolute_path_literal_count": 0
+    },
+    {
+      "file": "grade_alpha_search/03_train_coral_progression_aux_fold.py",
+      "bytes": 7809,
+      "sha256": "2529afd31e91dcc7327381de640651605c25a2eafc79cc846cd5dc6763f2c3bf",
+      "has_main": true,
+      "has_argparse": true,
+      "absolute_path_literal_count": 0
+    },
+    {
+      "file": "grade_alpha_search/common_step04a.py",
+      "bytes": 19659,
+      "sha256": "6032f392ea409a116d1ef5619c6b33f9fc37bc297786f0a4a58d70311a7b44c6",
+      "has_main": false,
+      "has_argparse": false,
+      "absolute_path_literal_count": 4
+    },
+    {
+      "file": "grade_alpha_search/ornet_progression_aux.py",
+      "bytes": 4994,
+      "sha256": "f0f7aa3fdfdf00fa1b6ced5eb8d00bec478399212fdcaff7a81252e82c3283ca",
+      "has_main": false,
+      "has_argparse": false,
+      "absolute_path_literal_count": 0
+    },
+    {
+      "file": "historical_fusion/01_expand_fusion_weight_inner_grid.py",
+      "bytes": 9039,
+      "sha256": "8b48119025053c305ae4f372fc0ba290fd6b63e2cfe9003c0e3ae1ae648ce7b3",
+      "has_main": false,
+      "has_argparse": false,
+      "absolute_path_literal_count": 1
+    },
+    {
+      "file": "historical_fusion/01_materialize_dual_innerval_and_search_fusion_weight_R2.py",
+      "bytes": 16753,
+      "sha256": "7c3773a5f5eb9360d6a647bf6bb3679025cabbef26d7965d5ceb7befc66690cc",
+      "has_main": false,
+      "has_argparse": false,
+      "absolute_path_literal_count": 2
+    },
+    {
+      "file": "historical_fusion/01_selected_weight_outer_oof_eval.py",
+      "bytes": 17227,
+      "sha256": "5dc21ecd59e5430adbc6d9840e95269b2175a3e80e3df3e2a6ede1c6d390c3a0",
+      "has_main": false,
+      "has_argparse": false,
+      "absolute_path_literal_count": 1
+    },
+    {
+      "file": "matched_aux/11_remote_matched_aux_formal5.py",
+      "bytes": 28350,
+      "sha256": "38be4df8c4bbb9e214c6600937b99cae4b943ba8d9300bb86f2f4ee0dfc19cf7",
+      "has_main": true,
+      "has_argparse": true,
+      "absolute_path_literal_count": 2
+    },
+    {
+      "file": "matched_aux/common_step04a.py",
+      "bytes": 19659,
+      "sha256": "6032f392ea409a116d1ef5619c6b33f9fc37bc297786f0a4a58d70311a7b44c6",
+      "has_main": false,
+      "has_argparse": false,
+      "absolute_path_literal_count": 4
+    },
+    {
+      "file": "matched_aux/matched_aux_objectives.py",
+      "bytes": 1804,
+      "sha256": "6726ca5f8ab3854a1d3aec85ead40ab1040f2c5729236f6035b9d2ce3ab2a60f",
+      "has_main": false,
+      "has_argparse": false,
+      "absolute_path_literal_count": 0
+    },
+    {
+      "file": "matched_aux/ornet_progression_aux.py",
+      "bytes": 4994,
+      "sha256": "f0f7aa3fdfdf00fa1b6ced5eb8d00bec478399212fdcaff7a81252e82c3283ca",
+      "has_main": false,
+      "has_argparse": false,
+      "absolute_path_literal_count": 0
+    },
+    {
+      "file": "matched_aux/parent_r09_trainer.py.txt",
+      "bytes": 7809,
+      "sha256": "2529afd31e91dcc7327381de640651605c25a2eafc79cc846cd5dc6763f2c3bf",
+      "absolute_path_literal_count": 0
+    },
+    {
+      "file": "matched_aux/source54.py",
+      "bytes": 40063,
+      "sha256": "b8e5360657fa467e74db846c4d03e7f5f80901aa2108e66587b04a58e89cb259",
+      "has_main": true,
+      "has_argparse": true,
+      "absolute_path_literal_count": 0
+    },
+    {
+      "file": "matched_outer_evaluation/01_remote_evaluate_frozen_aux.py",
+      "bytes": 28332,
+      "sha256": "0d034046d515d09c04f46af023ead91fa4a5ee9d9e1230c02dd692576de30bfa",
+      "has_main": true,
+      "has_argparse": true,
+      "absolute_path_literal_count": 2
+    },
+    {
+      "file": "matched_outer_evaluation/02_patient_paired_metrics.py",
+      "bytes": 6599,
+      "sha256": "bb0ce9cc7d4590edf29e0076ce96a4eac77e2349f10ddf40c29e2c56b356d4f9",
+      "has_main": false,
+      "has_argparse": false,
+      "absolute_path_literal_count": 0
+    },
+    {
+      "file": "p4c_reference/01_server_p4_1c_formal_train.py",
+      "bytes": 33359,
+      "sha256": "c1d6f6d1ae4402474ec3162c293f6aa79c726222d8f4304e1ab79463d4681655",
+      "has_main": true,
+      "has_argparse": false,
+      "absolute_path_literal_count": 3
+    },
+    {
+      "file": "selected_fusion/01_remote_validation_selected_fusion.py",
+      "bytes": 10120,
+      "sha256": "fef266471a5d32fc1da088b4664f821078d0714f796171edf25cacec3ae0634f",
+      "has_main": true,
+      "has_argparse": true,
+      "absolute_path_literal_count": 1
+    },
+    {
+      "file": "selected_fusion/02_fixed_fusion_metrics.py",
+      "bytes": 4478,
+      "sha256": "31ecd0bf8255de1c18d0ed01e41a2132212708bc6c1f338634b1c5a85148b654",
+      "has_main": false,
+      "has_argparse": false,
+      "absolute_path_literal_count": 0
+    },
+    {
+      "file": "selected_fusion/04_A3_PATIENT_METRICS.py",
+      "bytes": 6599,
+      "sha256": "bb0ce9cc7d4590edf29e0076ce96a4eac77e2349f10ddf40c29e2c56b356d4f9",
+      "has_main": false,
+      "has_argparse": false,
+      "absolute_path_literal_count": 0
+    },
+    {
+      "file": "selected_fusion/05_P5R2_IDENTITY_PARENT.py",
+      "bytes": 22224,
+      "sha256": "a3a6d4b638f3b992b469c8fdf28fb4ccf02e6d068ffc63a8e5088adbdf054631",
+      "has_main": true,
+      "has_argparse": true,
+      "absolute_path_literal_count": 3
+    },
+    {
+      "file": "selected_fusion/16_d1_probability_compatibility.py",
+      "bytes": 10175,
+      "sha256": "a93b73eabea3279faaf0a646fbef86069bde927e4b2e8c4f9eb46387942e7c8c",
+      "has_main": false,
+      "has_argparse": false,
+      "absolute_path_literal_count": 0
+    },
+    {
+      "file": "selected_fusion/17_exact_validation_formats.py",
+      "bytes": 24434,
+      "sha256": "c1e7e6400608128e95483170b9b67b86c7efbc0c2f9b562bc0b21fccbc0ef027",
+      "has_main": false,
+      "has_argparse": false,
+      "absolute_path_literal_count": 0
+    },
+    {
+      "file": "selected_fusion/20_A4_FIXED_FUSION_PARENT.py",
+      "bytes": 36136,
+      "sha256": "b6eb5d7e4d017333bc7825b75439242f71ac3382892c2271fd03821fafaab678",
+      "has_main": true,
+      "has_argparse": true,
+      "absolute_path_literal_count": 2
+    },
+    {
+      "file": "selected_fusion/21_A5_FORMAT_AUDIT_PARENT.py",
+      "bytes": 34125,
+      "sha256": "5ad7628150057db088005ae48078d2765d076f4e154093aa32138dfdc7743822",
+      "has_main": true,
+      "has_argparse": true,
+      "absolute_path_literal_count": 2
+    },
+    {
+      "file": "selected_fusion/22_LEGACY_DUAL_PRODUCER.py.txt",
+      "bytes": 16753,
+      "sha256": "7c3773a5f5eb9360d6a647bf6bb3679025cabbef26d7965d5ceb7befc66690cc",
+      "absolute_path_literal_count": 0
+    },
+    {
+      "file": "selected_fusion/23_LEGACY_SELECTOR.py.txt",
+      "bytes": 9039,
+      "sha256": "8b48119025053c305ae4f372fc0ba290fd6b63e2cfe9003c0e3ae1ae648ce7b3",
+      "absolute_path_literal_count": 0
+    },
+    {
+      "file": "selected_fusion/24_P4C_PRODUCER.py.txt",
+      "bytes": 33359,
+      "sha256": "c1d6f6d1ae4402474ec3162c293f6aa79c726222d8f4304e1ab79463d4681655",
+      "absolute_path_literal_count": 0
+    },
+    {
+      "file": "selected_fusion/25_matched_inner_selection.py",
+      "bytes": 4454,
+      "sha256": "db066ead69f1229d6c01e3003e3ddf251e9b0807abe1ecfd9eccdc976263361a",
+      "has_main": false,
+      "has_argparse": false,
+      "absolute_path_literal_count": 0
+    },
+    {
+      "file": "selected_fusion/26_selected_fusion_analysis.py",
+      "bytes": 16942,
+      "sha256": "e9d3689b3f44c07171f9e4cc63d287ed30b00eb39a98e56ed7017533b3f972c0",
+      "has_main": false,
+      "has_argparse": false,
+      "absolute_path_literal_count": 1
+    },
+    {
+      "file": "source94/COMMON_04A.py",
+      "bytes": 19659,
+      "sha256": "6032f392ea409a116d1ef5619c6b33f9fc37bc297786f0a4a58d70311a7b44c6",
+      "has_main": false,
+      "has_argparse": false,
+      "absolute_path_literal_count": 4
+    },
+    {
+      "file": "source94/DEIT_CORE_52.py",
+      "bytes": 17836,
+      "sha256": "dc8c0b4b1aafe640d7ce764c3efff984e5154430621c946ea7025c0b4d3887ae",
+      "has_main": true,
+      "has_argparse": true,
+      "absolute_path_literal_count": 0
+    },
+    {
+      "file": "source94/ORNET_ALPHA0125.py",
+      "bytes": 4994,
+      "sha256": "f0f7aa3fdfdf00fa1b6ced5eb8d00bec478399212fdcaff7a81252e82c3283ca",
+      "has_main": false,
+      "has_argparse": false,
+      "absolute_path_literal_count": 0
+    },
+    {
+      "file": "source94/PARENT_P5R2_SPLIT_AUDITOR.py",
+      "bytes": 22224,
+      "sha256": "a3a6d4b638f3b992b469c8fdf28fb4ccf02e6d068ffc63a8e5088adbdf054631",
+      "has_main": true,
+      "has_argparse": true,
+      "absolute_path_literal_count": 3
+    },
+    {
+      "file": "source94/PHADKE_SR1_AGGREGATOR.py",
+      "bytes": 28067,
+      "sha256": "b97c2aaa45805cb80990b1e4efa38a8915a2a12a2fadd33c8600aeb0fea2a530",
+      "has_main": true,
+      "has_argparse": false,
+      "absolute_path_literal_count": 2
+    },
+    {
+      "file": "source94/PHADKE_SR1_TRAINER.py",
+      "bytes": 27867,
+      "sha256": "9ff0d2a05d49ab884d9381ca396127f28d9759c02916eb8515af004f8cf47cae",
+      "has_main": true,
+      "has_argparse": false,
+      "absolute_path_literal_count": 2
+    },
+    {
+      "file": "source94/R09_CORE_54.py",
+      "bytes": 40063,
+      "sha256": "b8e5360657fa467e74db846c4d03e7f5f80901aa2108e66587b04a58e89cb259",
+      "has_main": true,
+      "has_argparse": true,
+      "absolute_path_literal_count": 0
+    },
+    {
+      "file": "source94/R09_TRAINER.py",
+      "bytes": 7809,
+      "sha256": "2529afd31e91dcc7327381de640651605c25a2eafc79cc846cd5dc6763f2c3bf",
+      "has_main": true,
+      "has_argparse": true,
+      "absolute_path_literal_count": 0
+    },
+    {
+      "file": "source94_entry/01_prepare_devonly.py",
+      "bytes": 11374,
+      "sha256": "4a3d65166f9bbe5a613630d85a4113e9222543167be0e053f727fa4dc1c41f0d",
+      "has_main": false,
+      "has_argparse": true,
+      "absolute_path_literal_count": 1
+    },
+    {
+      "file": "source94_entry/02_train_devonly.py",
+      "bytes": 24191,
+      "sha256": "f90bb9ffde446389999775c5853ffd2aec38f9032259c8edc243c88351395a14",
+      "has_main": true,
+      "has_argparse": true,
+      "absolute_path_literal_count": 1
+    },
+    {
+      "file": "sr1_reference/01_server_p4_1_sr1_source_protocol_reconstruction.py",
+      "bytes": 27867,
+      "sha256": "9ff0d2a05d49ab884d9381ca396127f28d9759c02916eb8515af004f8cf47cae",
+      "has_main": true,
+      "has_argparse": false,
+      "absolute_path_literal_count": 2
+    }
+  ]
+}

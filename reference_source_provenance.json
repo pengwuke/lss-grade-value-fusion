@@ -1,0 +1,23 @@
+{
+  "P4C": {
+    "source_sha256": "c1d6f6d1ae4402474ec3162c293f6aa79c726222d8f4304e1ab79463d4681655",
+    "file": "p4c_reference/01_server_p4_1c_formal_train.py"
+  },
+  "SR1": {
+    "source_sha256": "9ff0d2a05d49ab884d9381ca396127f28d9759c02916eb8515af004f8cf47cae",
+    "file": "sr1_reference/01_server_p4_1_sr1_source_protocol_reconstruction.py"
+  },
+  "Net_constructor_AST_equal": true,
+  "extracted_definitions": [
+    "Net",
+    "corn_probs"
+  ],
+  "only_constructor_change": "default pretrained True to False; strict state loading before use",
+  "score_floor": 1e-06,
+  "renormalized": false,
+  "input_normalization": {
+    "mean": 0.449,
+    "std": 0.226
+  },
+  "input_resize": "PIL bilinear 224x224 after source40 crop"
+}

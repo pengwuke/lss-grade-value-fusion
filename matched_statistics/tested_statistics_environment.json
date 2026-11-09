@@ -1,0 +1,16 @@
+{
+  "python": "3.12.14",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "isolated_mode": true,
+  "venv_active": true,
+  "torch_installed": false,
+  "versions": {
+    "numpy": "2.5.4",
+    "scikit-learn": "1.9.1",
+    "scipy": "1.18.1",
+    "joblib": "1.6.0",
+    "threadpoolctl": "3.8.0",
+    "setuptools": "84.2.1"
+  },
+  "scope": "New isolated Windows statistics installation; not historical training or full model runtime dependencies"
+}

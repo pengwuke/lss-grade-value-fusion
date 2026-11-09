@@ -1,0 +1,183 @@
+{
+  "status": "PASS_ARTIFICIAL_PATH_IO_ONLY",
+  "old_behaviour_reproduced": {
+    "r6_literal_model_home_path_failed_after_model_application": true,
+    "r6_report_went_to_literal_tilde_directory": true,
+    "artificial_inputs_only": true
+  },
+  "single_roi_cli_cases": 20,
+  "statistics_cli_cases": 6,
+  "single_roi_model_roles_used": 10,
+  "single_roi_full_report_equal_R6": true,
+  "statistics_full_report_equal_R6": true,
+  "real_patient_data_used": false,
+  "new_training": false,
+  "new_weight_selection": false,
+  "paper_performance_recomputed": false,
+  "cases": [
+    {
+      "fold": 0,
+      "strategy": "R10",
+      "path_mode": "absolute",
+      "entire_prediction_report_equal_R6": true
+    },
+    {
+      "fold": 0,
+      "strategy": "R10",
+      "path_mode": "literal_home",
+      "entire_prediction_report_equal_R6": true
+    },
+    {
+      "fold": 0,
+      "strategy": "R11",
+      "path_mode": "absolute",
+      "entire_prediction_report_equal_R6": true
+    },
+    {
+      "fold": 0,
+      "strategy": "R11",
+      "path_mode": "literal_home",
+      "entire_prediction_report_equal_R6": true
+    },
+    {
+      "fold": 1,
+      "strategy": "R10",
+      "path_mode": "absolute",
+      "entire_prediction_report_equal_R6": true
+    },
+    {
+      "fold": 1,
+      "strategy": "R10",
+      "path_mode": "literal_home",
+      "entire_prediction_report_equal_R6": true
+    },
+    {
+      "fold": 1,
+      "strategy": "R11",
+      "path_mode": "absolute",
+      "entire_prediction_report_equal_R6": true
+    },
+    {
+      "fold": 1,
+      "strategy": "R11",
+      "path_mode": "literal_home",
+      "entire_prediction_report_equal_R6": true
+    },
+    {
+      "fold": 2,
+      "strategy": "R10",
+      "path_mode": "absolute",
+      "entire_prediction_report_equal_R6": true
+    },
+    {
+      "fold": 2,
+      "strategy": "R10",
+      "path_mode": "literal_home",
+      "entire_prediction_report_equal_R6": true
+    },
+    {
+      "fold": 2,
+      "strategy": "R11",
+      "path_mode": "absolute",
+      "entire_prediction_report_equal_R6": true
+    },
+    {
+      "fold": 2,
+      "strategy": "R11",
+      "path_mode": "literal_home",
+      "entire_prediction_report_equal_R6": true
+    },
+    {
+      "fold": 3,
+      "strategy": "R10",
+      "path_mode": "absolute",
+      "entire_prediction_report_equal_R6": true
+    },
+    {
+      "fold": 3,
+      "strategy": "R10",
+      "path_mode": "literal_home",
+      "entire_prediction_report_equal_R6": true
+    },
+    {
+      "fold": 3,
+      "strategy": "R11",
+      "path_mode": "absolute",
+      "entire_prediction_report_equal_R6": true
+    },
+    {
+      "fold": 3,
+      "strategy": "R11",
+      "path_mode": "literal_home",
+      "entire_prediction_report_equal_R6": true
+    },
+    {
+      "fold": 4,
+      "strategy": "R10",
+      "path_mode": "absolute",
+      "entire_prediction_report_equal_R6": true
+    },
+    {
+      "fold": 4,
+      "strategy": "R10",
+      "path_mode": "literal_home",
+      "entire_prediction_report_equal_R6": true
+    },
+    {
+      "fold": 4,
+      "strategy": "R11",
+      "path_mode": "absolute",
+      "entire_prediction_report_equal_R6": true
+    },
+    {
+      "fold": 4,
+      "strategy": "R11",
+      "path_mode": "literal_home",
+      "entire_prediction_report_equal_R6": true
+    }
+  ],
+  "statistics_cases": [
+    {
+      "analysis": "single",
+      "path_mode": "absolute",
+      "entire_report_equal_R6_wrapper": true,
+      "existing_output_rejected": true,
+      "iterations": 37
+    },
+    {
+      "analysis": "single",
+      "path_mode": "literal_home",
+      "entire_report_equal_R6_wrapper": true,
+      "existing_output_rejected": true,
+      "iterations": 37
+    },
+    {
+      "analysis": "fixed",
+      "path_mode": "absolute",
+      "entire_report_equal_R6_wrapper": true,
+      "existing_output_rejected": true,
+      "iterations": 37
+    },
+    {
+      "analysis": "fixed",
+      "path_mode": "literal_home",
+      "entire_report_equal_R6_wrapper": true,
+      "existing_output_rejected": true,
+      "iterations": 37
+    },
+    {
+      "analysis": "selected",
+      "path_mode": "absolute",
+      "entire_report_equal_R6_wrapper": true,
+      "existing_output_rejected": true,
+      "iterations": 37
+    },
+    {
+      "analysis": "selected",
+      "path_mode": "literal_home",
+      "entire_report_equal_R6_wrapper": true,
+      "existing_output_rejected": true,
+      "iterations": 37
+    }
+  ]
+}

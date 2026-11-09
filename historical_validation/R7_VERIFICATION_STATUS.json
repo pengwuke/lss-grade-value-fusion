@@ -1,0 +1,23 @@
+{
+  "status": "PASS_ARTIFICIAL_PATH_IO_AND_REGRESSION",
+  "runtime_regression_tests": 27,
+  "statistics_regression_tests": 10,
+  "new_runtime_path_tests": 4,
+  "new_statistics_path_tests": 3,
+  "single_roi_cli_cases": 20,
+  "statistics_cli_cases": 6,
+  "single_roi_reports_equal_R6": true,
+  "statistics_reports_equal_R6": true,
+  "core_runtime_programs_unchanged": true,
+  "statistics_kernels_and_plans_unchanged": true,
+  "historical_sources_unchanged": 46,
+  "model_weights_changed": false,
+  "fusion_config_changed": false,
+  "strict_load_validation_origin": "R5 50 roles",
+  "full_synthetic_forward_validation_origin": "R4 50 roles",
+  "new_patient_inference": false,
+  "new_patient_bootstrap": false,
+  "new_training": false,
+  "new_weight_selection": false,
+  "public_release": false
+}

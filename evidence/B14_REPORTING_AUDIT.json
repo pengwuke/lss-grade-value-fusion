@@ -1,0 +1,327 @@
+{
+  "status": "PASS",
+  "manuscript": "B14",
+  "matched_and_direct_intervals": 192,
+  "historical_intervals": 9,
+  "robustness_intervals": 20,
+  "total_displayed_intervals_checked": 221,
+  "decimal_value_checks": 626,
+  "maximum_absolute_display_rounding_difference": 0.0048933989339392525,
+  "table_source_associations": [
+    {
+      "stage": "single",
+      "contrast_id": "A3_GRADE_FIXED_MINUS_A1_SCALED",
+      "public_label": "等级值辅助（$\\alpha=0.125$）−尺度匹配CORAL",
+      "file": "ablation_all_intervals.tex",
+      "intervals_checked": 6
+    },
+    {
+      "stage": "single",
+      "contrast_id": "A3_GRADE_FIXED_MINUS_A0_NATURAL",
+      "public_label": "等级值辅助（$\\alpha=0.125$）−自然CORAL",
+      "file": "ablation_all_intervals.tex",
+      "intervals_checked": 6
+    },
+    {
+      "stage": "single",
+      "contrast_id": "A3_GRADE_FIXED_MINUS_A2_BINARY_P",
+      "public_label": "等级值辅助（$\\alpha=0.125$）−概率接口二元辅助",
+      "file": "ablation_all_intervals.tex",
+      "intervals_checked": 6
+    },
+    {
+      "stage": "single",
+      "contrast_id": "A1_SCALED_MINUS_A0_NATURAL",
+      "public_label": "尺度匹配CORAL−自然CORAL",
+      "file": "ablation_all_intervals.tex",
+      "intervals_checked": 6
+    },
+    {
+      "stage": "fixed",
+      "contrast_id": "GRADE_F040_MINUS_A1_SCALED_F040",
+      "public_label": "等级值辅助（$\\alpha=0.125$）＋DeiT−尺度匹配CORAL＋DeiT",
+      "file": "fusion_all_intervals.tex",
+      "intervals_checked": 6
+    },
+    {
+      "stage": "fixed",
+      "contrast_id": "GRADE_F040_MINUS_A0_NATURAL_F040",
+      "public_label": "等级值辅助（$\\alpha=0.125$）＋DeiT−自然CORAL＋DeiT",
+      "file": "fusion_all_intervals.tex",
+      "intervals_checked": 6
+    },
+    {
+      "stage": "fixed",
+      "contrast_id": "GRADE_F040_MINUS_A2_BINARY_P_F040",
+      "public_label": "等级值辅助（$\\alpha=0.125$）＋DeiT−概率接口二元辅助＋DeiT",
+      "file": "fusion_all_intervals.tex",
+      "intervals_checked": 6
+    },
+    {
+      "stage": "fixed",
+      "contrast_id": "GRADE_F040_MINUS_PHADKE_F040",
+      "public_label": "等级值辅助（$\\alpha=0.125$）＋DeiT−Phadke影像分支＋DeiT",
+      "file": "fusion_all_intervals.tex",
+      "intervals_checked": 6
+    },
+    {
+      "stage": "fixed",
+      "contrast_id": "SCALED_F040_MINUS_NATURAL_F040",
+      "public_label": "尺度匹配CORAL＋DeiT−自然CORAL＋DeiT",
+      "file": "fusion_all_intervals.tex",
+      "intervals_checked": 6
+    },
+    {
+      "stage": "fixed",
+      "contrast_id": "A0_NATURAL_F040_MINUS_SINGLE",
+      "public_label": "自然CORAL＋DeiT−自然CORAL",
+      "file": "fusion_all_intervals.tex",
+      "intervals_checked": 6
+    },
+    {
+      "stage": "fixed",
+      "contrast_id": "A1_SCALED_F040_MINUS_SINGLE",
+      "public_label": "尺度匹配CORAL＋DeiT−尺度匹配CORAL",
+      "file": "fusion_all_intervals.tex",
+      "intervals_checked": 6
+    },
+    {
+      "stage": "fixed",
+      "contrast_id": "A2_BINARY_P_F040_MINUS_SINGLE",
+      "public_label": "概率接口二元辅助＋DeiT−概率接口二元辅助",
+      "file": "fusion_all_intervals.tex",
+      "intervals_checked": 6
+    },
+    {
+      "stage": "fixed",
+      "contrast_id": "A3_GRADE_FIXED_F040_MINUS_SINGLE",
+      "public_label": "等级值辅助（$\\alpha=0.125$）＋DeiT−等级值辅助（$\\alpha=0.125$）",
+      "file": "fusion_all_intervals.tex",
+      "intervals_checked": 6
+    },
+    {
+      "stage": "fixed",
+      "contrast_id": "PHADKE_P4C_F040_MINUS_SINGLE",
+      "public_label": "Phadke影像分支＋DeiT−Phadke影像分支",
+      "file": "fusion_all_intervals.tex",
+      "intervals_checked": 6
+    },
+    {
+      "stage": "fixed",
+      "contrast_id": "GRADE_F040_MINUS_DEIT",
+      "public_label": "等级值辅助（$\\alpha=0.125$）＋DeiT−冻结DeiT",
+      "file": "fusion_all_intervals.tex",
+      "intervals_checked": 6
+    },
+    {
+      "stage": "fixed",
+      "contrast_id": "PHADKE_F040_MINUS_DEIT",
+      "public_label": "Phadke影像分支＋DeiT−冻结DeiT",
+      "file": "fusion_all_intervals.tex",
+      "intervals_checked": 6
+    },
+    {
+      "stage": "fixed",
+      "contrast_id": "AUX_EFFECT_CHANGE_WITH_FUSION_GRADE_MINUS_A1_SCALED",
+      "public_label": "等级值相对尺度匹配CORAL的效应：融合后−单分支",
+      "file": "fusion_all_intervals.tex",
+      "intervals_checked": 6
+    },
+    {
+      "stage": "fixed",
+      "contrast_id": "AUX_EFFECT_CHANGE_WITH_FUSION_GRADE_MINUS_A0_NATURAL",
+      "public_label": "等级值相对自然CORAL的效应：融合后−单分支",
+      "file": "fusion_all_intervals.tex",
+      "intervals_checked": 6
+    },
+    {
+      "stage": "fixed",
+      "contrast_id": "AUX_EFFECT_CHANGE_WITH_FUSION_GRADE_MINUS_A2_BINARY_P",
+      "public_label": "等级值相对概率接口二元辅助的效应：融合后−单分支",
+      "file": "fusion_all_intervals.tex",
+      "intervals_checked": 6
+    },
+    {
+      "stage": "selected",
+      "contrast_id": "R11_MINUS_PHADKE_MATCHED_SELECTED",
+      "public_label": "内层选$\\alpha$等级值−Phadke（均选权）",
+      "file": "selected_all_intervals.tex",
+      "intervals_checked": 6
+    },
+    {
+      "stage": "selected",
+      "contrast_id": "GRADE_FIXED_ALPHA_MINUS_PHADKE_MATCHED_SELECTED",
+      "public_label": "固定$\\alpha$等级值−Phadke（均选权）",
+      "file": "selected_all_intervals.tex",
+      "intervals_checked": 6
+    },
+    {
+      "stage": "selected",
+      "contrast_id": "GRADE_SELECTED_MINUS_A0_NATURAL_SELECTED",
+      "public_label": "固定$\\alpha$等级值−自然CORAL（均选权）",
+      "file": "selected_all_intervals.tex",
+      "intervals_checked": 6
+    },
+    {
+      "stage": "selected",
+      "contrast_id": "GRADE_SELECTED_MINUS_A1_SCALED_SELECTED",
+      "public_label": "固定$\\alpha$等级值−尺度匹配CORAL（均选权）",
+      "file": "selected_all_intervals.tex",
+      "intervals_checked": 6
+    },
+    {
+      "stage": "selected",
+      "contrast_id": "GRADE_SELECTED_MINUS_A2_BINARY_P_SELECTED",
+      "public_label": "固定$\\alpha$等级值−概率接口二元（均选权）",
+      "file": "selected_all_intervals.tex",
+      "intervals_checked": 6
+    },
+    {
+      "stage": "selected",
+      "contrast_id": "A0_NATURAL_SELECTED_MINUS_FIXED",
+      "public_label": "自然CORAL：选权−固定",
+      "file": "selected_all_intervals.tex",
+      "intervals_checked": 6
+    },
+    {
+      "stage": "selected",
+      "contrast_id": "A1_SCALED_SELECTED_MINUS_FIXED",
+      "public_label": "尺度匹配CORAL：选权−固定",
+      "file": "selected_all_intervals.tex",
+      "intervals_checked": 6
+    },
+    {
+      "stage": "selected",
+      "contrast_id": "A2_BINARY_P_SELECTED_MINUS_FIXED",
+      "public_label": "概率接口二元辅助：选权−固定",
+      "file": "selected_all_intervals.tex",
+      "intervals_checked": 6
+    },
+    {
+      "stage": "selected",
+      "contrast_id": "A3_GRADE_FIXED_SELECTED_MINUS_FIXED",
+      "public_label": "等级值辅助（$\\alpha=0.125$）：选权−固定",
+      "file": "selected_all_intervals.tex",
+      "intervals_checked": 6
+    },
+    {
+      "stage": "selected",
+      "contrast_id": "PHADKE_P4C_SELECTED_MINUS_FIXED",
+      "public_label": "Phadke影像分支：选权−固定",
+      "file": "selected_all_intervals.tex",
+      "intervals_checked": 6
+    },
+    {
+      "stage": "selected",
+      "contrast_id": "R09_SELECTED_ALPHA_SELECTED_MINUS_FIXED",
+      "public_label": "等级值辅助（内层选$\\alpha$）：选权−固定",
+      "file": "selected_all_intervals.tex",
+      "intervals_checked": 6
+    },
+    {
+      "stage": "selected",
+      "contrast_id": "SCALED_SELECTED_MINUS_NATURAL_SELECTED",
+      "public_label": "尺度匹配−自然CORAL（均选权）",
+      "file": "selected_all_intervals.tex",
+      "intervals_checked": 6
+    },
+    {
+      "stage": "r11_natural",
+      "contrast_id": "R11_MINUS_NATURAL_SELECTED",
+      "file": "direct_natural_ci.tex",
+      "intervals_checked": 6
+    }
+  ],
+  "direction_claim_checks": [
+    {
+      "claim": "Single fixed-alpha vs A1_SCALED: both F1 favorable, Acc/QWK/MAE cross zero",
+      "status": "SUPPORTED_AS_CONDITIONALLY_REPORTED"
+    },
+    {
+      "claim": "Single fixed-alpha vs A0_NATURAL: both F1 favorable, Acc/QWK/MAE cross zero",
+      "status": "SUPPORTED_AS_CONDITIONALLY_REPORTED"
+    },
+    {
+      "claim": "Single fixed-alpha vs A2_BINARY_P: both F1 favorable, Acc/QWK/MAE cross zero",
+      "status": "SUPPORTED_AS_CONDITIONALLY_REPORTED"
+    },
+    {
+      "claim": "Fixed-alpha fixed fusion vs binary: all six favorable",
+      "status": "SUPPORTED_AS_CONDITIONALLY_REPORTED"
+    },
+    {
+      "claim": "Fixed fusion vs A1_SCALED: BA/F1 favorable, Acc/QWK/MAE cross zero",
+      "status": "SUPPORTED_AS_CONDITIONALLY_REPORTED"
+    },
+    {
+      "claim": "Fixed fusion vs A0_NATURAL: BA/F1 favorable, Acc/QWK/MAE cross zero",
+      "status": "SUPPORTED_AS_CONDITIONALLY_REPORTED"
+    },
+    {
+      "claim": "All 18 fixed-fusion auxiliary-effect change intervals cross zero",
+      "status": "SUPPORTED_AS_CONDITIONALLY_REPORTED"
+    },
+    {
+      "claim": "Matched public selected fusion: five favorable, BA crosses zero",
+      "status": "SUPPORTED_AS_CONDITIONALLY_REPORTED"
+    },
+    {
+      "claim": "Fixed-alpha selected vs natural: all six cross zero",
+      "status": "SUPPORTED_AS_CONDITIONALLY_REPORTED"
+    },
+    {
+      "claim": "Fixed-alpha selected vs binary: all six cross zero",
+      "status": "SUPPORTED_AS_CONDITIONALLY_REPORTED"
+    },
+    {
+      "claim": "Fixed-alpha selected vs scaled: BA/F1 favorable, others cross zero",
+      "status": "SUPPORTED_AS_CONDITIONALLY_REPORTED"
+    },
+    {
+      "claim": "All six selected-minus-fixed QWK intervals cross zero",
+      "status": "SUPPORTED_AS_CONDITIONALLY_REPORTED"
+    },
+    {
+      "claim": "R11-R10 Acc/MAE favorable with unfavorable BA, QWK crosses zero",
+      "status": "SUPPORTED_AS_CONDITIONALLY_REPORTED"
+    },
+    {
+      "claim": "Fixed-alpha selected-minus-fixed MAE upper bound touches zero",
+      "status": "SUPPORTED_AS_CONDITIONALLY_REPORTED"
+    },
+    {
+      "claim": "Full R11-natural direct: only WF1 favorable",
+      "status": "SUPPORTED_AS_CONDITIONALLY_REPORTED"
+    },
+    {
+      "claim": "Robustness family: only mild recall favorable, all core family intervals cross zero",
+      "status": "SUPPORTED_AS_CONDITIONALLY_REPORTED"
+    }
+  ],
+  "branch_error_arithmetic_checks": [
+    {
+      "cnn": "R09_SELECTED_ALPHA",
+      "fusion": "R09_SELECTED_ALPHA_VSEL",
+      "repairs_and_losses": {
+        "repaired": 93,
+        "lost": 82,
+        "net_correct": 11,
+        "net_absolute_grade_error": -14
+      }
+    },
+    {
+      "cnn": "A0_NATURAL",
+      "fusion": "A0_NATURAL_VSEL",
+      "repairs_and_losses": {
+        "repaired": 150,
+        "lost": 130,
+        "net_correct": 20,
+        "net_absolute_grade_error": -34
+      }
+    }
+  ],
+  "source_scope": "Aggregate frozen reports and table transcription; not new model execution, inference or resampling",
+  "new_patient_statistics": false,
+  "new_bootstrap": false,
+  "no_patient_rows_or_identifiers": true
+}

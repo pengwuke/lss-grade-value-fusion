@@ -1,0 +1,574 @@
+{
+  "fixed": {
+    "source_sha256": "5c3241e8e2b3576cf5a3273de0a7715c8912dada1e3ecbdee81add54ea47d37b",
+    "systems": [
+      "A0_NATURAL",
+      "A1_SCALED",
+      "A2_BINARY_P",
+      "A3_GRADE_FIXED",
+      "PHADKE_P4C",
+      "ORIGINAL_DEIT",
+      "A0_NATURAL_F040",
+      "A1_SCALED_F040",
+      "A2_BINARY_P_F040",
+      "A3_GRADE_FIXED_F040",
+      "PHADKE_P4C_F040"
+    ],
+    "contrasts": [
+      {
+        "name": "GRADE_F040_MINUS_A1_SCALED_F040",
+        "terms": [
+          [
+            9,
+            1
+          ],
+          [
+            7,
+            -1
+          ]
+        ],
+        "role": "primary_auxiliary_effect_in_fixed_fusion"
+      },
+      {
+        "name": "GRADE_F040_MINUS_A0_NATURAL_F040",
+        "terms": [
+          [
+            9,
+            1
+          ],
+          [
+            6,
+            -1
+          ]
+        ],
+        "role": "primary_auxiliary_effect_in_fixed_fusion"
+      },
+      {
+        "name": "GRADE_F040_MINUS_A2_BINARY_P_F040",
+        "terms": [
+          [
+            9,
+            1
+          ],
+          [
+            8,
+            -1
+          ]
+        ],
+        "role": "primary_auxiliary_effect_in_fixed_fusion"
+      },
+      {
+        "name": "GRADE_F040_MINUS_PHADKE_F040",
+        "terms": [
+          [
+            9,
+            1
+          ],
+          [
+            10,
+            -1
+          ]
+        ],
+        "role": "primary_two_branch_system_comparison"
+      },
+      {
+        "name": "SCALED_F040_MINUS_NATURAL_F040",
+        "terms": [
+          [
+            7,
+            1
+          ],
+          [
+            6,
+            -1
+          ]
+        ],
+        "role": "secondary_loss_scale"
+      },
+      {
+        "name": "A0_NATURAL_F040_MINUS_SINGLE",
+        "terms": [
+          [
+            6,
+            1
+          ],
+          [
+            0,
+            -1
+          ]
+        ],
+        "role": "secondary_added_fixed_deit"
+      },
+      {
+        "name": "A1_SCALED_F040_MINUS_SINGLE",
+        "terms": [
+          [
+            7,
+            1
+          ],
+          [
+            1,
+            -1
+          ]
+        ],
+        "role": "secondary_added_fixed_deit"
+      },
+      {
+        "name": "A2_BINARY_P_F040_MINUS_SINGLE",
+        "terms": [
+          [
+            8,
+            1
+          ],
+          [
+            2,
+            -1
+          ]
+        ],
+        "role": "secondary_added_fixed_deit"
+      },
+      {
+        "name": "A3_GRADE_FIXED_F040_MINUS_SINGLE",
+        "terms": [
+          [
+            9,
+            1
+          ],
+          [
+            3,
+            -1
+          ]
+        ],
+        "role": "secondary_added_fixed_deit"
+      },
+      {
+        "name": "PHADKE_P4C_F040_MINUS_SINGLE",
+        "terms": [
+          [
+            10,
+            1
+          ],
+          [
+            4,
+            -1
+          ]
+        ],
+        "role": "secondary_added_fixed_deit"
+      },
+      {
+        "name": "GRADE_F040_MINUS_DEIT",
+        "terms": [
+          [
+            9,
+            1
+          ],
+          [
+            5,
+            -1
+          ]
+        ],
+        "role": "secondary_versus_transformer_alone"
+      },
+      {
+        "name": "PHADKE_F040_MINUS_DEIT",
+        "terms": [
+          [
+            10,
+            1
+          ],
+          [
+            5,
+            -1
+          ]
+        ],
+        "role": "secondary_versus_transformer_alone"
+      },
+      {
+        "name": "AUX_EFFECT_CHANGE_WITH_FUSION_GRADE_MINUS_A1_SCALED",
+        "terms": [
+          [
+            9,
+            1
+          ],
+          [
+            7,
+            -1
+          ],
+          [
+            3,
+            -1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "role": "exploratory_difference_in_differences_not_additive_attribution"
+      },
+      {
+        "name": "AUX_EFFECT_CHANGE_WITH_FUSION_GRADE_MINUS_A0_NATURAL",
+        "terms": [
+          [
+            9,
+            1
+          ],
+          [
+            6,
+            -1
+          ],
+          [
+            3,
+            -1
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "role": "exploratory_difference_in_differences_not_additive_attribution"
+      },
+      {
+        "name": "AUX_EFFECT_CHANGE_WITH_FUSION_GRADE_MINUS_A2_BINARY_P",
+        "terms": [
+          [
+            9,
+            1
+          ],
+          [
+            8,
+            -1
+          ],
+          [
+            3,
+            -1
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        "role": "exploratory_difference_in_differences_not_additive_attribution"
+      }
+    ],
+    "repeats": 20000,
+    "seed": 42
+  },
+  "selected": {
+    "source_sha256": "aaa8897e29e0b9c5d517d8372341761030a40de059eff7c572388dfb3ce5644e",
+    "systems": [
+      "A0_NATURAL",
+      "A1_SCALED",
+      "A2_BINARY_P",
+      "A3_GRADE_FIXED",
+      "PHADKE_P4C",
+      "R09_SELECTED_ALPHA",
+      "ORIGINAL_DEIT",
+      "A0_NATURAL_F040",
+      "A1_SCALED_F040",
+      "A2_BINARY_P_F040",
+      "A3_GRADE_FIXED_F040",
+      "PHADKE_P4C_F040",
+      "R09_SELECTED_ALPHA_F040",
+      "A0_NATURAL_VSEL",
+      "A1_SCALED_VSEL",
+      "A2_BINARY_P_VSEL",
+      "A3_GRADE_FIXED_VSEL",
+      "PHADKE_P4C_VSEL",
+      "R09_SELECTED_ALPHA_VSEL"
+    ],
+    "contrasts": [
+      {
+        "name": "R11_MINUS_PHADKE_MATCHED_SELECTED",
+        "role": "primary_selected_system_comparison",
+        "terms": [
+          [
+            18,
+            1
+          ],
+          [
+            17,
+            -1
+          ]
+        ]
+      },
+      {
+        "name": "GRADE_FIXED_ALPHA_MINUS_PHADKE_MATCHED_SELECTED",
+        "role": "primary_selected_system_comparison",
+        "terms": [
+          [
+            16,
+            1
+          ],
+          [
+            17,
+            -1
+          ]
+        ]
+      },
+      {
+        "name": "GRADE_SELECTED_MINUS_A0_NATURAL_SELECTED",
+        "role": "primary_matched_auxiliary_scheme",
+        "terms": [
+          [
+            16,
+            1
+          ],
+          [
+            13,
+            -1
+          ]
+        ]
+      },
+      {
+        "name": "GRADE_SELECTED_MINUS_A1_SCALED_SELECTED",
+        "role": "primary_matched_auxiliary_scheme",
+        "terms": [
+          [
+            16,
+            1
+          ],
+          [
+            14,
+            -1
+          ]
+        ]
+      },
+      {
+        "name": "GRADE_SELECTED_MINUS_A2_BINARY_P_SELECTED",
+        "role": "primary_matched_auxiliary_scheme",
+        "terms": [
+          [
+            16,
+            1
+          ],
+          [
+            15,
+            -1
+          ]
+        ]
+      },
+      {
+        "name": "A0_NATURAL_SELECTED_MINUS_FIXED",
+        "role": "secondary_validation_selection_increment",
+        "terms": [
+          [
+            13,
+            1
+          ],
+          [
+            7,
+            -1
+          ]
+        ]
+      },
+      {
+        "name": "A1_SCALED_SELECTED_MINUS_FIXED",
+        "role": "secondary_validation_selection_increment",
+        "terms": [
+          [
+            14,
+            1
+          ],
+          [
+            8,
+            -1
+          ]
+        ]
+      },
+      {
+        "name": "A2_BINARY_P_SELECTED_MINUS_FIXED",
+        "role": "secondary_validation_selection_increment",
+        "terms": [
+          [
+            15,
+            1
+          ],
+          [
+            9,
+            -1
+          ]
+        ]
+      },
+      {
+        "name": "A3_GRADE_FIXED_SELECTED_MINUS_FIXED",
+        "role": "secondary_validation_selection_increment",
+        "terms": [
+          [
+            16,
+            1
+          ],
+          [
+            10,
+            -1
+          ]
+        ]
+      },
+      {
+        "name": "PHADKE_P4C_SELECTED_MINUS_FIXED",
+        "role": "secondary_validation_selection_increment",
+        "terms": [
+          [
+            17,
+            1
+          ],
+          [
+            11,
+            -1
+          ]
+        ]
+      },
+      {
+        "name": "R09_SELECTED_ALPHA_SELECTED_MINUS_FIXED",
+        "role": "secondary_validation_selection_increment",
+        "terms": [
+          [
+            18,
+            1
+          ],
+          [
+            12,
+            -1
+          ]
+        ]
+      },
+      {
+        "name": "SCALED_SELECTED_MINUS_NATURAL_SELECTED",
+        "role": "secondary_loss_scale",
+        "terms": [
+          [
+            14,
+            1
+          ],
+          [
+            13,
+            -1
+          ]
+        ]
+      }
+    ],
+    "repeats": 20000,
+    "seed": 42
+  },
+  "single": {
+    "systems": [
+      "A0_NATURAL",
+      "A1_SCALED",
+      "A2_BINARY_P",
+      "A3_GRADE_FIXED"
+    ],
+    "contrasts": [
+      {
+        "name": "GRADE_MINUS_SCALED",
+        "terms": [
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            -1
+          ]
+        ],
+        "role": "primary_matched_auxiliary_scheme"
+      },
+      {
+        "name": "GRADE_MINUS_NATURAL",
+        "terms": [
+          [
+            3,
+            1
+          ],
+          [
+            0,
+            -1
+          ]
+        ],
+        "role": "primary_matched_auxiliary_scheme"
+      },
+      {
+        "name": "GRADE_MINUS_BINARY",
+        "terms": [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            -1
+          ]
+        ],
+        "role": "primary_matched_auxiliary_scheme"
+      },
+      {
+        "name": "SCALED_MINUS_NATURAL",
+        "terms": [
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            -1
+          ]
+        ],
+        "role": "secondary_loss_scale"
+      }
+    ],
+    "repeats": 20000,
+    "seed": 42,
+    "kernel_source_sha256": "bb0ce9cc7d4590edf29e0076ce96a4eac77e2349f10ddf40c29e2c56b356d4f9"
+  },
+  "r11_natural": {
+    "systems": [
+      "R09_SELECTED_ALPHA_VSEL",
+      "A0_NATURAL_VSEL"
+    ],
+    "contrasts": [
+      {
+        "name": "R11_MINUS_NATURAL_MATCHED_SELECTED",
+        "terms": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            -1
+          ]
+        ],
+        "role": "post_hoc_direct_internal_reference"
+      }
+    ],
+    "repeats": 20000,
+    "seed": 42,
+    "kernel_source_sha256": "bb0ce9cc7d4590edf29e0076ce96a4eac77e2349f10ddf40c29e2c56b356d4f9"
+  },
+  "r11_robustness": {
+    "systems": [
+      "R09_SELECTED_ALPHA_VSEL",
+      "A0_NATURAL_VSEL"
+    ],
+    "contrasts": [
+      {
+        "name": "R11_MINUS_NATURAL_MATCHED_SELECTED",
+        "terms": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            -1
+          ]
+        ],
+        "role": "post_hoc_direct_internal_reference"
+      }
+    ],
+    "repeats": 100000,
+    "seed": 42,
+    "kernel_source_sha256": "bb0ce9cc7d4590edf29e0076ce96a4eac77e2349f10ddf40c29e2c56b356d4f9",
+    "outcome_family_size": 10,
+    "individual_confidence": 0.995,
+    "analysis_role": "post_hoc_frozen_prediction_robustness"
+  }
+}

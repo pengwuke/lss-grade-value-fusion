@@ -1,0 +1,677 @@
+{
+  "status": "PASS_ARTIFICIAL_COMMON5_PRECISION",
+  "common5_frozen_rule_cases": 70,
+  "float64_legacy_cases_byte_equal_R8": 70,
+  "source94_and_sr1_float32_float64_cases_unchanged": 4,
+  "single_roi_cli_cases": 10,
+  "core_model_roles_exercised": 10,
+  "near_tie_cases": [
+    {
+      "weight": 0.4,
+      "artificial_rows": 6000,
+      "R8_grade_disagreements_with_frozen_rule": 2530,
+      "R9_disagreements": 0
+    },
+    {
+      "weight": 0.7,
+      "artificial_rows": 5164,
+      "R8_grade_disagreements_with_frozen_rule": 3662,
+      "R9_disagreements": 0
+    },
+    {
+      "weight": 0.6,
+      "artificial_rows": 6000,
+      "R8_grade_disagreements_with_frozen_rule": 3619,
+      "R9_disagreements": 0
+    },
+    {
+      "weight": 0.9,
+      "artificial_rows": 1337,
+      "R8_grade_disagreements_with_frozen_rule": 692,
+      "R9_disagreements": 0
+    }
+  ],
+  "near_tie_frequency_is_not_patient_frequency": true,
+  "scope": "Artificial arrays and PNGs only; no study predictions or labels read",
+  "patient_data_used": false,
+  "new_training": false,
+  "new_weight_selection": false,
+  "paper_performance_recomputed": false,
+  "frozen_numeric_source_sha256": "b6eb5d7e4d017333bc7825b75439242f71ac3382892c2271fd03821fafaab678",
+  "frozen_selected_source_sha256": "5dc21ecd59e5430adbc6d9840e95269b2175a3e80e3df3e2a6ede1c6d390c3a0",
+  "frozen_selected_expression": "selected_prob = weights[:, None] * cand_prob + (1.0 - weights[:, None]) * deit_prob",
+  "numeric_cases": [
+    {
+      "kind": "core",
+      "fold": 0,
+      "strategy": "R10",
+      "float32_matches_frozen_float64": true,
+      "existing_float64_bytes_unchanged": true
+    },
+    {
+      "kind": "core",
+      "fold": 0,
+      "strategy": "R11",
+      "float32_matches_frozen_float64": true,
+      "existing_float64_bytes_unchanged": true
+    },
+    {
+      "kind": "matched",
+      "fold": 0,
+      "arm": "A0_NATURAL",
+      "strategy": "fixed",
+      "float32_matches_frozen_float64": true,
+      "existing_float64_bytes_unchanged": true
+    },
+    {
+      "kind": "matched",
+      "fold": 0,
+      "arm": "A0_NATURAL",
+      "strategy": "selected",
+      "float32_matches_frozen_float64": true,
+      "existing_float64_bytes_unchanged": true
+    },
+    {
+      "kind": "matched",
+      "fold": 0,
+      "arm": "A1_SCALED",
+      "strategy": "fixed",
+      "float32_matches_frozen_float64": true,
+      "existing_float64_bytes_unchanged": true
+    },
+    {
+      "kind": "matched",
+      "fold": 0,
+      "arm": "A1_SCALED",
+      "strategy": "selected",
+      "float32_matches_frozen_float64": true,
+      "existing_float64_bytes_unchanged": true
+    },
+    {
+      "kind": "matched",
+      "fold": 0,
+      "arm": "A2_BINARY_P",
+      "strategy": "fixed",
+      "float32_matches_frozen_float64": true,
+      "existing_float64_bytes_unchanged": true
+    },
+    {
+      "kind": "matched",
+      "fold": 0,
+      "arm": "A2_BINARY_P",
+      "strategy": "selected",
+      "float32_matches_frozen_float64": true,
+      "existing_float64_bytes_unchanged": true
+    },
+    {
+      "kind": "matched",
+      "fold": 0,
+      "arm": "A3_GRADE_FIXED",
+      "strategy": "fixed",
+      "float32_matches_frozen_float64": true,
+      "existing_float64_bytes_unchanged": true
+    },
+    {
+      "kind": "matched",
+      "fold": 0,
+      "arm": "A3_GRADE_FIXED",
+      "strategy": "selected",
+      "float32_matches_frozen_float64": true,
+      "existing_float64_bytes_unchanged": true
+    },
+    {
+      "kind": "matched",
+      "fold": 0,
+      "arm": "PHADKE_P4C",
+      "strategy": "fixed",
+      "float32_matches_frozen_float64": true,
+      "existing_float64_bytes_unchanged": true
+    },
+    {
+      "kind": "matched",
+      "fold": 0,
+      "arm": "PHADKE_P4C",
+      "strategy": "selected",
+      "float32_matches_frozen_float64": true,
+      "existing_float64_bytes_unchanged": true
+    },
+    {
+      "kind": "matched",
+      "fold": 0,
+      "arm": "R09_SELECTED_ALPHA",
+      "strategy": "fixed",
+      "float32_matches_frozen_float64": true,
+      "existing_float64_bytes_unchanged": true
+    },
+    {
+      "kind": "matched",
+      "fold": 0,
+      "arm": "R09_SELECTED_ALPHA",
+      "strategy": "selected",
+      "float32_matches_frozen_float64": true,
+      "existing_float64_bytes_unchanged": true
+    },
+    {
+      "kind": "core",
+      "fold": 1,
+      "strategy": "R10",
+      "float32_matches_frozen_float64": true,
+      "existing_float64_bytes_unchanged": true
+    },
+    {
+      "kind": "core",
+      "fold": 1,
+      "strategy": "R11",
+      "float32_matches_frozen_float64": true,
+      "existing_float64_bytes_unchanged": true
+    },
+    {
+      "kind": "matched",
+      "fold": 1,
+      "arm": "A0_NATURAL",
+      "strategy": "fixed",
+      "float32_matches_frozen_float64": true,
+      "existing_float64_bytes_unchanged": true
+    },
+    {
+      "kind": "matched",
+      "fold": 1,
+      "arm": "A0_NATURAL",
+      "strategy": "selected",
+      "float32_matches_frozen_float64": true,
+      "existing_float64_bytes_unchanged": true
+    },
+    {
+      "kind": "matched",
+      "fold": 1,
+      "arm": "A1_SCALED",
+      "strategy": "fixed",
+      "float32_matches_frozen_float64": true,
+      "existing_float64_bytes_unchanged": true
+    },
+    {
+      "kind": "matched",
+      "fold": 1,
+      "arm": "A1_SCALED",
+      "strategy": "selected",
+      "float32_matches_frozen_float64": true,
+      "existing_float64_bytes_unchanged": true
+    },
+    {
+      "kind": "matched",
+      "fold": 1,
+      "arm": "A2_BINARY_P",
+      "strategy": "fixed",
+      "float32_matches_frozen_float64": true,
+      "existing_float64_bytes_unchanged": true
+    },
+    {
+      "kind": "matched",
+      "fold": 1,
+      "arm": "A2_BINARY_P",
+      "strategy": "selected",
+      "float32_matches_frozen_float64": true,
+      "existing_float64_bytes_unchanged": true
+    },
+    {
+      "kind": "matched",
+      "fold": 1,
+      "arm": "A3_GRADE_FIXED",
+      "strategy": "fixed",
+      "float32_matches_frozen_float64": true,
+      "existing_float64_bytes_unchanged": true
+    },
+    {
+      "kind": "matched",
+      "fold": 1,
+      "arm": "A3_GRADE_FIXED",
+      "strategy": "selected",
+      "float32_matches_frozen_float64": true,
+      "existing_float64_bytes_unchanged": true
+    },
+    {
+      "kind": "matched",
+      "fold": 1,
+      "arm": "PHADKE_P4C",
+      "strategy": "fixed",
+      "float32_matches_frozen_float64": true,
+      "existing_float64_bytes_unchanged": true
+    },
+    {
+      "kind": "matched",
+      "fold": 1,
+      "arm": "PHADKE_P4C",
+      "strategy": "selected",
+      "float32_matches_frozen_float64": true,
+      "existing_float64_bytes_unchanged": true
+    },
+    {
+      "kind": "matched",
+      "fold": 1,
+      "arm": "R09_SELECTED_ALPHA",
+      "strategy": "fixed",
+      "float32_matches_frozen_float64": true,
+      "existing_float64_bytes_unchanged": true
+    },
+    {
+      "kind": "matched",
+      "fold": 1,
+      "arm": "R09_SELECTED_ALPHA",
+      "strategy": "selected",
+      "float32_matches_frozen_float64": true,
+      "existing_float64_bytes_unchanged": true
+    },
+    {
+      "kind": "core",
+      "fold": 2,
+      "strategy": "R10",
+      "float32_matches_frozen_float64": true,
+      "existing_float64_bytes_unchanged": true
+    },
+    {
+      "kind": "core",
+      "fold": 2,
+      "strategy": "R11",
+      "float32_matches_frozen_float64": true,
+      "existing_float64_bytes_unchanged": true
+    },
+    {
+      "kind": "matched",
+      "fold": 2,
+      "arm": "A0_NATURAL",
+      "strategy": "fixed",
+      "float32_matches_frozen_float64": true,
+      "existing_float64_bytes_unchanged": true
+    },
+    {
+      "kind": "matched",
+      "fold": 2,
+      "arm": "A0_NATURAL",
+      "strategy": "selected",
+      "float32_matches_frozen_float64": true,
+      "existing_float64_bytes_unchanged": true
+    },
+    {
+      "kind": "matched",
+      "fold": 2,
+      "arm": "A1_SCALED",
+      "strategy": "fixed",
+      "float32_matches_frozen_float64": true,
+      "existing_float64_bytes_unchanged": true
+    },
+    {
+      "kind": "matched",
+      "fold": 2,
+      "arm": "A1_SCALED",
+      "strategy": "selected",
+      "float32_matches_frozen_float64": true,
+      "existing_float64_bytes_unchanged": true
+    },
+    {
+      "kind": "matched",
+      "fold": 2,
+      "arm": "A2_BINARY_P",
+      "strategy": "fixed",
+      "float32_matches_frozen_float64": true,
+      "existing_float64_bytes_unchanged": true
+    },
+    {
+      "kind": "matched",
+      "fold": 2,
+      "arm": "A2_BINARY_P",
+      "strategy": "selected",
+      "float32_matches_frozen_float64": true,
+      "existing_float64_bytes_unchanged": true
+    },
+    {
+      "kind": "matched",
+      "fold": 2,
+      "arm": "A3_GRADE_FIXED",
+      "strategy": "fixed",
+      "float32_matches_frozen_float64": true,
+      "existing_float64_bytes_unchanged": true
+    },
+    {
+      "kind": "matched",
+      "fold": 2,
+      "arm": "A3_GRADE_FIXED",
+      "strategy": "selected",
+      "float32_matches_frozen_float64": true,
+      "existing_float64_bytes_unchanged": true
+    },
+    {
+      "kind": "matched",
+      "fold": 2,
+      "arm": "PHADKE_P4C",
+      "strategy": "fixed",
+      "float32_matches_frozen_float64": true,
+      "existing_float64_bytes_unchanged": true
+    },
+    {
+      "kind": "matched",
+      "fold": 2,
+      "arm": "PHADKE_P4C",
+      "strategy": "selected",
+      "float32_matches_frozen_float64": true,
+      "existing_float64_bytes_unchanged": true
+    },
+    {
+      "kind": "matched",
+      "fold": 2,
+      "arm": "R09_SELECTED_ALPHA",
+      "strategy": "fixed",
+      "float32_matches_frozen_float64": true,
+      "existing_float64_bytes_unchanged": true
+    },
+    {
+      "kind": "matched",
+      "fold": 2,
+      "arm": "R09_SELECTED_ALPHA",
+      "strategy": "selected",
+      "float32_matches_frozen_float64": true,
+      "existing_float64_bytes_unchanged": true
+    },
+    {
+      "kind": "core",
+      "fold": 3,
+      "strategy": "R10",
+      "float32_matches_frozen_float64": true,
+      "existing_float64_bytes_unchanged": true
+    },
+    {
+      "kind": "core",
+      "fold": 3,
+      "strategy": "R11",
+      "float32_matches_frozen_float64": true,
+      "existing_float64_bytes_unchanged": true
+    },
+    {
+      "kind": "matched",
+      "fold": 3,
+      "arm": "A0_NATURAL",
+      "strategy": "fixed",
+      "float32_matches_frozen_float64": true,
+      "existing_float64_bytes_unchanged": true
+    },
+    {
+      "kind": "matched",
+      "fold": 3,
+      "arm": "A0_NATURAL",
+      "strategy": "selected",
+      "float32_matches_frozen_float64": true,
+      "existing_float64_bytes_unchanged": true
+    },
+    {
+      "kind": "matched",
+      "fold": 3,
+      "arm": "A1_SCALED",
+      "strategy": "fixed",
+      "float32_matches_frozen_float64": true,
+      "existing_float64_bytes_unchanged": true
+    },
+    {
+      "kind": "matched",
+      "fold": 3,
+      "arm": "A1_SCALED",
+      "strategy": "selected",
+      "float32_matches_frozen_float64": true,
+      "existing_float64_bytes_unchanged": true
+    },
+    {
+      "kind": "matched",
+      "fold": 3,
+      "arm": "A2_BINARY_P",
+      "strategy": "fixed",
+      "float32_matches_frozen_float64": true,
+      "existing_float64_bytes_unchanged": true
+    },
+    {
+      "kind": "matched",
+      "fold": 3,
+      "arm": "A2_BINARY_P",
+      "strategy": "selected",
+      "float32_matches_frozen_float64": true,
+      "existing_float64_bytes_unchanged": true
+    },
+    {
+      "kind": "matched",
+      "fold": 3,
+      "arm": "A3_GRADE_FIXED",
+      "strategy": "fixed",
+      "float32_matches_frozen_float64": true,
+      "existing_float64_bytes_unchanged": true
+    },
+    {
+      "kind": "matched",
+      "fold": 3,
+      "arm": "A3_GRADE_FIXED",
+      "strategy": "selected",
+      "float32_matches_frozen_float64": true,
+      "existing_float64_bytes_unchanged": true
+    },
+    {
+      "kind": "matched",
+      "fold": 3,
+      "arm": "PHADKE_P4C",
+      "strategy": "fixed",
+      "float32_matches_frozen_float64": true,
+      "existing_float64_bytes_unchanged": true
+    },
+    {
+      "kind": "matched",
+      "fold": 3,
+      "arm": "PHADKE_P4C",
+      "strategy": "selected",
+      "float32_matches_frozen_float64": true,
+      "existing_float64_bytes_unchanged": true
+    },
+    {
+      "kind": "matched",
+      "fold": 3,
+      "arm": "R09_SELECTED_ALPHA",
+      "strategy": "fixed",
+      "float32_matches_frozen_float64": true,
+      "existing_float64_bytes_unchanged": true
+    },
+    {
+      "kind": "matched",
+      "fold": 3,
+      "arm": "R09_SELECTED_ALPHA",
+      "strategy": "selected",
+      "float32_matches_frozen_float64": true,
+      "existing_float64_bytes_unchanged": true
+    },
+    {
+      "kind": "core",
+      "fold": 4,
+      "strategy": "R10",
+      "float32_matches_frozen_float64": true,
+      "existing_float64_bytes_unchanged": true
+    },
+    {
+      "kind": "core",
+      "fold": 4,
+      "strategy": "R11",
+      "float32_matches_frozen_float64": true,
+      "existing_float64_bytes_unchanged": true
+    },
+    {
+      "kind": "matched",
+      "fold": 4,
+      "arm": "A0_NATURAL",
+      "strategy": "fixed",
+      "float32_matches_frozen_float64": true,
+      "existing_float64_bytes_unchanged": true
+    },
+    {
+      "kind": "matched",
+      "fold": 4,
+      "arm": "A0_NATURAL",
+      "strategy": "selected",
+      "float32_matches_frozen_float64": true,
+      "existing_float64_bytes_unchanged": true
+    },
+    {
+      "kind": "matched",
+      "fold": 4,
+      "arm": "A1_SCALED",
+      "strategy": "fixed",
+      "float32_matches_frozen_float64": true,
+      "existing_float64_bytes_unchanged": true
+    },
+    {
+      "kind": "matched",
+      "fold": 4,
+      "arm": "A1_SCALED",
+      "strategy": "selected",
+      "float32_matches_frozen_float64": true,
+      "existing_float64_bytes_unchanged": true
+    },
+    {
+      "kind": "matched",
+      "fold": 4,
+      "arm": "A2_BINARY_P",
+      "strategy": "fixed",
+      "float32_matches_frozen_float64": true,
+      "existing_float64_bytes_unchanged": true
+    },
+    {
+      "kind": "matched",
+      "fold": 4,
+      "arm": "A2_BINARY_P",
+      "strategy": "selected",
+      "float32_matches_frozen_float64": true,
+      "existing_float64_bytes_unchanged": true
+    },
+    {
+      "kind": "matched",
+      "fold": 4,
+      "arm": "A3_GRADE_FIXED",
+      "strategy": "fixed",
+      "float32_matches_frozen_float64": true,
+      "existing_float64_bytes_unchanged": true
+    },
+    {
+      "kind": "matched",
+      "fold": 4,
+      "arm": "A3_GRADE_FIXED",
+      "strategy": "selected",
+      "float32_matches_frozen_float64": true,
+      "existing_float64_bytes_unchanged": true
+    },
+    {
+      "kind": "matched",
+      "fold": 4,
+      "arm": "PHADKE_P4C",
+      "strategy": "fixed",
+      "float32_matches_frozen_float64": true,
+      "existing_float64_bytes_unchanged": true
+    },
+    {
+      "kind": "matched",
+      "fold": 4,
+      "arm": "PHADKE_P4C",
+      "strategy": "selected",
+      "float32_matches_frozen_float64": true,
+      "existing_float64_bytes_unchanged": true
+    },
+    {
+      "kind": "matched",
+      "fold": 4,
+      "arm": "R09_SELECTED_ALPHA",
+      "strategy": "fixed",
+      "float32_matches_frozen_float64": true,
+      "existing_float64_bytes_unchanged": true
+    },
+    {
+      "kind": "matched",
+      "fold": 4,
+      "arm": "R09_SELECTED_ALPHA",
+      "strategy": "selected",
+      "float32_matches_frozen_float64": true,
+      "existing_float64_bytes_unchanged": true
+    }
+  ],
+  "cli_cases": [
+    {
+      "fold": 0,
+      "strategy": "R10",
+      "branch_probabilities_equal_R8": true,
+      "fused_matches_frozen_float64_rule": true,
+      "grade_equal_R8_on_this_artificial_case": true,
+      "maximum_fused_probability_change_vs_R8": 1.1920928910669204e-08
+    },
+    {
+      "fold": 0,
+      "strategy": "R11",
+      "branch_probabilities_equal_R8": true,
+      "fused_matches_frozen_float64_rule": true,
+      "grade_equal_R8_on_this_artificial_case": true,
+      "maximum_fused_probability_change_vs_R8": 8.940696738513054e-09
+    },
+    {
+      "fold": 1,
+      "strategy": "R10",
+      "branch_probabilities_equal_R8": true,
+      "fused_matches_frozen_float64_rule": true,
+      "grade_equal_R8_on_this_artificial_case": true,
+      "maximum_fused_probability_change_vs_R8": 2.0861625649182258e-08
+    },
+    {
+      "fold": 1,
+      "strategy": "R11",
+      "branch_probabilities_equal_R8": true,
+      "fused_matches_frozen_float64_rule": true,
+      "grade_equal_R8_on_this_artificial_case": true,
+      "maximum_fused_probability_change_vs_R8": 1.1920928966180355e-08
+    },
+    {
+      "fold": 2,
+      "strategy": "R10",
+      "branch_probabilities_equal_R8": true,
+      "fused_matches_frozen_float64_rule": true,
+      "grade_equal_R8_on_this_artificial_case": true,
+      "maximum_fused_probability_change_vs_R8": 1.788139347702611e-08
+    },
+    {
+      "fold": 2,
+      "strategy": "R11",
+      "branch_probabilities_equal_R8": true,
+      "fused_matches_frozen_float64_rule": true,
+      "grade_equal_R8_on_this_artificial_case": true,
+      "maximum_fused_probability_change_vs_R8": 2.9802322387695312e-08
+    },
+    {
+      "fold": 3,
+      "strategy": "R10",
+      "branch_probabilities_equal_R8": true,
+      "fused_matches_frozen_float64_rule": true,
+      "grade_equal_R8_on_this_artificial_case": true,
+      "maximum_fused_probability_change_vs_R8": 1.9371509563104183e-08
+    },
+    {
+      "fold": 3,
+      "strategy": "R11",
+      "branch_probabilities_equal_R8": true,
+      "fused_matches_frozen_float64_rule": true,
+      "grade_equal_R8_on_this_artificial_case": true,
+      "maximum_fused_probability_change_vs_R8": 1.4901161193847656e-08
+    },
+    {
+      "fold": 4,
+      "strategy": "R10",
+      "branch_probabilities_equal_R8": true,
+      "fused_matches_frozen_float64_rule": true,
+      "grade_equal_R8_on_this_artificial_case": true,
+      "maximum_fused_probability_change_vs_R8": 1.5646219236886694e-08
+    },
+    {
+      "fold": 4,
+      "strategy": "R11",
+      "branch_probabilities_equal_R8": true,
+      "fused_matches_frozen_float64_rule": true,
+      "grade_equal_R8_on_this_artificial_case": true,
+      "maximum_fused_probability_change_vs_R8": 1.9744038626257066e-08
+    }
+  ]
+}

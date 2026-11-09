@@ -1,0 +1,70 @@
+{
+  "date": "2026-11-09",
+  "purpose": "Fill the B10 acknowledged direct paired comparison gap; strengthen evidence by testing the claim, not by requiring favorable results",
+  "timing": "Post-hoc plan fixed before new intervals were computed, after rounded system point estimates were already known; not prospective preregistration",
+  "analysis_type": "post_hoc_internal_retrospective_frozen_prediction_comparison",
+  "systems": [
+    "R09_SELECTED_ALPHA_VSEL",
+    "A0_NATURAL_VSEL"
+  ],
+  "contrast": "full R11 minus natural CORAL with the same DeiT and fold-wise selected fusion",
+  "cohort": {
+    "patients": 468,
+    "rois": 2978,
+    "outer_folds": 5
+  },
+  "alignment_required": [
+    "stable ROI identity",
+    "patient identity",
+    "truth",
+    "outer fold",
+    "held-out prediction role",
+    "archived frozen selection settings"
+  ],
+  "outcomes": [
+    "accuracy",
+    "balanced_accuracy",
+    "macro_f1",
+    "weighted_f1",
+    "qwk",
+    "mae"
+  ],
+  "interpretation_focus": "QWK and MAE; all six outcomes reported with no favorable-outcome selection",
+  "bootstrap": {
+    "iterations": 20000,
+    "seed": 42,
+    "unit": "patient with all ROIs retained",
+    "paired": true,
+    "interval": "percentile 95%",
+    "multiplicity_adjusted": false,
+    "undefined_replicates": "count and exclude from finite percentile calculations, never replace with zero"
+  },
+  "descriptive_support": [
+    "both confusion matrices",
+    "per-grade recalls",
+    "mild to normal counts",
+    "six metrics by the five original outer folds",
+    "paired correct/incorrect transitions and absolute-grade-error changes"
+  ],
+  "verification": [
+    "frozen metrics kernel SHA",
+    "all input source SHA before/after",
+    "reproduce the six already reported system point estimates",
+    "independent sklearn check of points and first eight actual patient bootstrap draws"
+  ],
+  "inference_boundary": [
+    "conditional on fitted models and frozen choices",
+    "one seed and reused development cohort",
+    "intervals do not include retraining or model-selection uncertainty",
+    "fold counts descriptive, not five independent trials",
+    "interval crossing zero is not equivalence or proof of no effect"
+  ],
+  "no_actions": [
+    "training",
+    "hyperparameter or fusion search",
+    "new patient inference",
+    "external-validation claim",
+    "replacement of existing 12 frozen contrasts",
+    "publishing or submission"
+  ]
+}

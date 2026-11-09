@@ -1,0 +1,26 @@
+[
+  {
+    "file": "coral-pytorch_MIT.txt",
+    "url": "https://raw.githubusercontent.com/Raschka-research-group/coral-pytorch/main/LICENSE.txt",
+    "bytes": 1079,
+    "sha256": "f741229938339fefca287ef124b13302b7847f7381a4467f0d2c09e2af23d592"
+  },
+  {
+    "file": "timm_Apache-2.0.txt",
+    "url": "https://raw.githubusercontent.com/huggingface/pytorch-image-models/main/LICENSE",
+    "bytes": 11343,
+    "sha256": "71b111620fa32c17a80ccd6db2da759d31a591e497d8b5f382174f59d1b59d49"
+  },
+  {
+    "file": "Phadke_MIT.txt",
+    "url": "https://raw.githubusercontent.com/rohanpa27/LSS_foraminal_stenosis_imaging/main/LICENSE",
+    "bytes": 1072,
+    "sha256": "08d491a9de26d1b5950d3a963d0cf628517e5afc69d6883f21d3dea95592d76e"
+  },
+  {
+    "file": "torchvision_BSD-3-Clause.txt",
+    "url": "https://raw.githubusercontent.com/pytorch/vision/main/LICENSE",
+    "bytes": 1517,
+    "sha256": "6502f676851cfe25f8af75531dfb32375b7325b73c37e7b43741fa422893e71d"
+  }
+]

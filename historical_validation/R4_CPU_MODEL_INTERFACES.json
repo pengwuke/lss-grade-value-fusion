@@ -1,0 +1,773 @@
+{
+  "entries": 50,
+  "strict_architecture_load_pass": 50,
+  "synthetic_forward_pass": 50,
+  "artificial_inputs": [
+    "all-zero tensor",
+    "deterministic -1..1 gradient"
+  ],
+  "patient_inference": false,
+  "pretrained_downloads_required": false,
+  "device": "cpu",
+  "isolated_mode": true,
+  "versions": {
+    "torch": "2.13.0+cpu",
+    "torchvision": "0.28.0+cpu",
+    "timm": "1.0.28",
+    "numpy": "2.4.6",
+    "opencv-python-headless": "5.0.0.93",
+    "Pillow": "12.2.0"
+  },
+  "model_roles": [
+    {
+      "group": "common5_core",
+      "family": "grade_value_coral_selected",
+      "fold": 0,
+      "strict_load": true,
+      "output_shape": [
+        2,
+        4
+      ],
+      "maximum_row_mass_error": 0.0,
+      "synthetic_grades": [
+        2,
+        3
+      ]
+    },
+    {
+      "group": "common5_core",
+      "family": "deit_tiny",
+      "fold": 0,
+      "strict_load": true,
+      "output_shape": [
+        2,
+        4
+      ],
+      "maximum_row_mass_error": 1.1920928955078125e-07,
+      "synthetic_grades": [
+        3,
+        2
+      ]
+    },
+    {
+      "group": "common5_core",
+      "family": "grade_value_coral_selected",
+      "fold": 1,
+      "strict_load": true,
+      "output_shape": [
+        2,
+        4
+      ],
+      "maximum_row_mass_error": 0.0,
+      "synthetic_grades": [
+        2,
+        3
+      ]
+    },
+    {
+      "group": "common5_core",
+      "family": "deit_tiny",
+      "fold": 1,
+      "strict_load": true,
+      "output_shape": [
+        2,
+        4
+      ],
+      "maximum_row_mass_error": 0.0,
+      "synthetic_grades": [
+        3,
+        3
+      ]
+    },
+    {
+      "group": "common5_core",
+      "family": "grade_value_coral_selected",
+      "fold": 2,
+      "strict_load": true,
+      "output_shape": [
+        2,
+        4
+      ],
+      "maximum_row_mass_error": 0.0,
+      "synthetic_grades": [
+        2,
+        3
+      ]
+    },
+    {
+      "group": "common5_core",
+      "family": "deit_tiny",
+      "fold": 2,
+      "strict_load": true,
+      "output_shape": [
+        2,
+        4
+      ],
+      "maximum_row_mass_error": 0.0,
+      "synthetic_grades": [
+        3,
+        2
+      ]
+    },
+    {
+      "group": "common5_core",
+      "family": "grade_value_coral_selected",
+      "fold": 3,
+      "strict_load": true,
+      "output_shape": [
+        2,
+        4
+      ],
+      "maximum_row_mass_error": 0.0,
+      "synthetic_grades": [
+        2,
+        2
+      ]
+    },
+    {
+      "group": "common5_core",
+      "family": "deit_tiny",
+      "fold": 3,
+      "strict_load": true,
+      "output_shape": [
+        2,
+        4
+      ],
+      "maximum_row_mass_error": 0.0,
+      "synthetic_grades": [
+        3,
+        3
+      ]
+    },
+    {
+      "group": "common5_core",
+      "family": "grade_value_coral_selected",
+      "fold": 4,
+      "strict_load": true,
+      "output_shape": [
+        2,
+        4
+      ],
+      "maximum_row_mass_error": 0.0,
+      "synthetic_grades": [
+        2,
+        3
+      ]
+    },
+    {
+      "group": "common5_core",
+      "family": "deit_tiny",
+      "fold": 4,
+      "strict_load": true,
+      "output_shape": [
+        2,
+        4
+      ],
+      "maximum_row_mass_error": 0.0,
+      "synthetic_grades": [
+        3,
+        3
+      ]
+    },
+    {
+      "group": "common5_matched_aux",
+      "family": "A0_NATURAL",
+      "fold": 0,
+      "strict_load": true,
+      "output_shape": [
+        2,
+        4
+      ],
+      "maximum_row_mass_error": 0.0,
+      "synthetic_grades": [
+        2,
+        3
+      ]
+    },
+    {
+      "group": "common5_matched_aux",
+      "family": "A1_SCALED",
+      "fold": 0,
+      "strict_load": true,
+      "output_shape": [
+        2,
+        4
+      ],
+      "maximum_row_mass_error": 0.0,
+      "synthetic_grades": [
+        2,
+        3
+      ]
+    },
+    {
+      "group": "common5_matched_aux",
+      "family": "A2_BINARY_P",
+      "fold": 0,
+      "strict_load": true,
+      "output_shape": [
+        2,
+        4
+      ],
+      "maximum_row_mass_error": 0.0,
+      "synthetic_grades": [
+        2,
+        3
+      ]
+    },
+    {
+      "group": "common5_matched_aux",
+      "family": "A3_GRADE_FIXED",
+      "fold": 0,
+      "strict_load": true,
+      "output_shape": [
+        2,
+        4
+      ],
+      "maximum_row_mass_error": 0.0,
+      "synthetic_grades": [
+        2,
+        2
+      ]
+    },
+    {
+      "group": "common5_matched_aux",
+      "family": "A0_NATURAL",
+      "fold": 1,
+      "strict_load": true,
+      "output_shape": [
+        2,
+        4
+      ],
+      "maximum_row_mass_error": 0.0,
+      "synthetic_grades": [
+        2,
+        3
+      ]
+    },
+    {
+      "group": "common5_matched_aux",
+      "family": "A1_SCALED",
+      "fold": 1,
+      "strict_load": true,
+      "output_shape": [
+        2,
+        4
+      ],
+      "maximum_row_mass_error": 0.0,
+      "synthetic_grades": [
+        2,
+        3
+      ]
+    },
+    {
+      "group": "common5_matched_aux",
+      "family": "A2_BINARY_P",
+      "fold": 1,
+      "strict_load": true,
+      "output_shape": [
+        2,
+        4
+      ],
+      "maximum_row_mass_error": 0.0,
+      "synthetic_grades": [
+        2,
+        2
+      ]
+    },
+    {
+      "group": "common5_matched_aux",
+      "family": "A3_GRADE_FIXED",
+      "fold": 1,
+      "strict_load": true,
+      "output_shape": [
+        2,
+        4
+      ],
+      "maximum_row_mass_error": 0.0,
+      "synthetic_grades": [
+        2,
+        3
+      ]
+    },
+    {
+      "group": "common5_matched_aux",
+      "family": "A0_NATURAL",
+      "fold": 2,
+      "strict_load": true,
+      "output_shape": [
+        2,
+        4
+      ],
+      "maximum_row_mass_error": 0.0,
+      "synthetic_grades": [
+        2,
+        3
+      ]
+    },
+    {
+      "group": "common5_matched_aux",
+      "family": "A1_SCALED",
+      "fold": 2,
+      "strict_load": true,
+      "output_shape": [
+        2,
+        4
+      ],
+      "maximum_row_mass_error": 0.0,
+      "synthetic_grades": [
+        2,
+        2
+      ]
+    },
+    {
+      "group": "common5_matched_aux",
+      "family": "A2_BINARY_P",
+      "fold": 2,
+      "strict_load": true,
+      "output_shape": [
+        2,
+        4
+      ],
+      "maximum_row_mass_error": 0.0,
+      "synthetic_grades": [
+        2,
+        3
+      ]
+    },
+    {
+      "group": "common5_matched_aux",
+      "family": "A3_GRADE_FIXED",
+      "fold": 2,
+      "strict_load": true,
+      "output_shape": [
+        2,
+        4
+      ],
+      "maximum_row_mass_error": 0.0,
+      "synthetic_grades": [
+        2,
+        3
+      ]
+    },
+    {
+      "group": "common5_matched_aux",
+      "family": "A0_NATURAL",
+      "fold": 3,
+      "strict_load": true,
+      "output_shape": [
+        2,
+        4
+      ],
+      "maximum_row_mass_error": 0.0,
+      "synthetic_grades": [
+        2,
+        2
+      ]
+    },
+    {
+      "group": "common5_matched_aux",
+      "family": "A1_SCALED",
+      "fold": 3,
+      "strict_load": true,
+      "output_shape": [
+        2,
+        4
+      ],
+      "maximum_row_mass_error": 0.0,
+      "synthetic_grades": [
+        2,
+        3
+      ]
+    },
+    {
+      "group": "common5_matched_aux",
+      "family": "A2_BINARY_P",
+      "fold": 3,
+      "strict_load": true,
+      "output_shape": [
+        2,
+        4
+      ],
+      "maximum_row_mass_error": 0.0,
+      "synthetic_grades": [
+        2,
+        3
+      ]
+    },
+    {
+      "group": "common5_matched_aux",
+      "family": "A3_GRADE_FIXED",
+      "fold": 3,
+      "strict_load": true,
+      "output_shape": [
+        2,
+        4
+      ],
+      "maximum_row_mass_error": 0.0,
+      "synthetic_grades": [
+        2,
+        3
+      ]
+    },
+    {
+      "group": "common5_matched_aux",
+      "family": "A0_NATURAL",
+      "fold": 4,
+      "strict_load": true,
+      "output_shape": [
+        2,
+        4
+      ],
+      "maximum_row_mass_error": 0.0,
+      "synthetic_grades": [
+        2,
+        3
+      ]
+    },
+    {
+      "group": "common5_matched_aux",
+      "family": "A1_SCALED",
+      "fold": 4,
+      "strict_load": true,
+      "output_shape": [
+        2,
+        4
+      ],
+      "maximum_row_mass_error": 0.0,
+      "synthetic_grades": [
+        2,
+        3
+      ]
+    },
+    {
+      "group": "common5_matched_aux",
+      "family": "A2_BINARY_P",
+      "fold": 4,
+      "strict_load": true,
+      "output_shape": [
+        2,
+        4
+      ],
+      "maximum_row_mass_error": 0.0,
+      "synthetic_grades": [
+        2,
+        2
+      ]
+    },
+    {
+      "group": "common5_matched_aux",
+      "family": "A3_GRADE_FIXED",
+      "fold": 4,
+      "strict_load": true,
+      "output_shape": [
+        2,
+        4
+      ],
+      "maximum_row_mass_error": 0.0,
+      "synthetic_grades": [
+        2,
+        3
+      ]
+    },
+    {
+      "group": "common5_reference",
+      "family": "p4c_resnet18_corn_ema",
+      "fold": 0,
+      "strict_load": true,
+      "output_shape": [
+        2,
+        4
+      ],
+      "maximum_row_mass_error": 5.960464477539063e-08,
+      "synthetic_grades": [
+        0,
+        0
+      ]
+    },
+    {
+      "group": "common5_reference",
+      "family": "p4c_resnet18_corn_ema",
+      "fold": 1,
+      "strict_load": true,
+      "output_shape": [
+        2,
+        4
+      ],
+      "maximum_row_mass_error": 5.960464477539063e-08,
+      "synthetic_grades": [
+        0,
+        0
+      ]
+    },
+    {
+      "group": "common5_reference",
+      "family": "p4c_resnet18_corn_ema",
+      "fold": 2,
+      "strict_load": true,
+      "output_shape": [
+        2,
+        4
+      ],
+      "maximum_row_mass_error": 5.960464477539063e-08,
+      "synthetic_grades": [
+        0,
+        0
+      ]
+    },
+    {
+      "group": "common5_reference",
+      "family": "p4c_resnet18_corn_ema",
+      "fold": 3,
+      "strict_load": true,
+      "output_shape": [
+        2,
+        4
+      ],
+      "maximum_row_mass_error": 5.960464477539063e-08,
+      "synthetic_grades": [
+        0,
+        0
+      ]
+    },
+    {
+      "group": "common5_reference",
+      "family": "p4c_resnet18_corn_ema",
+      "fold": 4,
+      "strict_load": true,
+      "output_shape": [
+        2,
+        4
+      ],
+      "maximum_row_mass_error": 0.0,
+      "synthetic_grades": [
+        0,
+        0
+      ]
+    },
+    {
+      "group": "source94",
+      "family": "grade_value_coral_selected",
+      "fold": 0,
+      "strict_load": true,
+      "output_shape": [
+        2,
+        4
+      ],
+      "maximum_row_mass_error": 0.0,
+      "synthetic_grades": [
+        2,
+        3
+      ]
+    },
+    {
+      "group": "source94",
+      "family": "deit_tiny",
+      "fold": 0,
+      "strict_load": true,
+      "output_shape": [
+        2,
+        4
+      ],
+      "maximum_row_mass_error": 0.0,
+      "synthetic_grades": [
+        3,
+        2
+      ]
+    },
+    {
+      "group": "source94",
+      "family": "sr1_resnet18_corn_ema",
+      "fold": 0,
+      "strict_load": true,
+      "output_shape": [
+        2,
+        4
+      ],
+      "maximum_row_mass_error": 5.960464477539063e-08,
+      "synthetic_grades": [
+        0,
+        0
+      ]
+    },
+    {
+      "group": "source94",
+      "family": "grade_value_coral_selected",
+      "fold": 1,
+      "strict_load": true,
+      "output_shape": [
+        2,
+        4
+      ],
+      "maximum_row_mass_error": 0.0,
+      "synthetic_grades": [
+        2,
+        3
+      ]
+    },
+    {
+      "group": "source94",
+      "family": "deit_tiny",
+      "fold": 1,
+      "strict_load": true,
+      "output_shape": [
+        2,
+        4
+      ],
+      "maximum_row_mass_error": 1.1920928955078125e-07,
+      "synthetic_grades": [
+        3,
+        3
+      ]
+    },
+    {
+      "group": "source94",
+      "family": "sr1_resnet18_corn_ema",
+      "fold": 1,
+      "strict_load": true,
+      "output_shape": [
+        2,
+        4
+      ],
+      "maximum_row_mass_error": 0.0,
+      "synthetic_grades": [
+        0,
+        0
+      ]
+    },
+    {
+      "group": "source94",
+      "family": "grade_value_coral_selected",
+      "fold": 2,
+      "strict_load": true,
+      "output_shape": [
+        2,
+        4
+      ],
+      "maximum_row_mass_error": 0.0,
+      "synthetic_grades": [
+        2,
+        3
+      ]
+    },
+    {
+      "group": "source94",
+      "family": "deit_tiny",
+      "fold": 2,
+      "strict_load": true,
+      "output_shape": [
+        2,
+        4
+      ],
+      "maximum_row_mass_error": 0.0,
+      "synthetic_grades": [
+        3,
+        3
+      ]
+    },
+    {
+      "group": "source94",
+      "family": "sr1_resnet18_corn_ema",
+      "fold": 2,
+      "strict_load": true,
+      "output_shape": [
+        2,
+        4
+      ],
+      "maximum_row_mass_error": 0.0,
+      "synthetic_grades": [
+        0,
+        0
+      ]
+    },
+    {
+      "group": "source94",
+      "family": "grade_value_coral_selected",
+      "fold": 3,
+      "strict_load": true,
+      "output_shape": [
+        2,
+        4
+      ],
+      "maximum_row_mass_error": 0.0,
+      "synthetic_grades": [
+        2,
+        3
+      ]
+    },
+    {
+      "group": "source94",
+      "family": "deit_tiny",
+      "fold": 3,
+      "strict_load": true,
+      "output_shape": [
+        2,
+        4
+      ],
+      "maximum_row_mass_error": 1.1920928955078125e-07,
+      "synthetic_grades": [
+        3,
+        2
+      ]
+    },
+    {
+      "group": "source94",
+      "family": "sr1_resnet18_corn_ema",
+      "fold": 3,
+      "strict_load": true,
+      "output_shape": [
+        2,
+        4
+      ],
+      "maximum_row_mass_error": 0.0,
+      "synthetic_grades": [
+        0,
+        0
+      ]
+    },
+    {
+      "group": "source94",
+      "family": "grade_value_coral_selected",
+      "fold": 4,
+      "strict_load": true,
+      "output_shape": [
+        2,
+        4
+      ],
+      "maximum_row_mass_error": 0.0,
+      "synthetic_grades": [
+        2,
+        3
+      ]
+    },
+    {
+      "group": "source94",
+      "family": "deit_tiny",
+      "fold": 4,
+      "strict_load": true,
+      "output_shape": [
+        2,
+        4
+      ],
+      "maximum_row_mass_error": 0.0,
+      "synthetic_grades": [
+        3,
+        3
+      ]
+    },
+    {
+      "group": "source94",
+      "family": "sr1_resnet18_corn_ema",
+      "fold": 4,
+      "strict_load": true,
+      "output_shape": [
+        2,
+        4
+      ],
+      "maximum_row_mass_error": 0.0,
+      "synthetic_grades": [
+        0,
+        0
+      ]
+    }
+  ]
+}

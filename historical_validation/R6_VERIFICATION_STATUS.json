@@ -1,0 +1,19 @@
+{
+  "status": "PASS_SYNTHETIC_USAGE_AND_REGRESSION_CHECKS",
+  "runtime_regression_tests": 23,
+  "new_example_contract_tests": 6,
+  "single_roi_cli_cases": 10,
+  "core_model_role_files_exercised": 10,
+  "probabilities_equal_to_direct_verified_API": true,
+  "historical_source_files_unchanged": 46,
+  "core_runtime_programs_unchanged": true,
+  "weights_changed": false,
+  "fusion_config_changed": false,
+  "strict_load_validation_origin": "R5 50 roles",
+  "synthetic_full_model_validation_origin": "R4 50 roles",
+  "new_patient_inference": false,
+  "new_training": false,
+  "new_weight_selection": false,
+  "full_historical_pipeline_ported": false,
+  "public_release": false
+}

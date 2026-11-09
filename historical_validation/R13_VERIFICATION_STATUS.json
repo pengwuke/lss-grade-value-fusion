@@ -1,0 +1,22 @@
+{
+  "status": "PASS_LAYERED_SYSTEM_ABLATION_EVIDENCE_AND_B13_BINDING",
+  "date": "2026-11-09",
+  "scientific_manuscript": "B13",
+  "parent": "R12/B12",
+  "branch_report_sha256": "c9cae89718ee9fb3d53a89443786b6563ae5844cdd2d87489d674433ebf8cd1a",
+  "two_descriptive_branch_pairs": true,
+  "all_19_system_metric_and_matrix_source_parity": true,
+  "independent_vectorized_count_and_stratum_checks": true,
+  "new_statistical_inference": false,
+  "new_patient_bootstrap": false,
+  "new_training": false,
+  "new_patient_inference": false,
+  "new_selection": false,
+  "runtime_programs_unchanged": true,
+  "matched_statistics_programs_unchanged": true,
+  "historical_sources_unchanged": 46,
+  "model_weights_changed": false,
+  "fusion_config_changed": false,
+  "prior_verification_retained_not_repeated": "R12: 15 statistics tests/100000 bootstrap; R9 runtime 30 tests/70 cases/10 artificial CLI; R5 strict50; R4 artificial forwards50",
+  "public_release": false
+}
