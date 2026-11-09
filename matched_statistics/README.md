@@ -1,4 +1,4 @@
-# Paper2 matched statistics: public code v1.0.0 / manuscript B15
+# Paper2 matched statistics: public code v1.0.1 / manuscript B15
 
 Research-code companion to manuscript B15. The author contributions are MIT-licensed; no study rows or model files are included. The five modes
 have distinct scopes and defaults (all use seed 42):
@@ -114,10 +114,18 @@ The B11 direct and B12 robustness additions retain their later checks (15
 statistics tests, including the two synthetic CLI modes, as recorded in R12).
 R15 only checks reporting and documentation; it does not rerun those tests,
 real-patient intervals or model inference.
-The original R3 test is not a model-inference installation test, historical
-dependency lock or rerun of the paper's patient intervals. Author manuscript review,
-new-asset licensing and the dataset licence/use-description clarification remain
-pending. No public release or submission has occurred.
+The original R3 test was not a model-inference installation test, historical
+dependency lock or rerun of the paper's patient intervals. At the time of the
+retained R3/R15 preparation records, manuscript review, new-asset licensing and
+public release were pending. Those statements describe the historical records,
+not the current code status. The author's original code is now publicly available
+under MIT at https://github.com/pengwuke/lss-grade-value-fusion. This v1.0.1
+documentation-only distribution patch preserves the 1.0.0 package versions and
+all functional Python, kernels and plans. Trained models and original study rows
+are not included; their distribution and applicable grants are handled separately.
+The dataset licence/use-description difference remains disclosed in
+../THIRD_PARTY_NOTICES.md. Code publication does not mean the manuscript has
+been published or submitted.
 
 
 R7 path handling: literal user-home (`~`) paths are expanded for input and
@@ -157,4 +165,4 @@ resampling were rerun in R16.
 
 ## Public distribution scope
 
-This package is part of the scoped code v1.0.0 release derived from internal R16. Frozen source kernels/plans and all functional Python bytes are unchanged. Historical validation keeps its original round and scope; it is not a new validation of this distribution. Original study rows, patient/ROI probabilities and full historical training controllers are not bundled. See ../PUBLIC_DISTRIBUTION_MANIFEST.json and ../HISTORICAL_SOURCE_SCOPE.md.
+This package is part of the scoped code v1.0.1 release derived from internal R16. Frozen source kernels/plans and all functional Python bytes are unchanged. Historical validation keeps its original round and scope; it is not a new validation of this distribution. Original study rows, patient/ROI probabilities and full historical training controllers are not bundled. See ../PUBLIC_DISTRIBUTION_MANIFEST.json and ../HISTORICAL_SOURCE_SCOPE.md.

@@ -4,7 +4,9 @@ Research code for **Four-grade lumbar foraminal stenosis classification on routi
 
 Author: Wuke Peng. ORCID: 0009-0003-5791-3783.
 
-## Code release v1.0.0
+## Code distribution v1.0.1: documentation-only patch
+
+Public code repository: https://github.com/pengwuke/lss-grade-value-fusion. The initial code release v1.0.0 remains unchanged. This v1.0.1 distribution corrects publication-state metadata and historical-status wording only; all 32 Python files, frozen kernels/plans/fusion settings, both pyproject.toml package versions (1.0.0), and licence texts remain byte-identical to v1.0.0. No new training, inference, statistics or software tests were run for this documentation patch.
 
 This distribution contains a portable inference architecture/input/fusion interface, five explicit frozen-prediction statistical modes, a descriptive branch-error helper, artificial-input examples/tests, aggregate evidence, and source/validation metadata. It is a scoped derivative of internal R16, not the complete internal code/model archive. See PUBLIC_DISTRIBUTION_MANIFEST.json for exact membership.
 
@@ -61,7 +63,7 @@ The task is grading expert-selected ROIs. Aggregate gains do not establish indep
 
 historical_validation/ retains immutable earlier preparation records. R4 checked a fresh isolated same-host Linux CPU installation, 50 strict role loads and artificial forward interfaces; it was not a new machine or a clinical evaluation. R5 retained model strict-load evidence. R7 records path and artificial-CLI checks. R9 records 30 runtime tests, 70 frozen-rule cases and ten artificial-image CLI cases. R12 records the added robustness interface and statistics checks. See historical_validation/README.md for scope.
 
-This v1.0.0 packaging step checks membership, hashes, source preservation and distribution scope only. It performs no new training, model inference, statistics, bootstrap, selection or clinical validation. Historical records retain original IDs, dates and scope, including their then-unpublished status. Their old pending flags are not the current code-licence status. Historical source paths/digests in those records are provenance references and need not be bundled public paths.
+This v1.0.1 packaging step checks membership, hashes, source preservation and distribution scope only. It performs no new training, model inference, statistics, bootstrap, selection or clinical validation. Historical records retain original IDs, dates and scope, including their then-unpublished status. Their old pending flags are not the current code-licence status. Historical source paths/digests in those records are provenance references and need not be bundled public paths.
 
 ## Integrity
 

@@ -1,7 +1,7 @@
 {
-  "release": "code_v1.0.0",
+  "release": "code_v1.0.1",
   "manuscript": "B15",
-  "status": "STAGED_NOT_PUBLISHED",
+  "status": "PUBLIC_CODE_DISTRIBUTION",
   "author_code_license": "MIT",
   "parent_candidate": "R16_B15",
   "parent_code_tree_sha256": "a8ffad7fe31dccd16afb11d565076280ca0e51a2651fee8583d87d98b40d7ab2",
@@ -14,24 +14,24 @@
   "historical_validation_records_not_new_tests": true,
   "files_excluding_this_manifest_and_SHA256SUMS": {
     "ARCHIVE_INTEGRITY.md": {
-      "bytes": 974,
-      "sha256": "1f94bcbb21ea48ecae96c382a728497847e44de9692a9880d6335edc39e07bca"
+      "bytes": 1216,
+      "sha256": "1bca3bc14c1e473ba53e33c3226ac69f0262f65b844210fb629a2d113664361e"
     },
     "CODE_MODEL_COMPATIBILITY.json": {
-      "bytes": 7104,
-      "sha256": "1d8626d341cc5de43680d49c83c76f6e8fb3d8529794aff0c4c3ef0f5e3f997b"
+      "bytes": 7922,
+      "sha256": "d7f457e4716527571c26af9132f77ab44a2cd9672bdf138d7d926b9610a8d640"
     },
     "COMMON5_FUSION_PRECISION.md": {
       "bytes": 2467,
-      "sha256": "eeb0c79e52b0751c7d8a8c45fb60d5f6473ccefe33d196a7b271291b0961fdc8"
+      "sha256": "5a8fef720ebcc5b4536409c0e3fb0eca0922178f8d47e737ae5ee34dd7669934"
     },
     "COMMON5_SINGLE_ROI_EXAMPLE.md": {
       "bytes": 2961,
-      "sha256": "63e53d57161142a7afd5637bb8078c227c4ad65a866ab4a2a28694f6dcd6eb86"
+      "sha256": "edc625fc8be69859d38ea0ae71a7822007cca0c4553439017b1148fc6b2a0bfe"
     },
     "HISTORICAL_SOURCE_SCOPE.md": {
       "bytes": 1159,
-      "sha256": "23f39add71a24dd68346d7cff81f771da2b3ec7f7d681b16a0d829b75f7b9165"
+      "sha256": "d86fe7ff093fda68549fc3af403b1c185264673807e585862fea152e19aa9048"
     },
     "LICENSE": {
       "bytes": 1066,
@@ -39,11 +39,11 @@
     },
     "PATH_INPUT_OUTPUT.md": {
       "bytes": 2287,
-      "sha256": "1036c5ee978f44c25112d099c65dd1451a4d2c8ddd69317d5b66260fe2044b9e"
+      "sha256": "0cb1a24f4338c1bc9c06d5ddb6f052407c93538ee512e05178e5d026a6269d3b"
     },
     "README.md": {
-      "bytes": 7006,
-      "sha256": "15c0cfa420731f9e4674878ee1bff67a9f3aec06715fb1ff7980181e489923ba"
+      "bytes": 7514,
+      "sha256": "aa0cfb1e9bb27f862ae9bb0c28ed75b78d4bc31ce698a37ee1536a9a37d5033b"
     },
     "TASK_BASELINE_EVIDENCE.md": {
       "bytes": 3264,
@@ -54,8 +54,8 @@
       "sha256": "64b777d01a1b615be4c9cc9fd28b463166e766d9ae01626ddbc154f0d5aa4b72"
     },
     "TRAINING_REPRODUCTION_SCOPE.md": {
-      "bytes": 1354,
-      "sha256": "a4c830d39f4f19adb9eaa94e0b53cc6c7f06fcc36e6aaeeb74cedff4d04ab11e"
+      "bytes": 1660,
+      "sha256": "d16b59be21800c6a515723ec744dfef3712954ff97b9850313fb36b56f780210"
     },
     "cnn_source_provenance.json": {
       "bytes": 390,
@@ -203,7 +203,7 @@
     },
     "historical_validation/README.md": {
       "bytes": 1333,
-      "sha256": "d3e7879d42505fe0153871da503a7084e0e5c4e6d4504da7c9ffe3434b5d7341"
+      "sha256": "668ce5099d8862ba33c54d4f29cdd6171c2f5f1e5fa5b7c65418ff31a60d47ca"
     },
     "historical_validation/VERIFICATION_STATUS.json": {
       "bytes": 971,
@@ -214,8 +214,8 @@
       "sha256": "1d5726116f34e9cd5d15dda97f53ee9f0409d51d4927d895140127aa609626a9"
     },
     "matched_statistics/README.md": {
-      "bytes": 9822,
-      "sha256": "b5042a31e22323c9650c056cf33b28b39d79715d6c028a10079062300102b116"
+      "bytes": 10415,
+      "sha256": "b3325d6e3aafbdd0bd35cf7cdd30290da280db239ae887d218b95930ec6be79d"
     },
     "matched_statistics/STATISTICS_VERIFICATION.json": {
       "bytes": 909,
@@ -396,5 +396,10 @@
   },
   "manifest_self_exclusion": "This manifest and SHA256SUMS omitted from payload map to avoid self-reference; SHA256SUMS covers this manifest",
   "credential_pattern_hits": 0,
-  "patient_roi_table_hits": 0
+  "patient_roi_table_hits": 0,
+  "code_public_release": true,
+  "public_repository": "https://github.com/pengwuke/lss-grade-value-fusion",
+  "distribution_patch": "Documentation-only v1.0.1; runtime/statistics package versions remain 1.0.0; no new runtime tests or scientific computation.",
+  "baseline_public_release": "v1.0.0",
+  "baseline_public_asset_sha256": "44b1bbb10011c1737ef927b8803c4cb29136ed63409294e0c67117e41e9d5425"
 }

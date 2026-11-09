@@ -45,4 +45,4 @@ computation. Relative CSV paths remain relative to their input JSON. See the
 paired code root PATH_INPUT_OUTPUT.md for examples and limits.
 
 
-Public v1.0.0 scope: no weights or patient data are included. Model examples require a separately obtained matching authorised model package. Historical validation references describe earlier preparation, not new release-time execution.
+Public v1.0.1 scope: no weights or patient data are included. Model examples require a separately obtained matching authorised model package. Historical validation references describe earlier preparation, not new release-time execution.

@@ -1,8 +1,8 @@
 {
-  "candidate_id": "paper2-b15-public-code-v1.0.0-staged",
+  "candidate_id": "paper2-b15-public-code-v1.0.1-docs-patch",
   "distribution_scope": "Portable code/statistics/aggregate evidence subset; not the full internal R16 or a model release",
-  "public_release": false,
-  "publication_status": "STAGED_NOT_PUBLISHED",
+  "public_release": true,
+  "publication_status": "PUBLIC_CODE_DISTRIBUTION",
   "author_license_assigned": true,
   "author_code_license": "MIT",
   "author_model_license_assigned": false,
@@ -55,19 +55,19 @@
     "tests/test_robustness.py": "63ae31fc8c14a09ba84cbe6f8f966572ea940193f7f837861a6a611fc48cc6f2"
   },
   "usage_files_sha256": {
-    "COMMON5_SINGLE_ROI_EXAMPLE.md": "63e53d57161142a7afd5637bb8078c227c4ad65a866ab4a2a28694f6dcd6eb86",
+    "COMMON5_SINGLE_ROI_EXAMPLE.md": "edc625fc8be69859d38ea0ae71a7822007cca0c4553439017b1148fc6b2a0bfe",
     "examples/predict_common5_pair.py": "5715894c3086005914b3aebb69092698fdf0277287b606cab2dc086e6955e272",
     "historical_source_inventory.json": "726e605fe9e5f1b88421ebf5d99e7dc646777258d453d11bd1211d6cfd405e72",
     "tests/test_common5_pair_example.py": "890c40cf12373f38cf5ab6c2240161269366e1955bded6e2386235aa87942f8d",
-    "TRAINING_REPRODUCTION_SCOPE.md": "a4c830d39f4f19adb9eaa94e0b53cc6c7f06fcc36e6aaeeb74cedff4d04ab11e",
-    "matched_statistics/README.md": "b5042a31e22323c9650c056cf33b28b39d79715d6c028a10079062300102b116",
+    "TRAINING_REPRODUCTION_SCOPE.md": "d16b59be21800c6a515723ec744dfef3712954ff97b9850313fb36b56f780210",
+    "matched_statistics/README.md": "b3325d6e3aafbdd0bd35cf7cdd30290da280db239ae887d218b95930ec6be79d",
     "matched_statistics/src/paper2_statistics/__main__.py": "1d2f7d2ea2fae9fa95a35d2923387107a37871fd605749e0c84ae6a69fc28c3b",
     "matched_statistics/src/paper2_statistics/inputs.py": "644306b0d21eddf31573340b04c8429e43884df4a1c1d6c699fc926ef3c6b631",
     "matched_statistics/tests/test_home_path_contracts.py": "f92776bd0bcf4be58449e7117c7c226a68984e24acae49bc299cc1a7bea530e8",
-    "PATH_INPUT_OUTPUT.md": "1036c5ee978f44c25112d099c65dd1451a4d2c8ddd69317d5b66260fe2044b9e",
+    "PATH_INPUT_OUTPUT.md": "0cb1a24f4338c1bc9c06d5ddb6f052407c93538ee512e05178e5d026a6269d3b",
     "tests/test_home_path_contracts.py": "6ac5cfc595a4ef59ad5552d28f9006f227ff33de42873efb00cd4c347a3d7369",
-    "ARCHIVE_INTEGRITY.md": "1f94bcbb21ea48ecae96c382a728497847e44de9692a9880d6335edc39e07bca",
-    "COMMON5_FUSION_PRECISION.md": "eeb0c79e52b0751c7d8a8c45fb60d5f6473ccefe33d196a7b271291b0961fdc8",
+    "ARCHIVE_INTEGRITY.md": "1bca3bc14c1e473ba53e33c3226ac69f0262f65b844210fb629a2d113664361e",
+    "COMMON5_FUSION_PRECISION.md": "5a8fef720ebcc5b4536409c0e3fb0eca0922178f8d47e737ae5ee34dd7669934",
     "tests/test_common5_fusion_precision.py": "46d034dde8629e29765493a54bc63ca3f72ba29a4cafb4cdbaa10b85b06af1c2",
     "TASK_BASELINE_EVIDENCE.md": "dd2d35070bdcc1ee2be2d20989fddde07cc736f843898d89923335f9c7b72312"
   },
@@ -88,5 +88,17 @@
   "new_statistics": false,
   "new_tests_run": false,
   "validation_origin": "Unchanged historical records under historical_validation/, not new release-time execution",
-  "full_historical_training_statistics_pipeline_ported": false
+  "full_historical_training_statistics_pipeline_ported": false,
+  "code_public_release": true,
+  "public_repository": "https://github.com/pengwuke/lss-grade-value-fusion",
+  "documentation_patch": {
+    "distribution_version": "1.0.1",
+    "runtime_package_version": "1.0.0",
+    "statistics_package_version": "1.0.0",
+    "baseline_public_release": "https://github.com/pengwuke/lss-grade-value-fusion/releases/tag/v1.0.0",
+    "baseline_asset_sha256": "44b1bbb10011c1737ef927b8803c4cb29136ed63409294e0c67117e41e9d5425",
+    "scope": "Publication-state metadata and historical-status documentation only; no functional Python, kernels, plans, fusion settings or licence changes.",
+    "new_runtime_tests_run": false,
+    "new_training_inference_or_statistics": false
+  }
 }
