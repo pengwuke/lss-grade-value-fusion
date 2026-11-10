@@ -1,12 +1,12 @@
 {
-  "release": "code_v1.1.1",
+  "release": "code_v1.1.2",
   "manuscript": "B15",
   "status": "PUBLIC_CODE_DISTRIBUTION_PREPARED",
   "public_repository": "https://github.com/pengwuke/lss-grade-value-fusion",
   "author_code_license": "MIT",
-  "parent_public_release": "v1.1.0",
-  "parent_public_commit": "61df3321ce3e0aa5858d8bffccc6e334071204b4",
-  "parent_public_asset_sha256": "424e7aeed65c7cce764953e7111f34bf669e3b96b8b3bd32a75df2a1e6401abb",
+  "parent_public_release": "v1.1.1",
+  "parent_public_commit": "fa086303265ccc4d22bdf61ea2ee5eed689a81e3",
+  "parent_public_asset_sha256": "87c6b3d30f02763f955c62b3050f2042ce93b9ed86cd9d3245446f073b8a091f",
   "scope": "Unchanged portable runtime/statistics plus all 46 sanitised historical training/analysis sources and per-file provenance/licence map",
   "models_bundled": false,
   "raw_or_patient_level_data_bundled": false,
@@ -20,20 +20,20 @@
   "new_training_inference_statistics": false,
   "files_excluding_this_manifest_and_SHA256SUMS": {
     "ARCHIVE_INTEGRITY.md": {
-      "bytes": 2029,
-      "sha256": "82dc7c4337abcf41c698a407abd4bc1d3d03a6a6b1906d7a58bb4d3a7945a834"
+      "bytes": 2501,
+      "sha256": "eafa28ed32547d8640f70fa587d76af2598ce76c0af5b559ab7ce3fab19e2ea1"
     },
     "CODE_MODEL_COMPATIBILITY.json": {
-      "bytes": 22197,
-      "sha256": "a6253b577aa191e6add00d723eea85369614557395625640465cdf55cedc6c67"
+      "bytes": 22757,
+      "sha256": "105719f21127a5ca1bc37139b7bf9cd045ed6cedb445111d0f067a4dab66fca5"
     },
     "COMMON5_FUSION_PRECISION.md": {
       "bytes": 2467,
       "sha256": "cb3fb2593b82b94931ebfbe9e178084877ccb4ad9180d48a68b28ca204d2f12c"
     },
     "COMMON5_SINGLE_ROI_EXAMPLE.md": {
-      "bytes": 2961,
-      "sha256": "52e6846a0c6d057fea9aefb7a55f1aed0f2060cb69bea40e1254dec7f0d2edec"
+      "bytes": 2939,
+      "sha256": "d07724d2ef7faac647030f08fddaa6fa3dc73b4494127d1b6c4de7456f25b195"
     },
     "HISTORICAL_SOURCE_SCOPE.md": {
       "bytes": 2381,
@@ -56,8 +56,8 @@
       "sha256": "0d2ca59f6ab1f931f4aad0726f1dce3b1dedec63657f7c62b00a8055381b9cc8"
     },
     "README.md": {
-      "bytes": 8119,
-      "sha256": "3543e3638263629eb98b204e8021dbd2aa1bdd99a82df94c7a6165a512a8a083"
+      "bytes": 8544,
+      "sha256": "835bea24576969c8f5d5788619eca6141edc00312f07cf58f2e4d73fc255736e"
     },
     "SOURCE_LICENSE_ATTRIBUTION.csv": {
       "bytes": 22672,
@@ -605,6 +605,6 @@
   "private_ip_hits": 0,
   "remaining_embedded_id_lists": 0,
   "actual_remote_publication_evidence": "External publication receipt",
-  "distribution_change": "Documentation-only current scope/version/integrity-receipt correction; all78 Python/archived source files and scientific/package assets unchanged",
+  "distribution_change": "Documentation-only R6 verification-record path correction with necessary current README/integrity/version/hash metadata; all78 Python/archived source files and scientific/package assets unchanged",
   "all_python_and_archived_source_files_preserved": 78
 }

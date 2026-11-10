@@ -1,5 +1,5 @@
 {
-  "candidate_id": "paper2-b15-code-v1.1.1-documentation-correction",
+  "candidate_id": "paper2-b15-code-v1.1.2-documentation-path-correction",
   "distribution_scope": "Portable runtime/statistics/aggregate evidence plus 46 sanitised historical training/analysis sources; not a full training port",
   "publication_status": "PUBLIC_CODE_DISTRIBUTION_PREPARED",
   "author_license_assigned": true,
@@ -53,7 +53,7 @@
     "tests/test_robustness.py": "63ae31fc8c14a09ba84cbe6f8f966572ea940193f7f837861a6a611fc48cc6f2"
   },
   "usage_files_sha256": {
-    "COMMON5_SINGLE_ROI_EXAMPLE.md": "52e6846a0c6d057fea9aefb7a55f1aed0f2060cb69bea40e1254dec7f0d2edec",
+    "COMMON5_SINGLE_ROI_EXAMPLE.md": "d07724d2ef7faac647030f08fddaa6fa3dc73b4494127d1b6c4de7456f25b195",
     "examples/predict_common5_pair.py": "5715894c3086005914b3aebb69092698fdf0277287b606cab2dc086e6955e272",
     "historical_source_inventory.json": "726e605fe9e5f1b88421ebf5d99e7dc646777258d453d11bd1211d6cfd405e72",
     "tests/test_common5_pair_example.py": "890c40cf12373f38cf5ab6c2240161269366e1955bded6e2386235aa87942f8d",
@@ -64,7 +64,7 @@
     "matched_statistics/tests/test_home_path_contracts.py": "f92776bd0bcf4be58449e7117c7c226a68984e24acae49bc299cc1a7bea530e8",
     "PATH_INPUT_OUTPUT.md": "8a7671c4d736639f5bf72bfa23f9884baca41d40a1c130e2623feaf4812873a6",
     "tests/test_home_path_contracts.py": "6ac5cfc595a4ef59ad5552d28f9006f227ff33de42873efb00cd4c347a3d7369",
-    "ARCHIVE_INTEGRITY.md": "82dc7c4337abcf41c698a407abd4bc1d3d03a6a6b1906d7a58bb4d3a7945a834",
+    "ARCHIVE_INTEGRITY.md": "eafa28ed32547d8640f70fa587d76af2598ce76c0af5b559ab7ce3fab19e2ea1",
     "COMMON5_FUSION_PRECISION.md": "cb3fb2593b82b94931ebfbe9e178084877ccb4ad9180d48a68b28ca204d2f12c",
     "tests/test_common5_fusion_precision.py": "46d034dde8629e29765493a54bc63ca3f72ba29a4cafb4cdbaa10b85b06af1c2",
     "TASK_BASELINE_EVIDENCE.md": "dd2d35070bdcc1ee2be2d20989fddde07cc736f843898d89923335f9c7b72312"
@@ -98,7 +98,7 @@
     "new_runtime_tests_run": false,
     "new_training_inference_or_statistics": false
   },
-  "actual_remote_publication_evidence": "External v1.1.1 publication receipt; prepared payload status is not remote access proof",
+  "actual_remote_publication_evidence": "External v1.1.2 publication receipt; prepared payload status is not remote access proof",
   "historical_source_inventory_scope": "Original raw R16 metadata retained; actual public file hashes in SOURCE_LICENSE_ATTRIBUTION.json",
   "historical_source_program_files_sha256": {
     "historical_sources/deit_training/52_train_official_deit_protocol_v3_full468_oof.py": "dc8c0b4b1aafe640d7ce764c3efff984e5154430621c946ea7025c0b4d3887ae",
@@ -208,8 +208,18 @@
   },
   "author_model_license": "CC-BY-NC-4.0-author-contributions",
   "separate_model_publication_evidence": "External model publication receipt; this code payload does not report live remote model access",
-  "parent_public_code_release": "v1.1.0",
-  "parent_public_code_commit": "61df3321ce3e0aa5858d8bffccc6e334071204b4",
-  "parent_public_code_asset_sha256": "424e7aeed65c7cce764953e7111f34bf669e3b96b8b3bd32a75df2a1e6401abb",
-  "documentation_patch_scope": "Only current scope/version/integrity-receipt wording and corresponding metadata hashes; all78 Python/archived source files unchanged"
+  "parent_public_code_release": "v1.1.1",
+  "parent_public_code_commit": "fa086303265ccc4d22bdf61ea2ee5eed689a81e3",
+  "parent_public_code_asset_sha256": "87c6b3d30f02763f955c62b3050f2042ce93b9ed86cd9d3245446f073b8a091f",
+  "documentation_patch_scope": "Correct the R6 verification-record documentation path and necessary README/integrity/version/hash metadata only; all78 Python/archived source files and scientific assets unchanged",
+  "documentation_path_patch": {
+    "distribution_version": "1.1.2",
+    "parent_public_release": "v1.1.1",
+    "parent_public_commit": "fa086303265ccc4d22bdf61ea2ee5eed689a81e3",
+    "parent_public_asset_sha256": "87c6b3d30f02763f955c62b3050f2042ce93b9ed86cd9d3245446f073b8a091f",
+    "corrected_file": "COMMON5_SINGLE_ROI_EXAMPLE.md",
+    "corrected_reference": "historical_validation/R6_VERIFICATION_STATUS.json",
+    "new_runtime_tests_run": false,
+    "new_training_inference_or_statistics": false
+  }
 }

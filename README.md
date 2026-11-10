@@ -4,9 +4,11 @@ Research code for **Four-grade lumbar foraminal stenosis classification on routi
 
 Author: Wuke Peng. ORCID: 0009-0003-5791-3783.
 
-## Code distribution v1.1.1: documentation correction
+## Code distribution v1.1.2: verification-record path correction
 
-Public repository: https://github.com/pengwuke/lss-grade-value-fusion. This v1.1.1 documentation correction starts from immutable public v1.1.0 (commit 61df3321ce3e0aa5858d8bffccc6e334071204b4). The v1.1.0 source extension added all 46 inspectable historical training/analysis sources to exact public v1.0.1 (commit 7dcb02165a332ddf6831b285598cd3000bbb8f6c). This patch corrects current-version, integrity-receipt and byte-preservation wording only. All 78 Python/archived Python-text files (32 portable and 46 historical), package metadata, frozen kernels/plans/fusion, source maps/diffs and licence texts are byte-identical to v1.1.0. Older tags and raw R16 are preserved.
+Public repository: https://github.com/pengwuke/lss-grade-value-fusion. This v1.1.2 documentation-only patch starts from immutable public v1.1.1 (commit fa086303265ccc4d22bdf61ea2ee5eed689a81e3). It corrects one historical R6 verification-record path in COMMON5_SINGLE_ROI_EXAMPLE.md and updates the current README, integrity instructions and bound distribution metadata. All 78 Python/archived Python-text files (32 portable and 46 historical), both pyproject files, frozen kernels/plans/fusion, historical verification records, source maps/diffs, aggregate evidence and licence texts are byte-identical to v1.1.1. Older tags and raw R16 are preserved.
+
+Historical lineage: v1.1.1 corrected documentation of public v1.1.0 (commit 61df3321ce3e0aa5858d8bffccc6e334071204b4). The v1.1.0 source extension added all 46 inspectable historical training/analysis sources to exact public v1.0.1 (commit 7dcb02165a332ddf6831b285598cd3000bbb8f6c). Retained usage documents may describe the unchanged v1.1.1 parent scope; their interfaces and scope also apply to this path-only patch.
 
 The release contains portable inference architecture/input/fusion interfaces, five frozen-input statistics modes, synthetic examples/tests, aggregate evidence and the added training-source snapshot. See HISTORICAL_SOURCE_SCOPE.md, SOURCE_LICENSE_ATTRIBUTION.json/CSV and PUBLIC_SOURCE_DIFF.patch. This provides inspectable training-method source; it is not a claim of full historical retraining, complete portability or a locked historical environment. No legacy controller was executed or imported to prepare it.
 
@@ -27,7 +29,7 @@ python -m pip install -c constraints-cpu-inference-linux-py311.txt ./matched_sta
 python -m pip check
 ```
 
-Install only opencv-python-headless in this environment; other OpenCV wheels share the cv2 namespace. For statistics alone, install ./matched_statistics; it depends on NumPy and scikit-learn and does not require Torch. Installed package metadata remains version 1.0.0; this code distribution is v1.1.1 and the unchanged runtime source retains its historical internal 0.0.0 marker. The 32 portable Python files, frozen statistical kernels/plans and fusion settings are byte-identical to R16. Among the 46 historical copies, 21 match raw R16 and 25 contain the documented path/split-input sanitation; all 78 Python/archived Python-text files are byte-identical to public v1.1.0.
+Install only opencv-python-headless in this environment; other OpenCV wheels share the cv2 namespace. For statistics alone, install ./matched_statistics; it depends on NumPy and scikit-learn and does not require Torch. Installed package metadata remains version 1.0.0; this code distribution is v1.1.2 and the unchanged runtime source retains its historical internal 0.0.0 marker. The 32 portable Python files, frozen statistical kernels/plans and fusion settings are byte-identical to R16. Among the 46 historical copies, 21 match raw R16 and 25 contain the documented path/split-input sanitation; all 78 Python/archived Python-text files are byte-identical to public v1.1.0.
 
 ## Inference interface and inputs
 
@@ -63,7 +65,7 @@ The task is grading expert-selected ROIs. Aggregate gains do not establish indep
 
 historical_validation/ retains immutable earlier preparation records. R4 checked a fresh isolated same-host Linux CPU installation, 50 strict role loads and artificial forward interfaces; it was not a new machine or a clinical evaluation. R5 retained model strict-load evidence. R7 records path and artificial-CLI checks. R9 records 30 runtime tests, 70 frozen-rule cases and ten artificial-image CLI cases. R12 records the added robustness interface and statistics checks. See historical_validation/README.md for scope.
 
-This v1.1.1 packaging step checks membership, hashes, source preservation and distribution scope only. It performs no new training, model inference, statistics, bootstrap, selection or clinical validation. Historical records retain original IDs, dates and scope, including their then-unpublished status. Their old pending flags are not the current code-licence status. Historical source paths/digests in those records are provenance references and need not be bundled public paths.
+This v1.1.2 documentation patch checks membership, hashes, the corrected local reference and source preservation only. It performs no new training, model inference, statistics, bootstrap, selection or clinical validation. Historical records retain original IDs, dates and scope, including their then-unpublished status. Their old pending flags are not the current code-licence status. Historical source paths/digests in those records are provenance references and need not be bundled public paths.
 
 ## Integrity
 

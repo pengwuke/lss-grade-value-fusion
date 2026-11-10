@@ -36,7 +36,7 @@ patient-performance estimate or validation of the caller's cohort assignment.
 
 R6 checks use explicitly artificial grayscale PNG arrays, not MRI. Five folds
 and both strategies are compared with direct calls to the previously verified
-runtime APIs. See historical_validation/R6_SINGLE_ROI_EXAMPLE_TESTS.json and historical_validation/R6_historical_validation/VERIFICATION_STATUS.json.
+runtime APIs. See historical_validation/R6_SINGLE_ROI_EXAMPLE_TESTS.json and historical_validation/R6_VERIFICATION_STATUS.json.
 
 
 R7 path handling: literal user-home (`~`) paths are expanded for input and
