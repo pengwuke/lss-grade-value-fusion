@@ -10,6 +10,8 @@ The full report includes Accuracy, balanced accuracy, Macro-F1, weighted F1, QWK
 
 When authentic original OOF probabilities are available and match frozen hard predictions, also report multiclass log loss, four-class sum Brier score (not divided by 4) and top-label ECE using ten equal-width bins. Probability mass is normalized only for these scores, within the documented original sum tolerance; the frozen hard predictions are not changed. These probability-quality descriptions are not evidence that clinical risk is calibrated, safe or transportable, and no recalibration has been performed. When probability origin is absent or unverified, report the values as unavailable, never substitute inner-VAL scores.
 
+Top-label ECE groups the maximum class confidence and whether the predicted grade was correct; it does not assess each grade probability separately. Its value depends on the chosen bins. Brier score and log loss reflect more than calibration alone, so a lower value does not isolate better calibration. These are fixed-prediction point summaries without new probability-score intervals. See USE_AND_REPORTING_FAQ.md for inference/evaluation inputs and interpretation.
+
 The exact current aggregate is evidence/FULL_FIVE_FOLD_REPORTING.json (SHA256 5a75d0bca51494295af761f7192265eafc297dd7ad63a701fa7f77c6312a659b). It contains no patient/ROI identifiers, row-level predictions/probabilities or private paths.
 
 ## Current historical evidence
@@ -38,7 +40,7 @@ Successful CSV checks establish only structure and declared scale. They cannot p
 
 ## Data access and reproducibility
 
-The public code/model releases do not contain MRI, ROI images, real patient-level predictions/probabilities or partition rows. The study's main frozen patient-aligned inputs and fold records are retained on the school research server, with an internal support candidate and source checksums. This is not a public download or a promise of unrestricted on-request disclosure. A specific editorial/research data-access arrangement has to be stated accurately when established.
+The public code/model releases do not contain MRI, ROI images, real patient-level predictions/probabilities or patient-to-partition assignment rows. The study's main frozen patient-aligned inputs and fold records are retained on the school research server, with an internal support candidate and source checksums. This is not a public download or a promise of unrestricted on-request disclosure. A specific editorial/research data-access arrangement has to be stated accurately when established.
 
 The portable inference/statistics interfaces, historical source snapshots, archived checks and retained inputs have different scopes. Historical source inspection is not full portable retraining, and successful strict loading or synthetic tests are not clinical validation. Do not infer that all historical94-patient analyses or their dependencies are independently replayable from this release.
 

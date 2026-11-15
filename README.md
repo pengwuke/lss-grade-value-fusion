@@ -4,17 +4,17 @@ Research code for **Four-grade lumbar foraminal stenosis classification on routi
 
 Author: Wuke Peng. ORCID: 0009-0003-5791-3783.
 
-## Code distribution v1.1.3: full-fold reporting and reader names
+## Code distribution v1.1.4: reporting and use clarification
 
-This distribution starts from immutable public v1.1.2, commit ec9337ddb9ba5a0cbbd8f488e808e7e09a100a51. It revises task/baseline/evidence explanations and reporting scope, adds an independent complete-five-fold descriptive reporter plus targeted synthetic contract tests, and supplies the corresponding aggregate study report. All 78 parent Python/archived Python-text files (32 portable and 46 historical), both pyproject files, original frozen kernels/plans/fusion arithmetic, historical verification records, source maps/diffs and licence texts remain byte-identical to v1.1.2. New reporter modules are separate; none of the five existing paired-inference modes is changed.
+This documentation-only distribution starts from immutable public v1.1.3, commit 230bee55ff3223cdd924717003d5e63e71b8497a. It clarifies model-application versus evaluation inputs, probability-score interpretation, SR1 development-prediction reuse, the scope of fusion trade-offs and AI assistance. All 81 parent Python/archived Python-text files, both pyprojects, frozen kernels/plans/fusion arithmetic, original aggregate evidence, historical records, source maps/diffs and licence texts remain byte-identical to v1.1.3. The complete-fold reporter and its prior verification are inherited; no program or new numerical analysis is added in v1.1.4.
 
 Historical lineage and older tags are retained. The v1.1.0 source extension added the 46 inspectable historical training/analysis files to public v1.0.1; v1.1.1 clarified scope and v1.1.2 corrected a verification-record path. Retained historical usage records describe their original scope, not new testing during this revision.
 
 The release contains portable inference architecture/input/fusion interfaces, five frozen-input statistics modes, synthetic examples/tests, aggregate evidence and the added training-source snapshot. See HISTORICAL_SOURCE_SCOPE.md, SOURCE_LICENSE_ATTRIBUTION.json/CSV and PUBLIC_SOURCE_DIFF.patch. This provides inspectable training-method source; it is not a claim of full historical retraining, complete portability or a locked historical environment. No legacy controller was executed or imported to prepare it.
 
-No model weights, MRI/DICOM/ROI images, real patient/ROI predictions or probabilities, split/fold rows, original pretrained files, manuscript/reviewer files or credentials are bundled. The three historical auditors that embedded public test IDs now require the exact user-supplied original source CSV with strict source/hash gates and fail clearly if absent. Model distribution is handled separately. The unchanged runtime needs a matching authorised model package.
+No model weights, MRI/DICOM/ROI images, real patient/ROI predictions or probabilities, patient-to-split/fold assignment records, original pretrained files, manuscript/reviewer files or credentials are bundled. The three historical auditors that embedded public test IDs now require the exact user-supplied original source CSV with strict source/hash gates and fail clearly if absent. Model distribution is handled separately. The unchanged runtime needs a matching authorised model package.
 
-The author's original code contributions are MIT-licensed. Adapted/reference portions retain their own terms; see THIRD_PARTY_NOTICES.md and full texts in third_party_licenses/. The ORNet method is cited for the author's distinct CORAL-specific implementation; the upstream repository is not assigned MIT or copied into this distribution. Author code MIT does not license absent datasets/pretrained/model files. The versioned reporting release is [v1.1.3](https://github.com/pengwuke/lss-grade-value-fusion/releases/tag/v1.1.3); its tag and release-asset digest identify this distribution.
+The author's original code contributions are MIT-licensed. Adapted/reference portions retain their own terms; see THIRD_PARTY_NOTICES.md and full texts in third_party_licenses/. The ORNet method is cited for the author's distinct CORAL-specific implementation; the upstream repository is not assigned MIT or copied into this distribution. Author code MIT does not license absent datasets/pretrained/model files. The versioned documentation release is [v1.1.4](https://github.com/pengwuke/lss-grade-value-fusion/releases/tag/v1.1.4); its tag and release-asset digest identify this distribution.
 
 ## Installation
 
@@ -29,7 +29,7 @@ python -m pip install -c constraints-cpu-inference-linux-py311.txt ./matched_sta
 python -m pip check
 ```
 
-Install only opencv-python-headless in this environment; other OpenCV wheels share the cv2 namespace. For statistics alone, install ./matched_statistics; it depends on NumPy and scikit-learn and does not require Torch. Installed package metadata remains version 1.0.0; this code distribution is v1.1.3 and the unchanged runtime source retains its historical internal 0.0.0 marker. The 32 portable Python files, frozen statistical kernels/plans and fusion settings are byte-identical to R16. Among the 46 historical copies, 21 match raw R16 and 25 contain the documented path/split-input sanitation; all 78 Python/archived Python-text files are byte-identical to public v1.1.0.
+Install only opencv-python-headless in this environment; other OpenCV wheels share the cv2 namespace. For statistics alone, install ./matched_statistics; it depends on NumPy and scikit-learn and does not require Torch. Installed package metadata remains version 1.0.0; this code distribution is v1.1.4 and the unchanged runtime source retains its historical internal 0.0.0 marker. The 32 portable Python files, frozen statistical kernels/plans and fusion settings are byte-identical to R16. Among the 46 historical copies, 21 match raw R16 and 25 contain the documented path/split-input sanitation; all 78 Python/archived Python-text files are byte-identical to public v1.1.0.
 
 ## Inference interface and inputs
 
@@ -42,6 +42,8 @@ python -I examples/predict_common5_pair.py --models /path/to/model_candidate --c
 ```
 
 The image example uses two distinct representations of the same expert-selected ROI and an explicitly assigned held-out common5 fold. It does not select slices, locate a foramen, assign a new patient to a fold, or verify anatomical pairing. CNN requires DICOM-derived tight IQ8/NoHE/G1 at 64x64; DeiT requires historical PNG/HE at 224x224. One representation cannot be assumed recoverable from the other. The ResNet/CORN reconstruction has its own crop/normalisation and decoding contract. See COMMON5_SINGLE_ROI_EXAMPLE.md and COMMON5_FUSION_PRECISION.md. Input/hash checks do not establish patient identity or clinical validity.
+
+See USE_AND_REPORTING_FAQ.md for the distinction between unlabeled ROI application, label-bearing evaluation inputs and the scope of score/provenance checks.
 
 ## Frozen-input statistics
 
@@ -72,7 +74,12 @@ The complete aggregate report adds grade/error and probability-quality summaries
 
 historical_validation/ retains immutable earlier preparation records. R4 checked a fresh isolated same-host Linux CPU installation, 50 strict role loads and artificial forward interfaces; it was not a new machine or a clinical evaluation. R5 retained model strict-load evidence. R7 records path and artificial-CLI checks. R9 records 30 runtime tests, 70 frozen-rule cases and ten artificial-image CLI cases. R12 records the added robustness interface and statistics checks. See historical_validation/README.md for scope.
 
-This revision adds a descriptive full-fold/probability reporting audit of existing frozen predictions and tests only the new reporting utility with artificial data. It performs no new training, model inference, bootstrap intervals, significance tests, weight selection or clinical validation. The archived six-metric pooled results remain unchanged. Historical records retain original IDs, dates and scope, including their then-unpublished status. Their old pending flags are not the current code-licence status. Historical source paths/digests in those records are provenance references and need not be bundled public paths.
+This revision changes documentation only. The descriptive full-fold/probability reporting audit, artificial-input reporter tests and school-server checks of 19 frozen inputs were performed for v1.1.3 and are inherited here, not rerun or relabelled as v1.1.4 execution. No new training, model inference, numerical aggregation, bootstrap interval, significance test, weight selection or clinical validation is performed for this revision. The archived six-metric pooled results remain unchanged. Historical records retain original IDs, dates and scope, including their then-unpublished status. Their old pending flags are not the current code-licence status. Historical source paths/digests in those records are provenance references and need not be bundled public paths.
+
+
+## AI assistance
+
+ChatGPT and Codex (OpenAI) assisted script implementation/debugging, frozen-result aggregation and consistency checking, interpretation, drafting/revision, translation/typesetting and code/model documentation, including the complete-fold reporter. This was not language editing alone. Outputs derive from executed programs and frozen artefacts; generative AI did not generate or alter MRI images, reference labels or experimental observations. The author retains responsibility. USE_AND_REPORTING_FAQ.md gives the assistance and verification scope.
 
 ## Integrity
 

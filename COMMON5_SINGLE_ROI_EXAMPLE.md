@@ -9,6 +9,8 @@ After installing the runtime as described in README.md:
 
     python -I examples/predict_common5_pair.py --models /path/to/model_candidate --cnn-iq8 /path/to/roi_iq8.png --deit-png /path/to/roi_historical.png --fold 0 --strategy R11 --roi-id my_roi --output /path/to/new-report.json
 
+No true grade is required by this prediction command. The grade is an output; reference labels are required by evaluation tools, not by the image model at inference.
+
 Supply two representations of the same preselected anatomical ROI:
 
 * `--cnn-iq8`: the tight DICOM-derived ROI after modality rescaling and ROI
