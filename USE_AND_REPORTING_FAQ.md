@@ -12,6 +12,22 @@ Not to reproduce the study's OOF evaluation. Each study patient uses the pair co
 
 No single reported score establishes this. Log loss and four-class sum Brier assess probability quality beyond calibration alone. Top-label ECE10 compares maximum confidence with correctness of the predicted grade in ten equal-width bins; it does not establish calibration of each grade probability and depends on the bins. The study's scores are retrospective point descriptions without new probability-score intervals or recalibration. Training inverse-frequency sampling or weighted losses changes training emphasis, while these reports score the observed outer-fold grade distribution. Renormalizing scores for scoring or applying the frozen fusion is not population-prior correction, clinical risk calibration or a new validation.
 
+## Does G1 preserve physical anatomy or make any DICOM export equivalent?
+
+It preserves the supplied ROI array height-to-width ratio, up to integer-size rounding; it does not use physical spacing or patient-orientation metadata. The unchanged helper does not read DICOM headers, infer a sagittal plane, apply general modality/VOI LUTs, or check that a PNG was produced by the historical cache. INPUT_REPRESENTATION_LIMITS.md states the narrower contract and the caller checks. These are input-scope limits, not new evidence that the original dataset was processed incorrectly.
+
+## How should code and model weights be cited?
+
+Use artifact-specific versions and actual immutable identities. Code distribution v1.1.5, installed package version 1.0.0, model weights v1.0.0 and a later model-card revision identify different objects. CITATION.md explains these distinctions; the code repository also provides CITATION.cff. Neither file assigns a DOI or a published-paper status.
+
+## Does G1 preserve physical anatomy or make any DICOM export equivalent?
+
+It preserves the supplied ROI array height-to-width ratio, up to integer-size rounding; it does not use physical spacing or patient-orientation metadata. The unchanged helper does not read DICOM headers, infer a sagittal plane, apply general modality/VOI LUTs, or check that a PNG was produced by the historical cache. INPUT_REPRESENTATION_LIMITS.md states the narrower contract and the caller checks. These are input-scope limits, not new evidence that the original dataset was processed incorrectly.
+
+## How should code and model weights be cited?
+
+Use artifact-specific versions and actual immutable identities. Code distribution v1.1.5, installed package version 1.0.0, model weights v1.0.0 and a later model-card revision identify different objects. CITATION.md explains these distinctions; the code repository also provides CITATION.cff. Neither file assigns a DOI or a published-paper status.
+
 ## What can validation of a file or release establish?
 
 Checksums and strict state loading identify bytes and interface compatibility. CSV contracts establish the required columns, complete declared scale, one ROI per row and patient/fold consistency. They do not independently establish authentic OOF origin, anatomical pairing, selection independence or clinical validity. Raw patient-aligned inputs remain private; the full aggregate and synthetic checks cannot replace those inputs for paired reanalysis. Historical training sources are inspectable snapshots, not a complete portable retraining environment. Public posthoc/robustness/reporting plans record retrospective locks after prior same-cohort results were available; they are not prospective preregistration or independent confirmation. Age/sex/acquisition subgroup performance, external generalization, clinical utility and demographic fairness remain unestablished unless separately evaluated; no automated slice selection or localization is provided.

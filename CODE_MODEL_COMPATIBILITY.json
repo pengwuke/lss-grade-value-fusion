@@ -1,5 +1,5 @@
 {
-  "candidate_id": "paper2-code-v1.1.4-reporting-use-clarification",
+  "candidate_id": "paper2-code-v1.1.5-input-and-citation-documentation",
   "distribution_scope": "Portable runtime/statistics/aggregate evidence plus 46 sanitised historical training/analysis sources; not a full training port",
   "publication_status": "VERSIONED_RESEARCH_CODE_DISTRIBUTION",
   "author_license_assigned": true,
@@ -53,7 +53,7 @@
     "tests/test_robustness.py": "63ae31fc8c14a09ba84cbe6f8f966572ea940193f7f837861a6a611fc48cc6f2"
   },
   "usage_files_sha256": {
-    "COMMON5_SINGLE_ROI_EXAMPLE.md": "5d1f6d8afd8bc884c0fe1e5678b189b25168d3e17ad9f8fd9c943d56cdd5d008",
+    "COMMON5_SINGLE_ROI_EXAMPLE.md": "dbfda359092e074a04d23e9b561cf5bccd26151427c53be7125d77363a74b192",
     "examples/predict_common5_pair.py": "5715894c3086005914b3aebb69092698fdf0277287b606cab2dc086e6955e272",
     "historical_source_inventory.json": "726e605fe9e5f1b88421ebf5d99e7dc646777258d453d11bd1211d6cfd405e72",
     "tests/test_common5_pair_example.py": "890c40cf12373f38cf5ab6c2240161269366e1955bded6e2386235aa87942f8d",
@@ -64,13 +64,16 @@
     "matched_statistics/tests/test_home_path_contracts.py": "f92776bd0bcf4be58449e7117c7c226a68984e24acae49bc299cc1a7bea530e8",
     "PATH_INPUT_OUTPUT.md": "8a7671c4d736639f5bf72bfa23f9884baca41d40a1c130e2623feaf4812873a6",
     "tests/test_home_path_contracts.py": "6ac5cfc595a4ef59ad5552d28f9006f227ff33de42873efb00cd4c347a3d7369",
-    "ARCHIVE_INTEGRITY.md": "a4c13a81bcb2952012c34bf192b634eda9b9c2c85b47b1a7bff200fafec277fb",
+    "ARCHIVE_INTEGRITY.md": "2952ca5ddf6e1fe8044c41f71b8599cf10ce8b80e7aa7ffd94eb182f7d16af6c",
     "COMMON5_FUSION_PRECISION.md": "cb3fb2593b82b94931ebfbe9e178084877ccb4ad9180d48a68b28ca204d2f12c",
     "tests/test_common5_fusion_precision.py": "46d034dde8629e29765493a54bc63ca3f72ba29a4cafb4cdbaa10b85b06af1c2",
     "TASK_BASELINE_EVIDENCE.md": "61db8f4563e4a96c2c35ebe18044c18dae2b2bdb4e110129321bd1acf1062aa9",
     "FIVE_FOLD_REPORTING.md": "ca992ab8576739850c2f6a379e47204671475316714416e56997ef0a76152aef",
     "READER_NAME_MAPPING.json": "4600e50daaf6638655fb432d5015aa1a7da75c729f46c7c153498c8a2119351b",
-    "USE_AND_REPORTING_FAQ.md": "52330a15d52afe60c04e9e4ca35c3c53d11fa1f2f83ead98df7a4a77de894028"
+    "USE_AND_REPORTING_FAQ.md": "ed1aa9f3a139d0cb5e30ba3cca31e35086932809ec4f8bd2d5fae791050f0d72",
+    "INPUT_REPRESENTATION_LIMITS.md": "9885b9d0c53b34c728f88d105406b08dbad0e667d06cdd8b4fb8376dd86e971f",
+    "CITATION.cff": "281c28582e5780dfd605bc10321a020a33ae57ba1273125156f19cfe1d185562",
+    "CITATION.md": "7698fd7e9ae46164ce3b4048f4dedf43ddb67f4325b9091875538ae990ac0cc9"
   },
   "evidence_program_files": {
     "evidence_tools/branch_error_audit.py": "2116935bbbe609e43592f4fe514bcc74457718b2972c73b78b6f766b2b65047d",
@@ -103,7 +106,7 @@
     "new_runtime_tests_run": false,
     "new_training_inference_or_statistics": false
   },
-  "actual_remote_publication_evidence": "Versioned code release https://github.com/pengwuke/lss-grade-value-fusion/releases/tag/v1.1.4 ; external receipt, tag and release-asset SHA256 digest establish actual publication and artifact identity.",
+  "actual_remote_publication_evidence": "Versioned code release https://github.com/pengwuke/lss-grade-value-fusion/releases/tag/v1.1.5 ; actual publication requires the external commit/tag/asset receipt.",
   "historical_source_inventory_scope": "Original raw R16 metadata retained; actual public file hashes in SOURCE_LICENSE_ATTRIBUTION.json",
   "historical_source_program_files_sha256": {
     "historical_sources/deit_training/52_train_official_deit_protocol_v3_full468_oof.py": "dc8c0b4b1aafe640d7ce764c3efff984e5154430621c946ea7025c0b4d3887ae",
@@ -213,10 +216,10 @@
   },
   "author_model_license": "CC-BY-NC-4.0-author-contributions",
   "separate_model_publication_evidence": "External model publication receipt; this code payload does not report live remote model access",
-  "parent_public_code_release": "v1.1.3",
-  "parent_public_code_commit": "230bee55ff3223cdd924717003d5e63e71b8497a",
-  "parent_public_code_asset_sha256": "e63242911ce8f26a431a568d573261e34641674dd897ed9b86731fd55e714770",
-  "documentation_patch_scope": "Documentation-only clarification of inference/evaluation inputs, probability interpretation, SR1 development-prediction reuse, fusion-trade-off scope and AI assistance; all81 parent Python/archived Python-text files and numerical artefacts preserved.",
+  "parent_public_code_release": "v1.1.4",
+  "parent_public_code_commit": "bf252ccca397ed7222db9b66f712d18ba03d0c03",
+  "parent_public_code_asset_sha256": "a4981beb9c19d6613d030191c1849f19719a8e352b2abec666ffdd4524df28e3",
+  "documentation_patch_scope": "Documentation-only clarification of narrow input/geometry contracts and artifact citation; all81 parent source files, original reports, configurations and licences preserved.",
   "documentation_path_patch": {
     "distribution_version": "1.1.2",
     "parent_public_release": "v1.1.1",
@@ -234,8 +237,8 @@
   "new_test_files": {
     "tests/test_five_fold_reporting.py": "1c7aac211982ca2ef6ca06dd2a8e0e8fd07b55233fc5f83f1323403d8e86791a"
   },
-  "new_statistics_scope": "No numerical execution in v1.1.4. Prior complete-five-fold descriptive reporting is inherited from v1.1.3 without recalculation.",
-  "new_tests_scope": "No program changes or new runtime/model/statistical tests; file/manifest/ZIP byte checks only.",
+  "new_statistics_scope": "No numerical execution in v1.1.5. The v1.1.3 complete-five-fold reports and earlier checks are inherited without recalculation.",
+  "new_tests_scope": "No program changes or model/statistical/functional tests; citation-schema and file/manifest/ZIP metadata checks only.",
   "documentation_reporting_patch": {
     "date": "2026-11-15",
     "parent_release": "v1.1.2",
@@ -247,12 +250,15 @@
   "retained_new_file_fields_scope": "new_portable_reporting_files and new_test_files record the earlier v1.1.3 additions; no Python file is newly added by v1.1.4.",
   "documentation_review_patch": {
     "date": "2026-11-15",
-    "parent_public_code_release": "v1.1.3",
-    "all81_parent_Python_source_bytes_preserved": true,
-    "new_numerical_execution": false,
-    "new_training_model_inference_selection_or_CI": false,
-    "AI_assistance_disclosure": "README.md and USE_AND_REPORTING_FAQ.md",
-    "SR1_development_prediction_role": "Already used for checkpoint selection and then source-rule fitting; not independent outer-test OOF."
+    "parent_public_code_release": "v1.1.4",
+    "new_input_contract_guide": "INPUT_REPRESENTATION_LIMITS.md",
+    "citation_files": [
+      "CITATION.cff",
+      "CITATION.md"
+    ],
+    "all81_parent_sources_preserved": true,
+    "new_training_model_inference_statistics_or_functional_tests": false,
+    "citation_scope": "Code distribution version separate from unchanged installed packages, model-weight version and documentation revision; no DOI invented."
   },
   "historical_reporting_record": {
     "release": "v1.1.3",
@@ -260,5 +266,14 @@
     "new_statistics": true,
     "new_tests_run": true,
     "scope": "Descriptive complete-fold reporting, artificial reporter contracts and same-frozen-input parity were performed for v1.1.3, not this documentation-only release."
+  },
+  "historical_documentation_review_v1_1_4": {
+    "date": "2026-11-15",
+    "parent_public_code_release": "v1.1.3",
+    "all81_parent_Python_source_bytes_preserved": true,
+    "new_numerical_execution": false,
+    "new_training_model_inference_selection_or_CI": false,
+    "AI_assistance_disclosure": "README.md and USE_AND_REPORTING_FAQ.md",
+    "SR1_development_prediction_role": "Already used for checkpoint selection and then source-rule fitting; not independent outer-test OOF."
   }
 }

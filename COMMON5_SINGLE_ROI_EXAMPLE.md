@@ -24,7 +24,7 @@ It rejects RGB, 16-bit and non-PNG files rather than converting them silently.
 Other supported input preparation can use the lower-level APIs explicitly.
 Format/byte checks do not establish that the files were prepared by the original
 cache producers. Anatomical pairing and source provenance remain the caller's
-responsibility. One cache's equivalence to the other is not established.
+responsibility. One cache's equivalence to the other is not established. INPUT_REPRESENTATION_LIMITS.md separates decoded pixels, linear rescale, display transforms and pixel-array versus physical geometry; the example performs none of those source-header/provenance checks. INPUT_REPRESENTATION_LIMITS.md separates decoded pixels, linear rescale, display transforms and pixel-array versus physical geometry; the example performs none of those source-header/provenance checks.
 
 `--fold` is the explicitly assigned held-out fold 0..4 for common5 reproduction;
 the example does not assign new patients a fold. Averaging the five common5

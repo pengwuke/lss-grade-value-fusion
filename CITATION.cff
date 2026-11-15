@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "If you use this code distribution, cite this version and its actual immutable release identity. Cite upstream methods separately."
+type: software
+title: "Four-grade lumbar foraminal stenosis research code"
+authors:
+  - family-names: Peng
+    given-names: Wuke
+    orcid: "https://orcid.org/0009-0003-5791-3783"
+version: "1.1.5"
+repository-code: "https://github.com/pengwuke/lss-grade-value-fusion"
+url: "https://github.com/pengwuke/lss-grade-value-fusion/releases/tag/v1.1.5"
+license: MIT
+abstract: "Versioned research code and documentation for expert-ROI ordinal grading. Author code contributions use MIT; retained third-party notices apply. This citation does not identify a published article or establish clinical validation."
