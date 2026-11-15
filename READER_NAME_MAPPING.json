@@ -1,0 +1,24 @@
+{
+  "purpose": "Reader names map to stable archive/program identifiers; identifiers remain unchanged.",
+  "common5_complete_branch": {
+    "R09": {
+      "reader_name": "Grade-value CORAL (inner-selected alpha)",
+      "scope": "Single branch after auxiliary-coefficient selection using each model inner validation; not fixed-alpha matched ablation."
+    },
+    "R10": {
+      "reader_name": "Grade-value CORAL + DeiT (fixed fusion)",
+      "scope": "The same selected-alpha branch and frozen DeiT; weights0.40 and0.60."
+    },
+    "R11": {
+      "reader_name": "Grade-value CORAL + DeiT (validation-selected fusion)",
+      "scope": "The same two frozen branches with one scalar weight per outer fold, chosen on the corresponding inner validation data."
+    }
+  },
+  "matched_fixed_alpha_controls": {
+    "A0_NATURAL": "Natural CORAL without the auxiliary head",
+    "A1_SCALED": "Main-loss-scale-matched CORAL",
+    "A2_BINARY_P": "Probability-interface binary auxiliary supervision",
+    "A3_GRADE_FIXED": "Grade-value auxiliary supervision with fixed alpha0.125"
+  },
+  "warning": "Fixed-alpha branches/fusions are not interchangeable with R09/R10/R11. The two fusion strategies run in parallel; R10 is not input to R11. Model role counts, analysis-stage IDs and system IDs refer to different levels."
+}

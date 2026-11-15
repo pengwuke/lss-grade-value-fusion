@@ -1,0 +1,48 @@
+{
+  "scope": "Independent descriptive reporting utility, separate from preserved paired-inference modes; no model or clinical test.",
+  "synthetic_contract_tests": {
+    "command": "python -m unittest discover -s tests -p test_five_fold_reporting.py -v",
+    "test_count": 10,
+    "exit_code": 0,
+    "all_passed": true,
+    "environment": {
+      "python": "3.11.15",
+      "numpy": "2.4.6",
+      "scikit_learn": "1.9.0",
+      "platform": "win32"
+    },
+    "cases": [
+      "all five folds and declared cohort scale required",
+      "patient cross-fold and duplicate ROI rejection",
+      "canonical fold and grade contract",
+      "unequal fold mean versus pooled and sample SD ddof1",
+      "probability origin declaration required",
+      "manual logloss/Brier/ECE targets",
+      "probability mass and argmax rejection",
+      "undefined metrics and zero support null handling",
+      "CLI output never overwritten and no row identifiers exported",
+      "partial probability headers rejected"
+    ]
+  },
+  "new_programs": {
+    "evidence_tools/five_fold_metrics.py": "f3ce82def43c192ce0c0acf9ab9572ddf7752518b37e4e79ad678adf7789fb84",
+    "evidence_tools/five_fold_report.py": "4407756a67e8875e9ff68d2d87ed61f2eb8db4e0eeea537555d075588cd05b2c"
+  },
+  "new_test": {
+    "tests/test_five_fold_reporting.py": "1c7aac211982ca2ef6ca06dd2a8e0e8fd07b55233fc5f83f1323403d8e86791a"
+  },
+  "source_scoring_core_sha256": "0e54c21bd6b6a65b5c8b11742e1faf2c4d681b9d3ec8f8a0659a1c13fb6f366a",
+  "generic_adaptations": "Unavailable probabilities and zero reference-grade denominators are null; undefined kappa and incomplete finite fold summaries are null with validity counts. Existing actual-study score arithmetic is retained.",
+  "real_frozen_input_semantic_parity": {
+    "systems": 19,
+    "folds_per_system": 5,
+    "pooled_and_mean_sample_SD_included": true,
+    "all_numeric_and_semantic_fields_match_existing_aggregate": true,
+    "max_abs_numeric_difference": 0.0,
+    "performed_on_school_server": true,
+    "patient_rows_exported": false,
+    "study_rows_published": false
+  },
+  "provenance_limit": "This verification does not remove the historical cross-fold grid-development information reuse, establish new independent validation, or prove model/clinical safety.",
+  "new_training_model_inference_selection_or_CI": false
+}

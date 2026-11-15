@@ -1,20 +1,20 @@
 # Four-grade lumbar foraminal stenosis classification on routine sagittal T2 MRI
 
-Research code for **Four-grade lumbar foraminal stenosis classification on routine sagittal T2 MRI: a patient-disjoint evaluation of grade-value auxiliary supervision and probability fusion** (manuscript B15).
+Research code for **Four-grade lumbar foraminal stenosis classification on routine sagittal T2 MRI: a patient-disjoint evaluation of grade-value auxiliary supervision and probability fusion**.
 
 Author: Wuke Peng. ORCID: 0009-0003-5791-3783.
 
-## Code distribution v1.1.2: verification-record path correction
+## Code distribution v1.1.3: full-fold reporting and reader names
 
-Public repository: https://github.com/pengwuke/lss-grade-value-fusion. This v1.1.2 documentation-only patch starts from immutable public v1.1.1 (commit fa086303265ccc4d22bdf61ea2ee5eed689a81e3). It corrects one historical R6 verification-record path in COMMON5_SINGLE_ROI_EXAMPLE.md and updates the current README, integrity instructions and bound distribution metadata. All 78 Python/archived Python-text files (32 portable and 46 historical), both pyproject files, frozen kernels/plans/fusion, historical verification records, source maps/diffs, aggregate evidence and licence texts are byte-identical to v1.1.1. Older tags and raw R16 are preserved.
+This distribution starts from immutable public v1.1.2, commit ec9337ddb9ba5a0cbbd8f488e808e7e09a100a51. It revises task/baseline/evidence explanations and reporting scope, adds an independent complete-five-fold descriptive reporter plus targeted synthetic contract tests, and supplies the corresponding aggregate study report. All 78 parent Python/archived Python-text files (32 portable and 46 historical), both pyproject files, original frozen kernels/plans/fusion arithmetic, historical verification records, source maps/diffs and licence texts remain byte-identical to v1.1.2. New reporter modules are separate; none of the five existing paired-inference modes is changed.
 
-Historical lineage: v1.1.1 corrected documentation of public v1.1.0 (commit 61df3321ce3e0aa5858d8bffccc6e334071204b4). The v1.1.0 source extension added all 46 inspectable historical training/analysis sources to exact public v1.0.1 (commit 7dcb02165a332ddf6831b285598cd3000bbb8f6c). Retained usage documents may describe the unchanged v1.1.1 parent scope; their interfaces and scope also apply to this path-only patch.
+Historical lineage and older tags are retained. The v1.1.0 source extension added the 46 inspectable historical training/analysis files to public v1.0.1; v1.1.1 clarified scope and v1.1.2 corrected a verification-record path. Retained historical usage records describe their original scope, not new testing during this revision.
 
 The release contains portable inference architecture/input/fusion interfaces, five frozen-input statistics modes, synthetic examples/tests, aggregate evidence and the added training-source snapshot. See HISTORICAL_SOURCE_SCOPE.md, SOURCE_LICENSE_ATTRIBUTION.json/CSV and PUBLIC_SOURCE_DIFF.patch. This provides inspectable training-method source; it is not a claim of full historical retraining, complete portability or a locked historical environment. No legacy controller was executed or imported to prepare it.
 
 No model weights, MRI/DICOM/ROI images, real patient/ROI predictions or probabilities, split/fold rows, original pretrained files, manuscript/reviewer files or credentials are bundled. The three historical auditors that embedded public test IDs now require the exact user-supplied original source CSV with strict source/hash gates and fail clearly if absent. Model distribution is handled separately. The unchanged runtime needs a matching authorised model package.
 
-The author's original code contributions are MIT-licensed. Adapted/reference portions retain their own terms; see THIRD_PARTY_NOTICES.md and full texts in third_party_licenses/. The ORNet method is cited for the author's distinct CORAL-specific implementation; the upstream repository is not assigned MIT or copied into this distribution. Author code MIT does not license absent datasets/pretrained/model files. Current remote version identity and anonymous access checks are recorded in external publication receipts.
+The author's original code contributions are MIT-licensed. Adapted/reference portions retain their own terms; see THIRD_PARTY_NOTICES.md and full texts in third_party_licenses/. The ORNet method is cited for the author's distinct CORAL-specific implementation; the upstream repository is not assigned MIT or copied into this distribution. Author code MIT does not license absent datasets/pretrained/model files. The versioned reporting release is [v1.1.3](https://github.com/pengwuke/lss-grade-value-fusion/releases/tag/v1.1.3); its tag and release-asset digest identify this distribution.
 
 ## Installation
 
@@ -29,7 +29,7 @@ python -m pip install -c constraints-cpu-inference-linux-py311.txt ./matched_sta
 python -m pip check
 ```
 
-Install only opencv-python-headless in this environment; other OpenCV wheels share the cv2 namespace. For statistics alone, install ./matched_statistics; it depends on NumPy and scikit-learn and does not require Torch. Installed package metadata remains version 1.0.0; this code distribution is v1.1.2 and the unchanged runtime source retains its historical internal 0.0.0 marker. The 32 portable Python files, frozen statistical kernels/plans and fusion settings are byte-identical to R16. Among the 46 historical copies, 21 match raw R16 and 25 contain the documented path/split-input sanitation; all 78 Python/archived Python-text files are byte-identical to public v1.1.0.
+Install only opencv-python-headless in this environment; other OpenCV wheels share the cv2 namespace. For statistics alone, install ./matched_statistics; it depends on NumPy and scikit-learn and does not require Torch. Installed package metadata remains version 1.0.0; this code distribution is v1.1.3 and the unchanged runtime source retains its historical internal 0.0.0 marker. The 32 portable Python files, frozen statistical kernels/plans and fusion settings are byte-identical to R16. Among the 46 historical copies, 21 match raw R16 and 25 contain the documented path/split-input sanitation; all 78 Python/archived Python-text files are byte-identical to public v1.1.0.
 
 ## Inference interface and inputs
 
@@ -61,12 +61,19 @@ The main published-method comparison is the Phadke image method's same-protocol 
 
 The task is grading expert-selected ROIs. Aggregate gains do not establish independent causal effects of every component, clinical utility, reader-time savings or external generalisation. Only aggregate metrics/intervals/counts and plans are provided. The original MRI dataset is available from https://data.mendeley.com/datasets/rgb77xm3jf/4 (DOI 10.17632/rgb77xm3jf.4); this code package does not redistribute it.
 
+
+## Complete five-fold reporting and reader names
+
+See FIVE_FOLD_REPORTING.md for the independent reporter's CSV/scale contract and the distinction between every outer fold, mean with sample SD and pooled OOF. READER_NAME_MAPPING.json maps grade-value CORAL, fixed fusion and validation-selected fusion to stable archive IDs. Code keys and model roles remain unchanged. The original five statistics modes are frozen pooled paired analyses; they are not relabelled as the new full-fold reporting utility.
+
+The complete aggregate report adds grade/error and probability-quality summaries from recovered original branch OOF probabilities and algebraic fusion under already-frozen weights for all 19 retained systems; they are not 19 independently stored native probability files or new model forward passes. It is not a new independent evaluation, and probability scores do not establish clinical calibration. Model-level patient separation does not erase the historical cross-fold common-grid information reuse. Source MRI metadata and patient-level rows are not redistributed by this package. The source archive can retain date quasi-identifiers; FIVE_FOLD_REPORTING.md states the limited metadata audit, inspected pixel/target inputs and the author data-enquiry route, without certifying full anonymization.
+
 ## Historical validation and this packaging step
 
 historical_validation/ retains immutable earlier preparation records. R4 checked a fresh isolated same-host Linux CPU installation, 50 strict role loads and artificial forward interfaces; it was not a new machine or a clinical evaluation. R5 retained model strict-load evidence. R7 records path and artificial-CLI checks. R9 records 30 runtime tests, 70 frozen-rule cases and ten artificial-image CLI cases. R12 records the added robustness interface and statistics checks. See historical_validation/README.md for scope.
 
-This v1.1.2 documentation patch checks membership, hashes, the corrected local reference and source preservation only. It performs no new training, model inference, statistics, bootstrap, selection or clinical validation. Historical records retain original IDs, dates and scope, including their then-unpublished status. Their old pending flags are not the current code-licence status. Historical source paths/digests in those records are provenance references and need not be bundled public paths.
+This revision adds a descriptive full-fold/probability reporting audit of existing frozen predictions and tests only the new reporting utility with artificial data. It performs no new training, model inference, bootstrap intervals, significance tests, weight selection or clinical validation. The archived six-metric pooled results remain unchanged. Historical records retain original IDs, dates and scope, including their then-unpublished status. Their old pending flags are not the current code-licence status. Historical source paths/digests in those records are provenance references and need not be bundled public paths.
 
 ## Integrity
 
-Verify every shipped regular file against SHA256SUMS. The list excludes itself. The external preparation receipt binds the ZIP and the checksum list. See ARCHIVE_INTEGRITY.md. A checksum is not a clinical validation or third-party rights guarantee.
+Verify every shipped regular file against SHA256SUMS. The list excludes itself. See ARCHIVE_INTEGRITY.md. A checksum is not a clinical validation or third-party rights guarantee.

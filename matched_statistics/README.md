@@ -1,4 +1,4 @@
-# Paper2 matched statistics: public code v1.1.1 / manuscript B15
+# Paper2 frozen paired statistics and separate complete-fold reporting
 
 Research-code companion to manuscript B15. The author contributions are MIT-licensed; no study rows or model files are included. The five modes
 have distinct scopes and defaults (all use seed 42):
@@ -119,9 +119,7 @@ dependency lock or rerun of the paper's patient intervals. At the time of the
 retained R3/R15 preparation records, manuscript review, new-asset licensing and
 public release were pending. Those statements describe the historical records,
 not the current code status. The author's original code is now publicly available
-under MIT at https://github.com/pengwuke/lss-grade-value-fusion. This v1.1.1
-documentation-only patch of public v1.1.0 preserves the 1.0.0 package versions
-and all 78 Python/archived Python-text sources, kernels and plans. Trained models and original study rows
+under MIT at https://github.com/pengwuke/lss-grade-value-fusion. Code distribution v1.1.3 preserves the 1.0.0 installed package versions and all 78 parent Python/archived Python-text sources, kernels and plans. It adds a separate descriptive full-fold reporter outside this installed package; the five paired-inference modes here are unchanged. Trained models and original study rows
 are not included; their distribution and applicable grants are handled separately.
 The dataset licence/use-description difference remains disclosed in
 ../THIRD_PARTY_NOTICES.md. Code publication does not mean the manuscript has
@@ -166,3 +164,10 @@ resampling were rerun in R16.
 ## Public distribution scope
 
 This package is part of the code v1.1.1 release derived from internal R16. Frozen source kernels/plans and portable statistics-package Python bytes are unchanged; the historical snapshot also matches public v1.1.0. Historical validation keeps its original round and scope; it is not a new validation of this distribution. Original study rows and patient/ROI probabilities are not bundled. The independently installable statistics package does not include training controllers inside its own wheel; the top-level release now provides the historical source snapshot under ../historical_sources/. See ../PUBLIC_DISTRIBUTION_MANIFEST.json and ../HISTORICAL_SOURCE_SCOPE.md.
+
+
+## Current full-fold reporting contract
+
+The independent ../evidence_tools/five_fold_report.py utility reports each of all five outer folds, arithmetic fold mean with sample SD(ddof=1), pooled OOF, grade-level P/R/F1, normal/mild confusions and severe underestimation. When explicitly declared original OOF probabilities pass finite/mass/argmax checks, it also reports log loss, four-class sum Brier and ECE10. Otherwise probability scores are unavailable. This does not change this package's five modes or their frozen interval calculations. See ../FIVE_FOLD_REPORTING.md for exact usage, strict declared-cohort contracts and provenance limits.
+
+No single inner-validation score supports formal method superiority. A successful CSV contract only checks structure and declared cohort size; train/selection separation requires separate records. The historical common-grid development across cyclic folds remains disclosed, so the complete archived tables are retrospective evidence, not new development-independent confirmation.
